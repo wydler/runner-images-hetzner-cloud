@@ -36,7 +36,7 @@ jobs:
         with:
           github_token: ${{ steps.generate-token.outputs.token }}
           upstream_repository: actions/runner-images
-          target_repository: dwydler/runner-images-hetzner-cloud
+          target_repository: ${{ github.repository }}
           upstream_branch: main
           target_branch: main
           force: false

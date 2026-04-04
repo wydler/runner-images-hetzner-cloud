@@ -120,7 +120,7 @@ jobs:
           
           
       - name: Upload file software-report.json to artifact
-        uses: actions/upload-artifact@c6a366c94c3e0affe28c06c8df20a878f24da3cf  # v3.2.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
         with:
           name: software-report.json
           path: images/ubuntu/software-report.json
@@ -129,7 +129,7 @@ jobs:
           retention-days: 1
 
       - name: Upload file sbom.json.zip to artifact
-        uses: actions/upload-artifact@c6a366c94c3e0affe28c06c8df20a878f24da3cf  # v3.2.2
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f  # v7.0.0
         with:
           name: sbom.json.zip
           path: images/ubuntu/sbom.json.zip

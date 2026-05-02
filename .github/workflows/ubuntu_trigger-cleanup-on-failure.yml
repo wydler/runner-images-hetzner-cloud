@@ -39,7 +39,7 @@ jobs:
     
     steps:
       - name: Install Hetzner Cloud Cli
-        uses: hetznercloud/setup-hcloud@4ff9bbeda4053fb69dd7fa1fcbdfcce7e648bf33 # v1.0
+        uses: hetznercloud/setup-hcloud@ac9e7d74fb41a3ca44a6a3da123bd5aa70731e3a # v1.0
         
       - name: Delete temporary SSH Key on Hetzner Cloud
         run: |

@@ -90,7 +90,16 @@ set_etc_environment_variable "ANT_HOME" "/usr/share/ant"
 
 # Install Maven
 mavenVersion=$(get_toolset_value '.java.maven')
-mavenDownloadUrl="https://dlcdn.apache.org/maven/maven-3/${mavenVersion}/binaries/apache-maven-${mavenVersion}-bin.zip"
+
+mavenLatest=$(
+  curl -s https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/maven-metadata.xml \
+    | grep -oE "<version>${mavenVersion//./\\.}\.[0-9]+</version>" \
+    | sed -E 's#</?version>##g' \
+    | sort -V \
+    | tail -n 1
+)
+
+mavenDownloadUrl="https://dlcdn.apache.org/maven/maven-3/${mavenLatest}/binaries/apache-maven-${mavenLatest}-bin.zip"
 maven_archive_path=$(download_with_retry "$mavenDownloadUrl")
 unzip -qq -d /usr/share "$maven_archive_path"
 ln -s /usr/share/apache-maven-${mavenVersion}/bin/mvn /usr/bin/mvn

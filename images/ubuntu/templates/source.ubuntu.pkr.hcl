@@ -1,3 +1,13 @@
+packer {
+  required_plugins {
+    hcloud = {
+      source  = "github.com/hetznercloud/hcloud"
+      version = "1.7.2"
+    }
+  }
+}
+
+
 source "hcloud" "gh-shr-ubuntu" {
   token = var.hcloud_token
 

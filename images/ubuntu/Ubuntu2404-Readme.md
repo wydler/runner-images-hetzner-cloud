@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-90-generic
-- Image Version: 20260425.3
+- Kernel Version: 6.8.0-101-generic
+- Image Version: 20260510.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.20.2
-- Homebrew 5.1.7
-- Miniconda 26.1.1
+- Homebrew 5.1.10
+- Miniconda 26.3.2
 - Npm 10.8.2
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.11.1
+- Pipx 1.12.0
 - RubyGems 3.4.20
-- Vcpkg (build from commit 89dd0f4d24)
+- Vcpkg (build from commit 99a97de2cb)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,25 +51,25 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.4.1
+- Gradle 9.5.0
 - Lerna 9.0.7
 - Maven 3.9.15
 
 ### Tools
 - Ansible 2.20.5
-- AzCopy 10.32.2 - available by `azcopy` and `azcopy10` aliases
+- AzCopy 10.32.3 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.1.0
 - Bazelisk 1.28.1
-- Bicep 0.42.1
+- Bicep 0.43.8
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.25.2
+- CodeQL Action Bundle 2.25.4
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose v2 2.38.2
 - Docker-Buildx 0.33.0
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.233.0
+- Fastlane 2.233.1
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
@@ -85,10 +85,10 @@ to accomplish this.
 - Newman 6.2.2
 - nvm 0.40.4
 - OpenSSL 3.0.13-0ubuntu3.9
-- Packer 1.15.2
+- Packer 1.15.3
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.232.0
+- Pulumi 3.237.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,19 +97,19 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.34.37
+- AWS CLI 2.34.45
 - AWS CLI Session Manager Plugin 1.2.814.0
-- AWS SAM CLI 1.158.0
-- Azure CLI 2.85.0
+- AWS SAM CLI 1.159.1
+- Azure CLI 2.86.0
 - Azure CLI (azure-devops) 1.0.3
-- GitHub CLI 2.91.0
-- Google Cloud CLI 565.0.0
+- GitHub CLI 2.92.0
+- Google Cloud CLI 567.0.0
 
 ### Java
 | Version              | Environment Variable |
 | -------------------- | -------------------- |
-| 8.0.482+8            | JAVA_HOME_8_X64      |
-| 11.0.30+7            | JAVA_HOME_11_X64     |
+| 8.0.492+9            | JAVA_HOME_8_X64      |
+| 11.0.31+11           | JAVA_HOME_11_X64     |
 | 17.0.19+10 (default) | JAVA_HOME_17_X64     |
 | 21.0.11+10           | JAVA_HOME_21_X64     |
 | 25.0.3+9             | JAVA_HOME_25_X64     |
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 147.0.7727.116
-- ChromeDriver 147.0.7727.117
-- Chromium 147.0.7727.0
-- Microsoft Edge 147.0.3912.86
-- Microsoft Edge WebDriver 147.0.3912.86
+- Google Chrome 148.0.7778.96
+- ChromeDriver 148.0.7778.97
+- Chromium 148.0.7778.0
+- Microsoft Edge 148.0.3967.54
+- Microsoft Edge WebDriver 148.0.3967.54
 - Selenium server 4.43.0
-- Mozilla Firefox 150.0
+- Mozilla Firefox 150.0.2
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -185,7 +185,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.22.12
 - 1.23.12
 - 1.24.13
-- 1.25.9
+- 1.25.10
 
 #### Node.js
 - 20.20.2
@@ -202,7 +202,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### PyPy
 - 3.9.19 [PyPy 7.3.16]
 - 3.10.16 [PyPy 7.3.19]
-- 3.11.15 [PyPy 7.3.21]
+- 3.11.15 [PyPy 7.3.22]
 
 #### Ruby
 - 3.2.11
@@ -260,11 +260,11 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | brotli                 | 1.1.0-2build2                |
 | bzip2                  | 1.0.8-5.1build0.1            |
 | coreutils              | 9.4-3ubuntu6.2               |
-| curl                   | 8.5.0-2ubuntu10.8            |
+| curl                   | 8.5.0-2ubuntu10.9            |
 | dbus                   | 1.14.10-4ubuntu4.1           |
 | dnsutils               | 1:9.18.39-0ubuntu0.24.04.3   |
-| dpkg                   | 1.22.6ubuntu6.5              |
-| dpkg-dev               | 1.22.6ubuntu6.5              |
+| dpkg                   | 1.22.6ubuntu6.6              |
+| dpkg-dev               | 1.22.6ubuntu6.6              |
 | fakeroot               | 1.33-1                       |
 | file                   | 1:5.45-3build1               |
 | findutils              | 4.9.0-5build1                |
@@ -275,7 +275,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | gcc                    | 4:13.2.0-7ubuntu1            |
 | gnupg2                 | 2.4.4-2ubuntu17.4            |
 | haveged                | 1.9.14-1ubuntu2              |
-| iproute2               | 6.1.0-1ubuntu6.2             |
+| iproute2               | 6.1.0-1ubuntu6.3             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.1            |
@@ -291,7 +291,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | mercurial              | 6.7.2-1ubuntu2.2             |
 | net-tools              | 2.10-0.1ubuntu4.4            |
 | netcat                 | 1.226-1ubuntu2               |
-| openssh-client         | 1:9.6p1-3ubuntu13.15         |
+| openssh-client         | 1:9.6p1-3ubuntu13.16         |
 | p7zip-full             | 16.02+transitional.1         |
 | p7zip-rar              | 16.02+transitional.1         |
 | parallel               | 20231122+ds-1                |
@@ -305,7 +305,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | shellcheck             | 0.9.0-1                      |
 | sphinxsearch           | 2.2.11-8build1               |
 | sqlite3                | 3.45.1-1ubuntu2.5            |
-| ssh                    | 1:9.6p1-3ubuntu13.15         |
+| ssh                    | 1:9.6p1-3ubuntu13.16         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | swig                   | 4.2.0-2ubuntu1               |

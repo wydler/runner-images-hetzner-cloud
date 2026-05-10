@@ -1,5 +1,6 @@
 build {
   sources = ["source.hcloud.gh-shr-ubuntu"]
+  name = "ubuntu-22.04"
 
   provisioner "shell" {
     inline           = ["cloud-init status --wait --long"]

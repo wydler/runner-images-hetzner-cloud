@@ -112,7 +112,7 @@ if [ -z "$mavenLatest" ]; then
   exit 1
 fi
 
-mavenDownloadUrl="https://dlcdn.apache.org/maven/maven-${mavenLatest%%.*}/${mavenLatest}/binaries/apache-maven-${mavenLatest}-bin.zip"
+mavenDownloadUrl="https://archive.apache.org/dist/maven/maven-${mavenLatest%%.*}/${mavenLatest}/binaries/apache-maven-${mavenLatest}-bin.zip"
 maven_archive_path=$(download_with_retry "$mavenDownloadUrl")
 unzip -qq -d /usr/share "$maven_archive_path"
 ln -s /usr/share/apache-maven-${mavenLatest}/bin/mvn /usr/bin/mvn

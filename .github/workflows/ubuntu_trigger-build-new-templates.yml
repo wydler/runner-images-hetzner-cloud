@@ -89,13 +89,13 @@ jobs:
 
       - name: Run `packer init`
         id: init
-        run: packer init ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        run: packer init ./images/ubuntu/templates/
         env:
           PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Run `packer validate`
         id: validate
-        run: packer validate ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        run: packer validate ./images/ubuntu/templates/
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}

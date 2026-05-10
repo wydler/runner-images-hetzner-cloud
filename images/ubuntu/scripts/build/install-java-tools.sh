@@ -96,8 +96,8 @@ set_etc_environment_variable "ANT_HOME" "/usr/share/ant"
 mavenVersion=$(get_toolset_value '.java.maven')
 
 mavenLatest=$(
-  curl -s https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/maven-metadata.xml \
-    | grep -oE "<version>${mavenVersion//./\\.}\.[0-9]+</version>" \
+  curl -fsSL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/maven-metadata.xml \
+    | grep -oE "<version>${mavenVersion}\.[0-9]+\.[0-9]+</version>" \
     | sed -E 's#</?version>##g' \
     | sort -V \
     | tail -n 1

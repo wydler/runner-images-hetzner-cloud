@@ -95,15 +95,24 @@ set_etc_environment_variable "ANT_HOME" "/usr/share/ant"
 # Install Maven
 mavenVersion=$(get_toolset_value '.java.maven')
 
-mavenLatest=$(
-  curl -fsSL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/maven-metadata.xml \
-    | grep -oE "<version>${mavenVersion}\.[0-9]+\.[0-9]+</version>" \
-    | sed -E 's#</?version>##g' \
-    | sort -V \
-    | tail -n 1
-)
+if [[ "$mavenVersion" =~ ^[0-9]+$ ]]; then
+  mavenLatest=$(
+    curl -fsSL https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/maven-metadata.xml \
+      | grep -oE "<version>${mavenVersion}\.[0-9]+\.[0-9]+</version>" \
+      | sed -E 's#</?version>##g' \
+      | sort -V \
+      | tail -n 1
+  )
+else
+  mavenLatest="$mavenVersion"
+fi
 
-mavenDownloadUrl="https://dlcdn.apache.org/maven/maven-3/${mavenLatest}/binaries/apache-maven-${mavenLatest}-bin.zip"
+if [ -z "$mavenLatest" ]; then
+  echo "Failed to resolve Maven version from '$mavenVersion'"
+  exit 1
+fi
+
+mavenDownloadUrl="https://dlcdn.apache.org/maven/maven-${mavenLatest%%.*}/${mavenLatest}/binaries/apache-maven-${mavenLatest}-bin.zip"
 maven_archive_path=$(download_with_retry "$mavenDownloadUrl")
 unzip -qq -d /usr/share "$maven_archive_path"
 ln -s /usr/share/apache-maven-${mavenLatest}/bin/mvn /usr/bin/mvn

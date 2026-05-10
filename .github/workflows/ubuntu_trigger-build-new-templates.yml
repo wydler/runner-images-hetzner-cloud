@@ -95,7 +95,7 @@ jobs:
 
       - name: Run `packer validate`
         id: validate
-        run: packer validate ./images/ubuntu/templates/
+        run: packer validate -only "${{ inputs.hcloud_server_image }}*" ./images/ubuntu/templates/
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}

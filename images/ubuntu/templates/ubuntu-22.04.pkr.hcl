@@ -1,13 +1,3 @@
-packer {
-  required_plugins {
-    hcloud = {
-      source  = "github.com/hetznercloud/hcloud"
-      version = "1.7.2"
-    }
-  }
-}
-
-
 variable "hcloud_token" {
   type      = string
   sensitive = true

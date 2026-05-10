@@ -8,7 +8,7 @@ packer {
 }
 
 
-source "hcloud" "gh-shr-ubuntu" {
+source "hcloud" "ubuntu-base-image" {
   token = var.hcloud_token
 
   location    = var.server_location

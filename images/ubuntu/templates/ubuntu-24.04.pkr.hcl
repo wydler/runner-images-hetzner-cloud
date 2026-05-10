@@ -1,5 +1,5 @@
 build {
-  sources = ["source.hcloud.gh-shr-ubuntu"]
+  sources = ["source.hcloud.ubuntu-base-image"]
   name = "ubuntu-24.04"
 
   provisioner "shell" {

@@ -229,7 +229,7 @@ jobs:
           artifacts: software-report.json,sbom.json.zip
         
       - name: Delete all artifacts associated with the run 
-        uses: geekyeggo/delete-artifact@176a747ab7e287e3ff4787bf8a148716375ca118 # 6.0.0
+        uses: geekyeggo/delete-artifact@176a747ab7e287e3ff4787bf8a148716375ca118  # v6.0.0
         with:
           name: |
             software-report.json

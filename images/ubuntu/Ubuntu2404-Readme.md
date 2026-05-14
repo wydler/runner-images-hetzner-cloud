@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-101-generic
-- Image Version: 20260510.1
+- Kernel Version: 6.8.0-90-generic
+- Image Version: 20260514.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.20.2
-- Homebrew 5.1.10
+- Homebrew 5.1.11
 - Miniconda 26.3.2
 - Npm 10.8.2
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.12.0
 - RubyGems 3.4.20
-- Vcpkg (build from commit 99a97de2cb)
+- Vcpkg (build from commit 495848814a)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,7 +51,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.5.0
+- Gradle 9.5.1
 - Lerna 9.0.7
 - Maven 3.9.15
 
@@ -66,17 +66,17 @@ to accomplish this.
 - CodeQL Action Bundle 2.25.4
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose v2 2.38.2
-- Docker-Buildx 0.33.0
+- Docker-Buildx 0.34.0
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.233.1
+- Fastlane 2.234.0
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
 - Haveged 1.9.14
 - jq 1.7
 - Kind 0.31.0
-- Kubectl 1.36.0
+- Kubectl 1.36.1
 - Kustomize 5.8.1
 - MediaInfo 24.01
 - Mercurial 6.7.2
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.15.3
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.237.0
+- Pulumi 3.238.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.34.45
+- AWS CLI 2.34.46
 - AWS CLI Session Manager Plugin 1.2.814.0
-- AWS SAM CLI 1.159.1
+- AWS SAM CLI 1.160.0
 - Azure CLI 2.86.0
 - Azure CLI (azure-devops) 1.0.3
 - GitHub CLI 2.92.0
-- Google Cloud CLI 567.0.0
+- Google Cloud CLI 568.0.0
 
 ### Java
 | Version              | Environment Variable |
@@ -116,7 +116,7 @@ to accomplish this.
 
 ### PHP Tools
 - PHP: 8.3.6
-- Composer 2.9.7
+- Composer 2.9.8
 - PHPUnit 8.5.52
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
@@ -138,12 +138,12 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 148.0.7778.96
-- ChromeDriver 148.0.7778.97
+- Google Chrome 148.0.7778.167
+- ChromeDriver 148.0.7778.167
 - Chromium 148.0.7778.0
 - Microsoft Edge 148.0.3967.54
 - Microsoft Edge WebDriver 148.0.3967.54
-- Selenium server 4.43.0
+- Selenium server 4.44.0
 - Mozilla Firefox 150.0.2
 - Geckodriver 0.36.0
 
@@ -156,7 +156,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar   |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.126, 8.0.206, 8.0.319, 8.0.420, 9.0.116, 9.0.205, 9.0.313, 10.0.107, 10.0.203
+- .NET Core SDK: 8.0.127, 8.0.206, 8.0.319, 8.0.421, 9.0.117, 9.0.205, 9.0.314, 10.0.108, 10.0.204, 10.0.300
 - nbgv 3.9.50+6feeb89450
 
 ### Databases
@@ -189,7 +189,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Node.js
 - 20.20.2
-- 22.22.2
+- 22.22.3
 - 24.15.0
 
 #### Python
@@ -197,7 +197,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 3.11.15
 - 3.12.13
 - 3.13.13
-- 3.14.4
+- 3.14.5
 
 #### PyPy
 - 3.9.19 [PyPy 7.3.16]
@@ -208,14 +208,14 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 3.2.11
 - 3.3.11
 - 3.4.9
-- 4.0.3
+- 4.0.4
 
 ### PowerShell Tools
 - PowerShell 7.4.15
 
 #### PowerShell Modules
 - Az: 14.6.0
-- Microsoft.Graph: 2.36.1
+- Microsoft.Graph: 2.37.0
 - Pester: 5.7.1
 - PSScriptAnalyzer: 1.25.0
 

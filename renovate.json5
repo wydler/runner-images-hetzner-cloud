@@ -9,6 +9,7 @@
   prHourlyLimit: 0,
   prConcurrentLimit: 0,
   automerge: false,
+  minimumReleaseAge: '7 days',
   enabledManagers: [
     'github-actions',
   ],

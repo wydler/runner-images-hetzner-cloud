@@ -321,7 +321,9 @@
         "version": "16"
     },
     "cmake": {
-        "version": "3.31.6"
+        "version": "3.31.6",
+        "pinnedDetails": {
+            "reason": "Supply chain security - CMake"
     },
     "pwsh": {
         "version": "7.4"

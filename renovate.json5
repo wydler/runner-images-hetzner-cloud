@@ -11,6 +11,7 @@
   automerge: false,
   minimumReleaseAge: '7 days',
   minimumReleaseAgeBehaviour: 'timestamp-required',
+  internalChecksFilter: 'strict',
   enabledManagers: [
     'github-actions',
   ],

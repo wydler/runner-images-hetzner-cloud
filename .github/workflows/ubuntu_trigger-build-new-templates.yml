@@ -107,7 +107,7 @@ jobs:
 
       - name: Run `packer build`
         id: build
-        run: packer build -only "${{ inputs.hcl_filename }}*" ./images/ubuntu/templates/
+        run: packer build -only "${{ inputs.hcl_filename }}.*" ./images/ubuntu/templates/
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}

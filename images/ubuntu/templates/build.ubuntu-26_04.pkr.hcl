@@ -1,6 +1,6 @@
 build {
   sources = ["source.hcloud.ubuntu-base-image"]
-  name = "ubuntu-24.04"
+  name = "ubuntu-26_04"
 
   provisioner "shell" {
     inline           = ["cloud-init status --wait --long"]
@@ -58,7 +58,7 @@ build {
 
   provisioner "file" {
     destination = "${var.installer_script_folder}/toolset.json"
-    source      = "${path.root}/../toolsets/toolset-2404.json"
+    source      = "${path.root}/../toolsets/toolset-2604.json"
   }
 
   provisioner "shell" {
@@ -112,7 +112,6 @@ build {
       "${path.root}/../scripts/build/install-apache.sh",
       "${path.root}/../scripts/build/install-aws-tools.sh",
       "${path.root}/../scripts/build/install-clang.sh",
-      "${path.root}/../scripts/build/install-swift.sh",
       "${path.root}/../scripts/build/install-cmake.sh",
       "${path.root}/../scripts/build/install-codeql-bundle.sh",
       "${path.root}/../scripts/build/install-awf.sh",
@@ -215,7 +214,7 @@ build {
   }
 
   provisioner "file" {
-    destination = "${path.root}/../Ubuntu2404-Readme.md"
+    destination = "${path.root}/../Ubuntu2604-Readme.md"
     direction   = "download"
     source      = "${var.image_folder}/software-report.md"
   }
@@ -243,7 +242,7 @@ build {
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/post-build-validation.sh"]
   }
-  
+
   provisioner "shell" {
     inline           = ["cloud-init clean --machine-id --seed --logs", "rm -rf /run/cloud-init/\\*", "rm -rf /var/lib/cloud/\\*"]
     valid_exit_codes = [0, 2]

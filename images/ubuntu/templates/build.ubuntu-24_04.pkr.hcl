@@ -1,6 +1,6 @@
 build {
   sources = ["source.hcloud.ubuntu-base-image"]
-  name = "ubuntu-24.04"
+  name = "ubuntu-24_04"
 
   provisioner "shell" {
     inline           = ["cloud-init status --wait --long"]

@@ -70,7 +70,7 @@ build {
   }
 
   provisioner "shell" {
-    environment_vars = ["IMAGE_VERSION=${var.image_version}", "IMAGEDATA_FILE=${var.imagedata_file}"]
+    environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}", "IMAGE_VERSION=${var.image_version}", "IMAGEDATA_FILE=${var.imagedata_file}"]
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/configure-image-data.sh"]
   }
@@ -263,7 +263,7 @@ build {
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/post-build-validation.sh"]
   }
-  
+
   provisioner "shell" {
     inline           = ["cloud-init clean --machine-id --seed --logs", "rm -rf /run/cloud-init/\\*", "rm -rf /var/lib/cloud/\\*"]
     valid_exit_codes = [0, 2]

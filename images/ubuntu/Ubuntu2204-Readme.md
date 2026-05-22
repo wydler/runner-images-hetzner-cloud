@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
-- Kernel Version: 5.15.0-179-generic
-- Image Version: 20260522.1
+- Kernel Version: 5.15.0-164-generic
+- Image Version: 20260523.1
 - Systemd version: 249.11-0ubuntu3.20
 
 ## Installed Software
@@ -95,7 +95,7 @@ to accomplish this.
 - Packer 1.15.3
 - Parcel 2.16.4
 - Podman 3.4.4
-- Pulumi 3.242.0
+- Pulumi 3.243.0
 - R 4.6.0
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11

@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
 - Kernel Version: 6.8.0-90-generic
-- Image Version: 20260514.1
+- Image Version: 20260522.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -16,7 +16,7 @@
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
 - Julia 1.12.6
 - Kotlin 2.3.21-release-298
-- Node.js 20.20.2
+- Node.js 22.22.3
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
@@ -24,15 +24,15 @@
 
 ### Package Management
 - cpan 1.64
-- Helm 3.20.2
-- Homebrew 5.1.11
+- Helm 3.21.0
+- Homebrew 5.1.13
 - Miniconda 26.3.2
-- Npm 10.8.2
+- Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.12.0
 - RubyGems 3.4.20
-- Vcpkg (build from commit 495848814a)
+- Vcpkg (build from commit 22d9c655dc)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -53,20 +53,20 @@ to accomplish this.
 - Ant 1.10.14
 - Gradle 9.5.1
 - Lerna 9.0.7
-- Maven 3.9.15
+- Maven 3.9.16
 
 ### Tools
-- Ansible 2.20.5
-- AzCopy 10.32.3 - available by `azcopy` and `azcopy10` aliases
+- Ansible 2.20.6
+- AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.1.0
 - Bazelisk 1.28.1
 - Bicep 0.43.8
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.25.4
+- CodeQL Action Bundle 2.25.5
 - Docker Amazon ECR Credential Helper 0.12.0
-- Docker Compose v2 2.38.2
-- Docker-Buildx 0.34.0
+- Docker Compose 2.38.2
+- Docker-Buildx 0.34.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.234.0
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.15.3
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.238.0
+- Pulumi 3.242.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.34.46
+- AWS CLI 2.34.53
 - AWS CLI Session Manager Plugin 1.2.814.0
-- AWS SAM CLI 1.160.0
+- AWS SAM CLI 1.161.0
 - Azure CLI 2.86.0
-- Azure CLI (azure-devops) 1.0.3
+- Azure CLI (azure-devops) 1.0.4
 - GitHub CLI 2.92.0
-- Google Cloud CLI 568.0.0
+- Google Cloud CLI 569.0.0
 
 ### Java
 | Version              | Environment Variable |
@@ -125,7 +125,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ### Haskell Tools
 - Cabal 3.16.1.0
 - GHC 9.14.1
-- GHCup 0.1.50.2
+- GHCup 0.2.3.0
 - Stack 3.9.3
 
 ### Rust Tools
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 148.0.7778.167
-- ChromeDriver 148.0.7778.167
+- Google Chrome 148.0.7778.178
+- ChromeDriver 148.0.7778.178
 - Chromium 148.0.7778.0
-- Microsoft Edge 148.0.3967.54
-- Microsoft Edge WebDriver 148.0.3967.54
+- Microsoft Edge 148.0.3967.83
+- Microsoft Edge WebDriver 148.0.3967.83
 - Selenium server 4.44.0
-- Mozilla Firefox 150.0.2
+- Mozilla Firefox 151.0.1
 - Geckodriver 0.36.0
 
 #### Environment variables
@@ -163,7 +163,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - sqlite3 3.45.1
 
 #### PostgreSQL
-- PostgreSQL 16.13
+- PostgreSQL 16.14
 ```
 User: postgres
 PostgreSQL service is disabled by default.
@@ -188,9 +188,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.25.10
 
 #### Node.js
-- 20.20.2
 - 22.22.3
-- 24.15.0
+- 24.16.0
 
 #### Python
 - 3.10.20
@@ -208,10 +207,10 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 3.2.11
 - 3.3.11
 - 3.4.9
-- 4.0.4
+- 4.0.5
 
 ### PowerShell Tools
-- PowerShell 7.4.15
+- PowerShell 7.4.16
 
 #### PowerShell Modules
 - Az: 14.6.0
@@ -262,7 +261,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | coreutils              | 9.4-3ubuntu6.2               |
 | curl                   | 8.5.0-2ubuntu10.9            |
 | dbus                   | 1.14.10-4ubuntu4.1           |
-| dnsutils               | 1:9.18.39-0ubuntu0.24.04.3   |
+| dnsutils               | 1:9.18.39-0ubuntu0.24.04.5   |
 | dpkg                   | 1.22.6ubuntu6.6              |
 | dpkg-dev               | 1.22.6ubuntu6.6              |
 | fakeroot               | 1.33-1                       |
@@ -301,7 +300,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | pollinate              | 4.33-3.1ubuntu1.3            |
 | python-is-python3      | 3.11.4-1                     |
 | rpm                    | 4.18.2+dfsg-2.1build2        |
-| rsync                  | 3.2.7-1ubuntu1.2             |
+| rsync                  | 3.2.7-1ubuntu1.4             |
 | shellcheck             | 0.9.0-1                      |
 | sphinxsearch           | 2.2.11-8build1               |
 | sqlite3                | 3.45.1-1ubuntu2.5            |

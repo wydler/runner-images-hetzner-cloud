@@ -114,8 +114,8 @@ jobs:
       - name: Display Hetzner Object Name (Server, Snapshot, Labels,etc.)
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudObjectName }}"
 
-      - name:  Display Hetzner Sever Image name
+      - name: Display Hetzner Sever Image name
         run: echo "${{ needs.Get-BasicInformations.outputs.HCloudServerImage }}"
 
-      - name:  Display GitHub Pull Request Labels
+      - name: Display GitHub Pull Request Labels
         run: echo "${{ needs.Get-BasicInformations.outputs.GitHubPrLabels }}"

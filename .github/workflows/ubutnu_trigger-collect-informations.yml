@@ -33,12 +33,7 @@ jobs:
   Get-BasicInformations:
     runs-on: ubuntu-latest
       
-    steps:
-      - name: Get the current date
-        id: date
-        run: echo "date=$(TZ='Europe/Berlin' date +'%Y%m%d')" >> $GITHUB_OUTPUT
-        
-
+    steps:     
       - name: Define the name of the OS
         id: os
         run: |         

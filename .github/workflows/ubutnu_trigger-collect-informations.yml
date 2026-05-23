@@ -32,6 +32,7 @@ permissions:
 jobs:
   Get-Build-Metadata:
     runs-on: ubuntu-latest
+    name: Collect build metadata
       
     steps:     
       - name: Define the name of the OS

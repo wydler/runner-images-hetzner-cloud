@@ -25,6 +25,11 @@ env:
   os: "ubuntu24"
 
 
+concurrency:
+  group: "runner-image-build-${{ github.workflow }}"
+  cancel-in-progress: false
+
+
 jobs:
   Set-Variables:
     runs-on: ubuntu-latest

@@ -26,6 +26,11 @@ env:
   os: "ubuntu22"
 
 
+concurrency:
+  group: "build-image"
+  cancel-in-progress: false
+
+
 jobs:
   Set-Variables:
     runs-on: ubuntu-latest

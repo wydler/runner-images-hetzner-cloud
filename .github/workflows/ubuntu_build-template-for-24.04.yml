@@ -26,7 +26,7 @@ env:
 
 
 concurrency:
-  group: "build-image-ubuntu24"
+  group: "runner-image-build-${{ github.workflow }}"
   cancel-in-progress: false
 
 

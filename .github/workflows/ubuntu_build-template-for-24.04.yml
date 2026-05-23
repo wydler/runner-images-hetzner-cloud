@@ -25,6 +25,11 @@ env:
   os: "ubuntu24"
 
 
+concurrency:
+  group: "build-image-ubuntu24"
+  cancel-in-progress: true
+
+
 jobs:
   Set-Variables:
     runs-on: ubuntu-latest

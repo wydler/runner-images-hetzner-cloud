@@ -99,16 +99,16 @@ jobs:
     runs-on: ubuntu-latest
      
     steps:
-      - name: Write ReleaseName
+      - name: Display ReleaseName
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
 
-      - name: Write ReleaseTag
+      - name: Display ReleaseTag
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseTag }}"
 
-      - name: Write HCL filename
+      - name: Display HCL filename
         run: echo "${{ needs.Get-BasicInformations.outputs.HclFile }}"
 
-      - name: Write Release name
+      - name: Display Release name
         run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
 
       - name: Display Hetzner Object Name (Server, Snapshot, Labels,etc.)

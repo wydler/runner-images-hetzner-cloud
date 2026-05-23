@@ -96,9 +96,9 @@ jobs:
 
 
   Show-Build-Metadata:
-    needs: Get-Build-Metadata
     runs-on: ubuntu-latest
     name: Show build metadata
+    needs: Get-Build-Metadata
      
     steps:
       - name: Display ReleaseName

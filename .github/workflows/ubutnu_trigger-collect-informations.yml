@@ -95,7 +95,7 @@ jobs:
       GitHubPrLabels: "${{ inputs.os }}/${{ steps.releasetagname.outputs.longver }},${{ steps.os.outputs.ghprlabels }}"
 
 
-  Output-DebugInformations:
+  Show-Build-Metadata:
     needs: Get-Build-Metadata
     runs-on: ubuntu-latest
      

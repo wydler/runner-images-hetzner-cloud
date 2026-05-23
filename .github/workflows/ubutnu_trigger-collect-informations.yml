@@ -63,15 +63,6 @@ jobs:
       - name: Checkout the current repository
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
     
-      - name: Find newest Git Tag
-        id: tagger
-        uses: dwydler/query-git-tag-action@b0f8ba02595d4ca1e39c3fdfcaaad483717f7c28 # v2.5
-        with:
-          include: ${{ inputs.os }}/${{ steps.date.outputs.date }}.*
-          exact-match: 'false'
-          no-tags-text: 'false'
-          commit-ish: 'HEAD'
-
 
       - name: Create a new release name/tag
         id: releasetagname

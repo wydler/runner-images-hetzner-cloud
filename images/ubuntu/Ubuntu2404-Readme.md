@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-90-generic
-- Image Version: 20260522.1
+- Kernel Version: 6.8.0-111-generic
+- Image Version: 20260523.0118.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -32,7 +32,7 @@
 - Pip3 24.0
 - Pipx 1.12.0
 - RubyGems 3.4.20
-- Vcpkg (build from commit 22d9c655dc)
+- Vcpkg (build from commit 38d91be5ef)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.15.3
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.242.0
+- Pulumi 3.243.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0

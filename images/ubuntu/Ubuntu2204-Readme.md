@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
-- Kernel Version: 5.15.0-164-generic
-- Image Version: 20260523.1
+- Kernel Version: 5.15.0-179-generic
+- Image Version: 20260523.2
 - Systemd version: 249.11-0ubuntu3.20
 
 ## Installed Software
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.12.0
 - RubyGems 3.3.5
-- Vcpkg (build from commit 22d9c655dc)
+- Vcpkg (build from commit 38d91be5ef)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -107,7 +107,7 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- Alibaba Cloud CLI 3.3.15
+- Alibaba Cloud CLI 3.3.16
 - AWS CLI 2.34.53
 - AWS CLI Session Manager Plugin 1.2.814.0
 - AWS SAM CLI 1.161.0

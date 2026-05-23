@@ -76,25 +76,35 @@ jobs:
       - name: Create a new release name/tag
         id: releasetagname
         run: |
-          if [ "${{ steps.tagger.outputs.tag }}" == "'false'" ]; then
-            echo "var=$(TZ='Europe/Berlin' date +'%Y%m%d').1" >> $GITHUB_OUTPUT
-          else
-            #ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
-            ver=$(echo "${{ steps.tagger.outputs.tag }}" | cut -d '.' -f 2)
-            #ver=$ver+1
-            ver=`expr $ver + 1`
-            echo "var=$(TZ='Europe/Berlin' date +'%Y%m%d').$ver" >> $GITHUB_OUTPUT
-          fi
-              
+        
+          # Determines the current date in YYYYMMDD format. Using the Europe/Berlin timezone.
+          CURRENT_DATE=$(TZ='Europe/Berlin' date +'%Y%m%d')
+
+          # Formats the GitHub run number to exactly 4 digits and pads missing digits with leading zeros.
+          RUN_NUMBER=$(printf "%04d" "${GITHUB_RUN_NUMBER}")
+
+          # Contains the current attempt number of the same workflow run. This value increases when the workflow is re-run.
+          RUN_ATTEMPT=${{ github.run_attempt }}
+
+          # Builds the version string using the format: YYYYMMDD.RUN_NUMBER.RUN_ATTEMPT. Example: 20260523.0042.1
+          echo "fullver=$(echo $CURRENT_DATE.$RUN_NUMBER.$RUN_ATTEMPT)" >> $GITHUB_OUTPUT
+
+          # Builds the version string using the format: YYYYMMDD.RUN_NUMBER. Example: 20260523.0042
+          echo "longver=$(echo $CURRENT_DATE.$RUN_NUMBER)" >> $GITHUB_OUTPUT
+
+          # Builds the version string using the format: YYYYMMDD. Example: 20260523
+          echo "shortver=$(echo $CURRENT_DATE)" >> $GITHUB_OUTPUT
+
+
     outputs:
-      ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.var }}) Image Update
-      ReleaseTag: ${{ inputs.os }}/${{ steps.releasetagname.outputs.var }}
+      ReleaseName: ${{ steps.os.outputs.osname }} (${{ steps.releasetagname.outputs.fullver }}) Image Update
+      ReleaseTag: ${{ inputs.os }}/${{ steps.releasetagname.outputs.longver }}
       HclFile:  ${{ steps.os.outputs.packerfile }}
-      ReleaseNo: ${{ steps.releasetagname.outputs.var }}
-      HCloudObjectName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.var }}
+      ReleaseNo: ${{ steps.releasetagname.outputs.fullver }}
+      HCloudObjectName: ${{ inputs.os }}-${{ steps.releasetagname.outputs.fullver }}
       HCloudServerImage: ${{ steps.os.outputs.osimage }}
       ReadmeFile: ${{ steps.os.outputs.readme }}
-      GitHubPrLabels: "${{ inputs.os }}/${{ steps.releasetagname.outputs.var }},${{ steps.os.outputs.ghprlabels }}"
+      GitHubPrLabels: "${{ inputs.os }}/${{ steps.releasetagname.outputs.longver }},${{ steps.os.outputs.ghprlabels }}"
 
 
   Output-DebugInformations:

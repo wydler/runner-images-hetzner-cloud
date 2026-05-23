@@ -8,21 +8,21 @@ on:
         type: string
     outputs:
       ReleaseName:
-        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseName }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.ReleaseName }}
       ReleaseTag:
-        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseTag }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.ReleaseTag }}
       HclFile:
-        value: ${{ jobs.Get-BasicInformations.outputs.HclFile }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.HclFile }}
       ReleaseNo:
-        value: ${{ jobs.Get-BasicInformations.outputs.ReleaseNo }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.ReleaseNo }}
       HCloudObjectName:
-        value: ${{ jobs.Get-BasicInformations.outputs.HCloudObjectName }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.HCloudObjectName }}
       HCloudServerImage:
-        value: ${{ jobs.Get-BasicInformations.outputs.HCloudServerImage }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.HCloudServerImage }}
       ReadmeFile:
-        value: ${{ jobs.Get-BasicInformations.outputs.ReadmeFile }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.ReadmeFile }}
       GitHubPrLabels:
-        value: ${{ jobs.Get-BasicInformations.outputs.GitHubPrLabels }}
+        value: ${{ jobs.Get-Build-Metadata.outputs.GitHubPrLabels }}
 
 
 permissions:
@@ -30,7 +30,7 @@ permissions:
   
 
 jobs:
-  Get-BasicInformations:
+  Get-Build-Metadata:
     runs-on: ubuntu-latest
       
     steps:     
@@ -95,27 +95,27 @@ jobs:
 
 
   Output-DebugInformations:
-    needs: Get-BasicInformations
+    needs: Get-Build-Metadata
     runs-on: ubuntu-latest
      
     steps:
       - name: Display ReleaseName
-        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseName }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.ReleaseName }}"
 
       - name: Display ReleaseTag
-        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseTag }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.ReleaseTag }}"
 
       - name: Display HCL filename
-        run: echo "${{ needs.Get-BasicInformations.outputs.HclFile }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.HclFile }}"
 
       - name: Display Release name
-        run: echo "${{ needs.Get-BasicInformations.outputs.ReleaseNo }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.ReleaseNo }}"
 
       - name: Display Hetzner Object Name (Server, Snapshot, Labels,etc.)
-        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudObjectName }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.HCloudObjectName }}"
 
       - name: Display Hetzner Sever Image name
-        run: echo "${{ needs.Get-BasicInformations.outputs.HCloudServerImage }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.HCloudServerImage }}"
 
       - name: Display GitHub Pull Request Labels
-        run: echo "${{ needs.Get-BasicInformations.outputs.GitHubPrLabels }}"
+        run: echo "${{ needs.Get-Build-Metadata.outputs.GitHubPrLabels }}"

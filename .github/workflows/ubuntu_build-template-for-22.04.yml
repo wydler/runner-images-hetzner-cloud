@@ -27,7 +27,7 @@ env:
 
 
 concurrency:
-  group: "build-image"
+  group: "build-image-ubuntu22"
   cancel-in-progress: false
 
 

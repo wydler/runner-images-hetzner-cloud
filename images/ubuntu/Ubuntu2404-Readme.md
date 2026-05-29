@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-117-generic
-- Image Version: 20260529.0130.1
+- Kernel Version: 6.8.0-90-generic
+- Image Version: 20260529.0132.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -97,7 +97,7 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.34.56
+- AWS CLI 2.34.57
 - AWS CLI Session Manager Plugin 1.2.814.0
 - AWS SAM CLI 1.161.0
 - Azure CLI 2.86.0

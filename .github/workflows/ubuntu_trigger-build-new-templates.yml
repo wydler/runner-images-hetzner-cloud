@@ -312,7 +312,7 @@ jobs:
           source_branch: releases/${{ inputs.release_tag }}
           target_branch: customize
           title: ${{ inputs.release_name }}
-          body: ${{ steps.readme.outputs.content }}
+          body: ${{ needs.Create-Report.outputs.FileContent }}
           label: ${{ inputs.gh_pr_labels }}
           assignee: dwydler
 

@@ -364,4 +364,3 @@ jobs:
           name: |
             software-report.json
             sbom.json.zip
-                        

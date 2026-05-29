@@ -286,7 +286,7 @@ jobs:
     runs-on: ubuntu-latest
 
     needs:
-      - Create-ServerTemplate
+      - Create-Report
 
     permissions:
       contents: read

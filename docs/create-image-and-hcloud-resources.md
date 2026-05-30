@@ -233,7 +233,10 @@ There is an Github action with the name  "Manage - Sync fork (Branch main)," whi
 
 The following variables are required:
 
-- `GH_TOKEN` - A Fine-grained personal access token for the Github action mentioned above. The PAT needs `Read and Write access to code` and `Read access to metadata`.
+| Secret var | Description
+| ------------ | -----------
+| `GH_APP_SRP_ID` | The ID of the GitHub app Synchronization Repository Fork.
+| `GH_APP_SRP_PRIVATE_KEY` | The private key for the above-mentioned APP ID. The format must be base64.
 
 ## Builder variables
 

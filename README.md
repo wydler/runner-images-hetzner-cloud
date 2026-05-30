@@ -117,13 +117,6 @@ In general, these are the guidelines we follow when deciding what to pre-install
 ## FAQs
 
 <details>
-   <summary><b><i>What image version is used in my build?</b></i></summary>
-
-Usually, image deployment takes 2-3 days, and documentation in the `main` branch is only updated when deployment is finished. To find out which image version and what software versions are used in a specific build, see `Set up job` (GitHub Actions) or `Initialize job` (Azure DevOps) step log.
-<img width="1440" alt="actions-runner-image" src="https://github.com/actions/runner-images/assets/88318005/922a8bf5-3e4d-4265-9527-b3b51e6bf9c8">
-</details>
-
-<details>
    <summary><b><i>Looking for other Linux distributions?</b></i></summary>
 
 We do not plan to offer other Linux distributions. We recommend using Docker if you'd like to build using other distributions with the hosted runner images. Alternatively, you can leverage [self-hosted runners] and fully customize your VM image to your needs.

@@ -30,7 +30,7 @@ To build a VM machine from this repo's source, see the [instructions](docs/creat
 
 ## Announcements
 
-See notable upcoming changes by viewing issues with the [Announcement](https://github.com/dwydler/runner-images-hetzner-cloud/labels/Announcement) label.
+See notable upcoming changes by viewing issues with the [Announcement](https://github.com/actions/runner-images/labels/Announcement) label.
 
 ## Image Releases
 

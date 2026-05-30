@@ -263,7 +263,7 @@ Generated tool versions and details can be found in related projects:
 
 The user, created during the image generation, does not exist in the resulting image. Hence, some configuration files related to the user's home directory need to be changed, as well as the file permissions for some directories. Scripts for that are located in the `post-gen` folder in the repository:
 
-- Linux: <https://github.com/dwydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/assets/post-gen>
+- Linux: <https://github.com/wydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/assets/post-gen>
 
 **Note:** The default user for Linux should have `sudo privileges`.
 

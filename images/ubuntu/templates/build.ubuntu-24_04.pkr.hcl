@@ -1,104 +1,6 @@
-packer {
-  required_plugins {
-    hcloud = {
-      source  = "github.com/hetznercloud/hcloud"
-      version = ">=1.6.0"
-    }
-  }
-}
-
-
-variable "hcloud_token" {
-  type      = string
-  sensitive = true
-  default   = "${env("HCLOUD_TOKEN")}"
-}
-
-variable "helper_script_folder" {
-  type    = string
-  default = "/imagegeneration/helpers"
-}
-
-variable "image_folder" {
-  type    = string
-  default = "/imagegeneration"
-}
-
-variable "imagedata_file" {
-  type    = string
-  default = "/imagegeneration/imagedata.json"
-}
-
-variable "installer_script_folder" {
-  type    = string
-  default = "/imagegeneration/installers"
-}
-
-variable "server_location" {
-  type    = string
-  #default = "hel1"
-  default   = "${env("HCLOUD_SERVER_LOCATION")}"
-}
-
-variable "os_image_name" {
-  type    = string
-  #default = "ubuntu-22.04"
-  default   = "${env("HCLOUD_SERVER_IMAGE")}"
-}
-
-variable "image_version" {
-  type    = string
-  default = "${env("IMAGE_VERSION")}"
-}
-
-variable "server_type" {
-  type    = string
-  #default = "ccx13"
-  default   = "${env("HCLOUD_SERVER_TYPE")}"
-}
-
-variable "ssh_username" {
-  type      = string
-  default   = "root"
-}
-
-variable "managed_image_name" {
-  type    = string
-  default   = "${env("HCLOUD_OBJECT_NAME")}"
-  
-}
-
-
-source "hcloud" "gh-shr-ubuntu" {
-  token = var.hcloud_token
-
-  location    = var.server_location
-  image       = var.os_image_name
-  server_type = var.server_type
-  server_name = "${ var.managed_image_name }"
-  server_labels  = {
-    server = var.managed_image_name
-  }
-
-  user_data_file = "./images/ubuntu/templates/cloud-init.cfg"
-
-  ssh_username = var.ssh_username
-  temporary_key_pair_type = "ed25519"
-  ssh_keys_labels = {
-    server = var.managed_image_name
-  }
-
-  snapshot_name = "${ var.managed_image_name }"
-  snapshot_labels = {
-    app = "github-self-hosted-runner",
-    os = var.os_image_name,
-    server = var.managed_image_name
-  }
-}
-
-
 build {
-  sources = ["source.hcloud.gh-shr-ubuntu"]
+  sources = ["source.hcloud.ubuntu-base-image"]
+  name = "ubuntu-24_04"
 
   provisioner "shell" {
     inline           = ["cloud-init status --wait --long"]
@@ -168,7 +70,7 @@ build {
   }
 
   provisioner "shell" {
-    environment_vars = ["IMAGE_VERSION=${var.image_version}", "IMAGEDATA_FILE=${var.imagedata_file}"]
+    environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}", "IMAGE_VERSION=${var.image_version}", "IMAGEDATA_FILE=${var.imagedata_file}"]
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/configure-image-data.sh"]
   }
@@ -202,7 +104,6 @@ build {
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = [
       "${path.root}/../scripts/build/install-actions-cache.sh",
-      "${path.root}/../scripts/build/install-runner-package.sh",
       "${path.root}/../scripts/build/install-apt-common.sh",
       "${path.root}/../scripts/build/install-azcopy.sh",
       "${path.root}/../scripts/build/install-azure-cli.sh",
@@ -214,6 +115,7 @@ build {
       "${path.root}/../scripts/build/install-swift.sh",
       "${path.root}/../scripts/build/install-cmake.sh",
       "${path.root}/../scripts/build/install-codeql-bundle.sh",
+      "${path.root}/../scripts/build/install-awf.sh",
       "${path.root}/../scripts/build/install-container-tools.sh",
       "${path.root}/../scripts/build/install-dotnetcore-sdk.sh",
       "${path.root}/../scripts/build/install-microsoft-edge.sh",
@@ -255,7 +157,7 @@ build {
   }
 
   provisioner "shell" {
-    environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}", "INSTALLER_SCRIPT_FOLDER=${var.installer_script_folder}", "DOCKERHUB_PULL_IMAGES=NO"]
+    environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}", "INSTALLER_SCRIPT_FOLDER=${var.installer_script_folder}"]
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/install-docker.sh"]
   }
@@ -285,6 +187,11 @@ build {
   }
 
   provisioner "shell" {
+    execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+    script          = "${path.root}/../scripts/build/list-dpkg.sh"
+  }
+
+  provisioner "shell" {
     execute_command   = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     expect_disconnect = true
     inline            = ["echo 'Reboot VM'", "sudo reboot"]
@@ -292,7 +199,7 @@ build {
 
   provisioner "shell" {
     execute_command     = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
-    pause_before        = "1m0s"
+    pause_before        = "5m0s"
     scripts             = ["${path.root}/../scripts/build/cleanup.sh"]
     start_retry_timeout = "10m"
   }
@@ -300,6 +207,11 @@ build {
   provisioner "shell" {
     environment_vars = ["IMAGE_VERSION=${var.image_version}", "INSTALLER_SCRIPT_FOLDER=${var.installer_script_folder}"]
     inline           = ["pwsh -File ${var.image_folder}/SoftwareReport/Generate-SoftwareReport.ps1 -OutputDirectory ${var.image_folder}", "pwsh -File ${var.image_folder}/tests/RunAll-Tests.ps1 -OutputDirectory ${var.image_folder}"]
+  }
+
+  provisioner "shell" {
+    environment_vars = ["IMAGE_VERSION=${var.image_version}", "INSTALLER_SCRIPT_FOLDER=${var.installer_script_folder}"]
+    inline           = ["sudo sh ${var.image_folder}/SoftwareReport/Generate-SBOM.sh ${var.image_folder}"]
   }
 
   provisioner "file" {
@@ -314,10 +226,22 @@ build {
     source      = "${var.image_folder}/software-report.json"
   }
 
+  provisioner "file" {
+    destination = "${path.root}/../sbom.json.zip"
+    direction   = "download"
+    source      = "${var.image_folder}/sbom.json.zip"
+  }
+
   provisioner "shell" {
     environment_vars = ["HELPER_SCRIPT_FOLDER=${var.helper_script_folder}", "INSTALLER_SCRIPT_FOLDER=${var.installer_script_folder}", "IMAGE_FOLDER=${var.image_folder}"]
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/configure-system.sh"]
+  }
+
+  provisioner "shell" {
+    environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}"]
+    execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+    scripts          = ["${path.root}/../scripts/build/post-build-validation.sh"]
   }
 
   provisioner "shell" {

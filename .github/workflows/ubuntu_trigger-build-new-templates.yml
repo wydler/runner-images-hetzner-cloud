@@ -30,6 +30,10 @@ on:
       readme_file:
         required: true
         type: string       
+      gh_pr_labels:
+        required: true
+        type: string
+
 
 jobs:
   Create-NewBranch:
@@ -37,18 +41,17 @@ jobs:
 
     permissions:
       contents: read
-      pull-requests: read
 
     steps:
       - name: Generate app token
-        uses: actions/create-github-app-token@db3cdf40984fe6fd25ae19ac2bf2f4886ae8d959 # v2.0.5
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: generate-token
         with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          client-id: ${{ secrets.GH_APP_RIHC_ID }}
+          private-key: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
     
       - name: Create a new branch
-        uses: peterjgrainger/action-create-branch@10c7d268152480ae859347db45dc69086cef1d9c # v3.0.0
+        uses: peterjgrainger/action-create-branch@4b81ce657e255acd677cc6c55c9c763654be3aef # v4.0.0
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
         with:
@@ -61,35 +64,36 @@ jobs:
 
     permissions:
       contents: write
-      pull-requests: read
 
     steps:       
       - name: Generate app token
-        uses: actions/create-github-app-token@db3cdf40984fe6fd25ae19ac2bf2f4886ae8d959 # v2.0.5
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: generate-token
         with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          client-id: ${{ secrets.GH_APP_RIHC_ID }}
+          private-key: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
           
       - name: Checkout new created branch
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           ref: releases/${{ inputs.release_tag }}
 
 
       - name: Setup `packer`
-        uses: hashicorp/setup-packer@1aa358be5cf73883762b302a3a03abd66e75b232 # v3.1.0
+        uses: hashicorp/setup-packer@c3d53c525d422944e50ee27b840746d6522b08de # v3.2.0
         id: setup
         with:
           version: latest
 
       - name: Run `packer init`
         id: init
-        run: packer init ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        run: packer init ./images/ubuntu/templates/
+        env:
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Run `packer validate`
         id: validate
-        run: packer validate ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        run: packer validate -only "${{ inputs.hcl_filename }}.*" ./images/ubuntu/templates/
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
@@ -97,10 +101,11 @@ jobs:
           HCLOUD_SERVER_IMAGE: ${{ inputs.hcloud_server_image }}
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
 
       - name: Run `packer build`
         id: build
-        run: packer build ./images/ubuntu/templates/${{ inputs.hcl_filename }}
+        run: packer build -only "${{ inputs.hcl_filename }}.*" ./images/ubuntu/templates/
         env:
           HCLOUD_TOKEN: ${{ secrets.HCLOUD_TOKEN }}
           HCLOUD_OBJECT_NAME: ${{ inputs.hcloud_name }}
@@ -109,12 +114,34 @@ jobs:
           HCLOUD_SERVER_TYPE: ${{ inputs.hcloud_server_type }}
           IMAGE_VERSION: ${{ inputs.release_no }}
           PACKER_LOG: ${{ vars.PACKER_LOG }}
+          PACKER_GITHUB_API_TOKEN: ${{ steps.generate-token.outputs.token }}
           
-      - name: Remove File
-        uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
+          
+      - name: Upload file software-report.json to artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
         with:
+          name: software-report.json
           path: images/ubuntu/software-report.json
+          if-no-files-found: error
+          overwrite: true
+          retention-days: 1
 
+      - name: Upload file sbom.json.zip to artifact
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a  # v7.0.1
+        with:
+          name: sbom.json.zip
+          path: images/ubuntu/sbom.json.zip
+          if-no-files-found: error
+          overwrite: true
+          retention-days: 1
+
+      - name: Remove sbom.json.zip and software-report.json
+        #uses: JesseTG/rm@a7df6e6edbbd7ea7440ea0a57342fc7798950e4f # v1.0.3
+        #with:
+        #  path: images/ubuntu/software-report.json
+        run: |
+          rm images/ubuntu/software-report.json
+          rm images/ubuntu/sbom.json.zip
       
       - name: Commit & Push changes
         uses: actions-js/push@5a7cbd780d82c0c937b5977586e641b2fd94acc5 # v1.5
@@ -124,10 +151,140 @@ jobs:
           force: true
 
 
-  Create-PullRequest:
+  Create-Report:
+    runs-on: ubuntu-latest
+
     needs:
       - Create-ServerTemplate
+
+    permissions:
+      contents: read
+
+    outputs:
+        FileContent: ${{ steps.readme.outputs.FileContent }}
+
+    steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: generate-token
+        with:
+          client-id: ${{ secrets.GH_APP_RIHC_ID }}
+          private-key: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
+
+      - name: Checkout new created branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: '0'
+          ref: releases/${{ inputs.release_tag }}
+
+      - name: Get previous Release Tag
+        id: get-previous-release
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Continue"
+     
+          Write-Host "Finding previous release for OS '$($env:ReleaseTag.Split("/")[0])'..."
+
+          $PREVIOUS_RELEASE = (
+            gh release list `
+              --repo $env:GITHUB_REPOSITORY `
+              --limit 25 `
+              --json tagName `
+              --jq ".[] | select(.tagName | startswith(`"$($env:ReleaseTag.Split("/")[0])/`")) | .tagName" |
+            Select-Object -First 1
+          ).Trim()
+
+          "tag=$PREVIOUS_RELEASE" >> $env:GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          ReleaseTag: ${{ inputs.release_tag }}
+
+      - name: Download file software-report.json from artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          name: software-report.json
+
+      - name: Download previous software-report.json
+        if: steps.get-previous-release.outputs.tag != ''
+        id: dl-json-file
+        shell: pwsh
+        run: |
+          Write-Host "Downloading previous software report..."
+          $downloadUrl = "https://github.com/$($env:GITHUB_REPOSITORY)/releases/download/$env:PREVIOUS_RELEASE/software-report.json"
+
+          Invoke-WebRequest `
+            -Uri $downloadUrl `
+            -OutFile $env:SoftwareReportPreviousFile
+        env:
+          PREVIOUS_RELEASE: ${{ steps.get-previous-release.outputs.tag }}
+          SoftwareReportPreviousFile: "${{ runner.temp }}/software-report.previous.json"
+
+      - name: Generate previous software-report.json
+        if: steps.get-previous-release.outputs.tag == ''
+        shell: pwsh
+        run: |
+          $data = @{
+            NodeType = "HeaderNode"
+            Title    = "Ubuntu"
+            Children = @()
+          }
+
+          $data |
+            ConvertTo-Json -Depth 10 |
+            Set-Content "$env:SoftwareReportPreviousFile" -Encoding utf8
+
+          cat "$env:SoftwareReportPreviousFile"
+        env:
+          SoftwareReportPreviousFile: "${{ runner.temp }}/software-report.previous.json"
+
+      - name: Generate software report differences
+        id: software-report-diff
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          Write-Host "Calculating image differences..."
+
+          helpers/software-report-base/Calculate-ImagesDifference.ps1 `
+            $env:SoftwareReportPreviousFile `
+            $env:SoftwareReportCurrentFile `
+            $env:ImagesDifferenceFile `
+            $env:ReleaseTag `
+            $env:ReadmeFile
+
+          Write-Host "Done"
+        env:
+          SoftwareReportPreviousFile: "${{ runner.temp }}/software-report.previous.json"          
+          SoftwareReportCurrentFile: "software-report.json"
+          ImagesDifferenceFile: "${{ runner.temp }}/ImagesDifference.md"
+          ReleaseTag: ${{ inputs.release_tag }}
+          ReadmeFile: images/ubuntu/${{ inputs.readme_file }}          
+
+      - name: Save file 'ImagesDifference.md' in variable
+        id: readme
+        run: |
+          {
+            echo 'FileContent<<EOF'
+            cat $ImagesDifferenceFile
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
+        env:
+          ImagesDifferenceFile: "${{ runner.temp }}/ImagesDifference.md"
+
+      - name: Use output
+        run: |
+          echo "${{ steps.readme.outputs.FileContent }}"  
+
+      - name: Remove software-report.json
+        run: |
+          rm software-report.json
+
+
+  Create-PullRequest:
     runs-on: ubuntu-latest
+
+    needs:
+      - Create-Report
 
     permissions:
       contents: read
@@ -135,37 +292,29 @@ jobs:
       
     steps:
       - name: Generate app token
-        uses: actions/create-github-app-token@db3cdf40984fe6fd25ae19ac2bf2f4886ae8d959 # v2.0.5
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
         id: generate-token
         with:
-          app-id: ${{ secrets.APP_ID }}
-          private-key: ${{ secrets.APP_PRIVATE_KEY }}
+          client-id: ${{ secrets.GH_APP_RIHC_ID }}
+          private-key: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
           
       - name: Checkout new created branch
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
         with:
           fetch-depth: '0'
           ref: releases/${{ inputs.release_tag }}
-
-      - name: Save file ${{ inputs.readme_file }} in variable
-        id: readme
-        uses: jaywcjlove/github-action-read-file@546dbc91f1187996f2ef0f5a199a9a4af05a978b # v2.0.0
-        with:
-          branch: releases/${{ inputs.release_tag }}
-          path: images/ubuntu/${{ inputs.readme_file }}
           
       - name: Create pull request
         id: pullrequest
-        uses: devops-infra/action-pull-request@ff118b4a7c24bac5a3c95acef59e9edd1fc37890 # v0.6.0
+        uses: devops-infra/action-pull-request@86d8692dc48a93ee5731b366f78f658eb7243a8d # v1.1.3
         with:
           github_token: ${{ steps.generate-token.outputs.token }}
           source_branch: releases/${{ inputs.release_tag }}
           target_branch: customize
           title: ${{ inputs.release_name }}
-          body: ${{ steps.readme.outputs.content }}
-          label: ${{ inputs.release_tag }}
+          body: ${{ needs.Create-Report.outputs.FileContent }}
+          label: ${{ inputs.gh_pr_labels }}
           assignee: dwydler
-          #reviewer: dwydler
 
       - name: Merge the pull request
         uses: pascalgn/automerge-action@7961b8b5eec56cc088c140b56d864285eabd3f67 # v0.16.4
@@ -176,13 +325,53 @@ jobs:
           UPDATE_LABELS: ${{ inputs.release_tag }}
           MERGE_COMMIT_MESSAGE: "${{ inputs.release_name }} (#${{ steps.pullrequest.outputs.pr_number }})"
           MERGE_METHOD: "squash"
+          MERGE_RETRIES: 10
+          MERGE_RETRY_SLEEP: 30000 # milliseconds
+          MERGE_READY_STATE: clean
 
+
+  Create-Release:
+    runs-on: ubuntu-latest
+
+    needs:
+      - Create-Report
+      - Create-PullRequest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1 # v3.2.0
+        id: generate-token
+        with:
+          client-id: ${{ secrets.GH_APP_RIHC_ID }}
+          private-key: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
+
+      - name: Download file software-report.json from artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          name: software-report.json
+
+      - name: Download file sbom.json.zip from artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          name: sbom.json.zip
 
       - name: Create a new release
-        uses: ncipollo/release-action@36e78ab6296394ce36f72f6488e68c2353b50514 # v1.14.0
+        uses: ncipollo/release-action@339a81892b84b4eeb0f6e744e4574d79d0d9b8dd # v1.21.0
         with:
           tag: ${{ inputs.release_tag }}
           name: ${{ inputs.release_name }}
-          body: ${{ steps.readme.outputs.content }}
+          body: ${{ needs.Create-Report.outputs.FileContent }}
           token: ${{ steps.generate-token.outputs.token }}
-        
+          artifacts: |
+            software-report.json
+            sbom.json.zip
+
+      - name: Delete all artifacts associated with the run 
+        uses: geekyeggo/delete-artifact@176a747ab7e287e3ff4787bf8a148716375ca118  # v6.0.0
+        with:
+          name: |
+            software-report.json
+            sbom.json.zip

@@ -240,7 +240,7 @@ The following variables are required:
 
 ## Builder variables
 
-The `builders` section contains variables for the `gh-shr-ubuntu` builder used in the project. Most of the builder variables are inherited from the `user variables` section, however, the variables can be overwritten to adjust image-generation performance.
+The `builders` section contains variables for the `source.hcloud.ubuntu-base-image` builder used in the project. Most of the builder variables are inherited from the `user variables` section, however, the variables can be overwritten to adjust image-generation performance.
 
 - `servertype` - the size of the VM used for building; this can be changed when you deploy a VM from your image;
 - `location` - specify the location of the VM.

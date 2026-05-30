@@ -120,8 +120,10 @@ In general, these are the guidelines we follow when deciding what to pre-install
    <summary><b><i>What images are available for GitHub Actions and Azure DevOps?</b></i></summary>
 
 The availability of images for GitHub Actions and Azure DevOps is the same. However, deprecation policies may differ. See documentation for more details:
+
 - [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-runners-and-hardware-resources)
 - [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software)
+
 </details>
 
 <details>

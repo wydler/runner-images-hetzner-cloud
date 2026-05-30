@@ -117,16 +117,6 @@ In general, these are the guidelines we follow when deciding what to pre-install
 ## FAQs
 
 <details>
-   <summary><b><i>What images are available for GitHub Actions and Azure DevOps?</b></i></summary>
-
-The availability of images for GitHub Actions and Azure DevOps is the same. However, deprecation policies may differ. See documentation for more details:
-
-- [GitHub Actions](https://docs.github.com/en/free-pro-team@latest/actions/reference/specifications-for-github-hosted-runners#supported-runners-and-hardware-resources)
-- [Azure DevOps](https://docs.microsoft.com/en-us/azure/devops/pipelines/agents/hosted?view=azure-devops&tabs=yaml#software)
-
-</details>
-
-<details>
    <summary><b><i>What image version is used in my build?</b></i></summary>
 
 Usually, image deployment takes 2-3 days, and documentation in the `main` branch is only updated when deployment is finished. To find out which image version and what software versions are used in a specific build, see `Set up job` (GitHub Actions) or `Initialize job` (Azure DevOps) step log.

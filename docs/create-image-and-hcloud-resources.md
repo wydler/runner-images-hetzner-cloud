@@ -7,7 +7,6 @@ If any step fails, image generation is aborted, and the temporary VM is terminat
 After successful completion of all installation steps, Packer creates a managed image from the temporary VM's disk and deletes the VM.  
 
 
-- [Manual image generation](#manual-image-generation)
 - [Manual Image Generation Customization](#manual-image-generation-customization)
   - [Network Security](#network-security)
   - [Azure Subscription Authentication](#azure-subscription-authentication)
@@ -20,39 +19,6 @@ After successful completion of all installation steps, Packer creates a managed 
 - [Post-generation scripts](#post-generation-scripts)
   - [Running scripts](#running-scripts)
   - [Script Details: Ubuntu](#script-details-ubuntu)
-
-## Manual image generation
-
-This repository includes a script that assists in generating images in Azure.
-All you need is an Azure subscription, a resource group in that subscription and a build agent configured as described above.
-We suggest starting with building the UbuntuMinimal image because it includes only basic software and builds in less than 30 minutes.
-
-All the commands below should be executed in PowerShell.
-
-First, clone the runner-images repository and set the current directory to it:
-
-```powershell
-git clone https://github.com/actions/runner-images.git
-Set-Location runner-images
-```
-
-Then, import the [GenerateResourcesAndImage](../helpers/GenerateResourcesAndImage.ps1) script from the `helpers` subdirectory:
-
-```powershell
-Import-Module .\helpers\GenerateResourcesAndImage.ps1
-```
-
-Finally, run the `GenerateResourcesAndImage` function, setting the mandatory arguments: image type and where to build and store the resulting managed image:
-
-- `SubscriptionId` - your Azure Subscription ID;
-- `ResourceGroupName` - the name of the resource group that will store the resulting artifact (e.g., "imagegen-test").
-    The resource group must already exist in your Azure subscription;
-- `AzureLocation` - the location where resources will be created (e.g., "East US");
-- `ImageType` - the type of image to build (we suggest choosing "UbuntuMinimal" here; other valid options are "Windows2019", "Windows2022", "Windows2025", "Ubuntu2204", "Ubuntu2404").
-
-This function automatically creates all required Azure resources and initiates the Packer image generation for the selected image type.
-
-When the image is ready, you may proceed to [deployment](#generated-machine-deployment).
 
 ## Manual Image Generation Customization
 

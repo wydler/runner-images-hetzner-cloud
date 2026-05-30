@@ -151,25 +151,7 @@ Start-Sleep -Seconds 30
 
 ## Generated Machine Deployment
 
-After successful image generation, a Virtual Machine can be created from the generated image using the [CreateAzureVMFromPackerTemplate](../helpers/CreateAzureVMFromPackerTemplate.ps1) script.
-
-```powershell
-Import-Module .\helpers\CreateAzureVMFromPackerTemplate.ps1
-
-CreateAzureVMFromPackerTemplate -SubscriptionId {YourSubscriptionId} -ResourceGroupName {ResourceGroupName} -ManagedImageName "Runner-Image-Ubuntu2204" -VirtualMachineName "testvm1" -AdminUsername "shady1" -AdminPassword "SomeSecurePassword1" -AzureLocation "eastus"
-```
-
-Where:
-
-- `SubscriptionId` - the Azure subscription ID where resources will be created;
-- `ResourceGroupName` - the Azure resource group name where the Azure virtual machine will be created;
-- `ManagedImageName` - the name of the managed image to be used for the virtual machine creation;
-- `VirtualMachineName` - the name of the virtual machine to be generated;
-- `AdminUserName` - the administrator username for the virtual machine to be created;
-- `AdminPassword` - the administrator password for the virtual machine to be created;
-- `AzureLocation` - the location where the Azure virtual machine will be provisioned (e.g., "eastus").
-
-This function creates an Azure VM and generates network resources in Azure to make the VM accessible.
+tbd
 
 ## Automated image generation
 

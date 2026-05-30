@@ -36,7 +36,7 @@ See notable upcoming changes by viewing issues with the [Announcement](https://g
 
 *How to best follow along with changes*
 
-1. ind the latest releases for this repository on the [Releases page](https://github.com/wydler/runner-images-hetzner-cloud/releases).
+1. Find the latest releases for this repository on the [Releases page](https://github.com/wydler/runner-images-hetzner-cloud/releases).
 2. Subscribe to the releases coming out of this repository, instructions [here](https://docs.github.com/en/account-and-profile/managing-subscriptions-and-notifications-on-github/setting-up-notifications/configuring-notifications#configuring-your-watch-settings-for-an-individual-repository).
 3. Upcoming changes: A pre-release is created when the deployment of an image has started. As soon as the deployment is finished, the pre-release is converted to a release. If you have subscribed to releases, you will get notified of pre-releases as well.
 

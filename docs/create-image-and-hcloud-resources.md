@@ -7,7 +7,6 @@ If any step fails, image generation is aborted, and the temporary VM is terminat
 After successful completion of all installation steps, Packer creates a managed image from the temporary VM's disk and deletes the VM.  
 
 
-- [Build Agent Preparation](#build-agent-preparation)
 - [Manual image generation](#manual-image-generation)
 - [Manual Image Generation Customization](#manual-image-generation-customization)
   - [Network Security](#network-security)
@@ -21,48 +20,6 @@ After successful completion of all installation steps, Packer creates a managed 
 - [Post-generation scripts](#post-generation-scripts)
   - [Running scripts](#running-scripts)
   - [Script Details: Ubuntu](#script-details-ubuntu)
-
-## Build Agent Preparation
-
-The build agent is a machine where the Packer process will be started.
-You can use any physical or virtual machine running Windows or Linux OS.
-Of course, you may also use an [Azure VM](https://docs.microsoft.com/en-us/azure/virtual-machines/windows/quick-create-cli).
-In any case, you will need these software installed:
-
-- Packer 1.8.2 or higher.
-
-  Download and install it manually from [here](https://www.packer.io/downloads) or use [Chocolatey](https://chocolatey.org/):
-
-  ```powershell
-  choco install packer
-  ```
-
-- Git.
-
-  For Linux - install the latest version from your distro's package repo.
-
-  For Windows - download and install it from [here](https://gitforwindows.org/) or use [Chocolatey](https://chocolatey.org/):
-
-  ```powershell
-  choco install git -params '"/GitAndUnixToolsOnPath"'
-  ```
-
-- Powershell 5.0 or higher.
-
-  In Windows you already have it.
-
-  For Linux follow instructions [here](https://learn.microsoft.com/en-us/windows-server/administration/linux-package-repository-for-microsoft-software)
-  to add Microsoft's Linux Software Repository and then install the `powershell` package.
-
-- Azure CLI.
-
-  Follow the instructions [here](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli).
-  Or if you use Windows, you may run this command in Powershell instead:
-
-  ```powershell
-  Invoke-WebRequest -Uri https://aka.ms/installazurecliwindows -OutFile .\AzureCLI.msi
-  Start-Process msiexec.exe -Wait -ArgumentList '/I AzureCLI.msi /quiet'; rm .\AzureCLI.msi
-  ```
 
 ## Manual image generation
 

@@ -6,7 +6,7 @@ This document gives an overview of these change and the impact this has on the `
 
 ## .NET Core for Ubuntu 2204
 
-2204 use the [Microsoft Package repository](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet8&pivots=os-linux-ubuntu-2204) to install .NET deb files built and published by the .NET team.
+2204 uses the [Microsoft Package repository](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install?tabs=dotnet8&pivots=os-linux-ubuntu-2204) to install .NET deb files built and published by the .NET team.
 
 ## .NET Core Versions from Ubuntu 2404
 

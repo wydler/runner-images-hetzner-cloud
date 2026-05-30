@@ -130,7 +130,8 @@ For some tools, we always install the latest at the time of the deployment; for 
 
 <details>
    <summary><b><i>How do I request that a new tool be pre-installed on the image?</b></i></summary>
-Please create an issue and get an approval from us to add this tool to the image before creating the pull request.
+
+Please [create an issue](https://github.com/actions/runner-images/issues/new/choose) and get an approval from us to add this tool to the image before creating the pull request.
 </details>
 
 <details>

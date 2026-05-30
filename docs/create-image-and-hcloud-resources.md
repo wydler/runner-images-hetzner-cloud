@@ -192,8 +192,8 @@ The follow secrets are required that the CI/CD pipelines process:
 
 | Secret var | Description
 | ------------ | -----------
-| `APP_ID` | The ID of the GitHub app.
-| `APP_PRIVATE_KEY` | The private key for the above-mentioned APP ID. The format must be base64.
+| `GH_APP_RIHC_ID` | The ID of the GitHub app Runner Images Hetzner Cloud.
+| `GH_APP_RIHC_PRIVATE_KEY` | The private key for the above-mentioned APP ID. The format must be base64.
 | `HCLOUD_TOKEN` | API token for accessing the project in the Hetzner Cloud console. Read and write access required.
 
 ### Packer Templates

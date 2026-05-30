@@ -9,8 +9,8 @@ After successful completion of all installation steps, Packer creates a managed 
 
 - [Generated Machine Deployment](#generated-machine-deployment)
 - [Automated image generation](#automated-image-generation)
-  - [Required variables](#required-variables)
-  - [Optional variables](#optional-variables)
+  - [Repository Secrets](#repository-secrets)
+  - [Packer Templates](#packer-templates)
 - [Builder variables](#builder-variables)
 - [Toolset](#toolset)
 - [Post-generation scripts](#post-generation-scripts)

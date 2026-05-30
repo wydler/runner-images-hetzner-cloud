@@ -76,7 +76,7 @@ The following variables are required:
 
 There is currently no schedule defined for executing the action. Therefore, by default it has to be started manually.
 
-## Synchronize commits from the original repository 
+## Synchronize commits from the original repository
 
 This repository is a fork of [actions/runner-images](https://github.com/actions/runner-images). All changes from the original repository are synchronized to the branch `main`  every night.  
 There is an Github action with the name  "Manage - Sync fork (Branch main)," which is executed every night at 12:00 a.m.

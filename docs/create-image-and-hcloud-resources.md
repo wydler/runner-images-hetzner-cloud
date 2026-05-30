@@ -52,12 +52,12 @@ The following variables are required to be passed to the Packer process:
 
 | Template var | Env var | Description
 | ------------ | ------- | -----------
+| `hcloud_token` | `HCLOUD_TOKEN` | API token for accessing the project in the Hetzner Cloud console. Read and write access required.
 | `server_location` | `HCLOUD_SERVER_LOCATION` | The location of the VM in the Hetzner Cloud.
 | `os_image_name` | `HCLOUD_SERVER_IMAGE` | The name of the image to be used (e.g., ubuntu-24.04). If a snapshot is to be used as a template, the snapshot ID must be specified.
-| `image_version` | `IMAGE_VERSION` | The unique label for the VM and snapshot as identifier.
+| `image_version` | `IMAGE_VERSION` | A unique name for the image version within the runner.
 | `server_type` | `HCLOUD_SERVER_TYPE` | The type/plan to use for the VM.
-| `managed_image_name` | `HCLOUD_OBJECT_NAME` | The display name/description for the VM and snapshot.
-| `managed_image_resource_group_name` | `ARM_RESOURCE_GROUP` | The resource group under which the final artifact will be stored.
+| `managed_image_name` | `HCLOUD_OBJECT_NAME` | The display name/description for the VM and snapshot in the Hetzner Cloud console.
 
 ## Delete old VM templates/snapshots
 

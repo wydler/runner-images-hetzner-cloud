@@ -242,7 +242,7 @@ The following variables are required:
 
 The `builders` section contains variables for the `gh-shr-ubuntu` builder used in the project. Most of the builder variables are inherited from the `user variables` section, however, the variables can be overwritten to adjust image-generation performance.
 
-- `server_type` - the size of the VM used for building; this can be changed when you deploy a VM from your image;
+- `servertype` - the size of the VM used for building; this can be changed when you deploy a VM from your image;
 - `server_location` - specify the location of the VM.
 
 **Detailed Hetzner Cloud builders documentation can be found in the [packer documentation](https://developer.hashicorp.com/packer/integrations/hetznercloud/hcloud).**

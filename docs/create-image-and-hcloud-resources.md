@@ -1,6 +1,9 @@
 # GitHub Actions Runner Images
 
-The runner-images project uses [Packer](https://www.packer.io/) to generate disk images for Ubuntu 22.04/24.04. Each image is configured by a HCL2 Packer template that specifies where to build the image (Hetzner Cloud, in this case), and what steps to run to install software and prepare the disk The Packer process initializes a connection to the Hetzner Cloud using hcloud CLI and creates temporary resources required for the build process: a project and a virtual machine from the "clean" image specified in the template.
+The runner-images project uses [Packer](https://www.packer.io/) to generate disk images for Ubuntu 22.04/24.04.
+Each image is configured by a HCL2 Packer template that specifies where to build the image (Hetzner Cloud, in this case),
+and what steps to run to install software and prepare the disk The Packer process initializes a connection to the Hetzner Cloud
+using hcloud CLI and creates temporary resources required for the build process: a project and a virtual machine from the "clean" image specified in the template.
 
 If the VM deployment succeeds, Packer connects to it using SSH and begins executing installation steps from the template one-by-one.  
 If any step fails, image generation is aborted, and the temporary VM is terminated. Packer also attempts to clean up all the temporary resources it created (unless otherwise configured).  

@@ -59,7 +59,7 @@ See notable upcoming changes by viewing issues with the [Announcement](https://g
 - Popular tools can have several versions installed side-by-side with the following strategy:
 
 | Tool name | Installation strategy |
-|-----------|-----------------------|
+| --------- | --------------------- |
 | Docker images | not more than 3 latest LTS OS\tool versions. New images or new versions of current images are added using the standard tool request process |
 | Java      | all LTS versions |
 | Node.js   | 3 latest LTS versions |

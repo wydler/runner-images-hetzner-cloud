@@ -23,8 +23,8 @@ To build a VM machine from this repo's source, see the [instructions](docs/creat
 | Ubuntu 22.04 | [ubuntu-22.04] | [![Ubuntu - Build template for Ubuntu 22.04](https://github.com/dwydler/runner-images-hetzner-cloud/actions/workflows/ubuntu_build-template-for-22.04.yml/badge.svg?branch=customize)](https://github.com/dwydler/runner-images-hetzner-cloud/actions/workflows/ubuntu_build-template-for-22.04.yml) | [![](https://img.shields.io/github/v/release/dwydler/runner-images-hetzner-cloud?filter=ubuntu22*)](https://img.shields.io/github/v/release/dwydler/runner-images-hetzner-cloud?filter=ubuntu22*) |
 | Ubuntu Slim | [ubuntu-slim] | [![Ubuntu - Build template for Ubuntu Slim](https://github.com/dwydler/runner-images-hetzner-cloud/actions/workflows/docker-images.yml/badge.svg?branch=customize)](https://github.com/dwydler/runner-images-hetzner-cloud/actions/workflows/docker-images.yml) | [![](https://img.shields.io/github/v/release/dwydler/runner-images-hetzner-cloud?filter=ubuntu-slim*)](https://img.shields.io/github/v/release/dwydler/runner-images-hetzner-cloud?filter=ubuntu-slim*) |
 
-[ubuntu-24.04]: https://github.com/dwydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/Ubuntu2404-Readme.md
-[ubuntu-22.04]: https://github.com/dwydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/Ubuntu2204-Readme.md
+[ubuntu-24.04]: https://github.com/wydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/Ubuntu2404-Readme.md
+[ubuntu-22.04]: https://github.com/wydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu/Ubuntu2204-Readme.md
 [ubuntu-slim]: https://github.com/wydler/runner-images-hetzner-cloud/tree/customize/images/ubuntu-slim/ubuntu-slim-Readme.md
 
 

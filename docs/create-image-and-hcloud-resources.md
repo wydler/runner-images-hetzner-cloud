@@ -7,9 +7,6 @@ If any step fails, image generation is aborted, and the temporary VM is terminat
 After successful completion of all installation steps, Packer creates a managed image from the temporary VM's disk and deletes the VM.  
 
 
-- [Manual Image Generation Customization](#manual-image-generation-customization)
-  - [Network Security](#network-security)
-  - [Azure Subscription Authentication](#azure-subscription-authentication)
 - [Generated Machine Deployment](#generated-machine-deployment)
 - [Automated image generation](#automated-image-generation)
   - [Required variables](#required-variables)
@@ -19,58 +16,6 @@ After successful completion of all installation steps, Packer creates a managed 
 - [Post-generation scripts](#post-generation-scripts)
   - [Running scripts](#running-scripts)
   - [Script Details: Ubuntu](#script-details-ubuntu)
-
-## Manual Image Generation Customization
-
-The `GenerateResourcesAndImage` function accepts a number of arguments that may assist you in generating an image in your specific environment.
-
-For example, you may want all the resources involved in the image generation process to be tagged.
-In this case, pass a HashTable of tags as a value for the `Tags` parameter.
-
-If you don't want the function to authenticate interactively, you should create a Service Principal and invoke the function with the parameters `AzureClientId`, `AzureClientSecret` and `AzureTenantId`.
-You can find more details in the [corresponding section below](#azure-subscription-authentication).
-
-Use `get-help GenerateResourcesAndImage -Detailed` for the complete list of available parameters.
-
-### Network Security
-
-To connect to a temporary virtual machine, Packer uses SSH.
-
-If your build agent is located outside of the Hetzner Cloud where the temporary VM is created, a public network interface and public IP address are used.
-Make sure that firewalls are configured properly and that SSH (TCP port 22) connections are allowed both outgoing for the build agent and incoming for the temporary VM.
-
-### Azure Subscription Authentication
-
-Packer uses a Service Principal to authenticate in Azure infrastructure.
-For more information about Service Principals, refer to the
-[Azure documentation](https://docs.microsoft.com/en-us/azure/active-directory/develop/howto-create-service-principal-portal).
-
-The `GenerateResourcesAndImage` function is able to create a Service Principal to be used by Packer.
-It uses the Connect-AzAccount cmdlet that invokes an interactive authentication process by default.
-If you don't want to use interactive authentication, you should create a Service Principal with full read-write permissions for the selected Azure subscription on your own
-and provide proper values for the parameters `AzureClientId`, `AzureClientSecret` and `AzureTenantId`.
-
-Here is an example of how to create a Service Principal using the Az PowerShell module:
-
-```powershell
-$credentials = [Microsoft.Azure.PowerShell.Cmdlets.Resources.MSGraph.Models.ApiV10.MicrosoftGraphPasswordCredential]@{
-  StartDateTime = Get-Date
-  EndDateTime = (Get-Date).AddDays(7)
-}
-
-$sp = New-AzADServicePrincipal -DisplayName "imagegen-app"
-$appCred = New-AzADAppCredential -ApplicationId $sp.AppId -PasswordCredentials $credentials
-
-Start-Sleep -Seconds 30
-New-AzRoleAssignment -RoleDefinitionName "Contributor" -PrincipalId $sp.Id
-Start-Sleep -Seconds 30
-
-@{
-  ClientId = $sp.AppId
-  ClientSecret = $appCred.SecretText
-  TenantId = (Get-AzSubscription -SubscriptionId $SubscriptionId).TenantId
-}
-```
 
 ## Generated Machine Deployment
 

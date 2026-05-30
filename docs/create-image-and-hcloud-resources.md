@@ -216,7 +216,13 @@ Therefore, a GitHub action called "Misc - Delete old VM templates" is available 
 
 The following variables are required:
 
-- `KEEP_SNAPSHOTS` - This is a repository variable. The value of the variable indicates how many snapshots (sorted in ascending order) to keep.
+| Secret var | Description
+| ------------ | -----------
+| `HCLOUD_TOKEN` | API token for accessing the project in the Hetzner Cloud console. Read and write access required.
+
+| Repo var | Description
+| ------------ | -----------
+| `KEEP_SNAPSHOTS` | This is a repository variable. The value of the variable indicates how many snapshots (sorted in ascending order) to keep.
 
 There is currently no schedule defined for executing the action. Therefore, by default it has to be started manually.
 

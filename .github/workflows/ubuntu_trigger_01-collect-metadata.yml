@@ -1,0 +1,275 @@
+---
+name: Ubuntu - Trigger collect metadata
+
+"on":
+  workflow_call:
+    inputs:
+      os:
+        required: true
+        type: string
+      container_registry:
+        required: true
+        type: string
+      container_registry_account:
+        required: true
+        type: string
+      container_registry_repo:
+        required: true
+        type: string
+      container_registry_repo_tag_cache_name:
+        required: true
+        type: string
+      container_platform:
+        required: true
+        type: string
+
+    outputs:
+      gh_branch_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_branch_name }}
+      gh_tag:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_tag }}
+      gh_release_title:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_release_title }}
+      gh_release_no:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_release_no }}
+      gh_pr_title:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_pr_title }}
+      gh_pr_labels:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_pr_labels }}
+      gh_pr_commit_message:
+        value: ${{ jobs.Create-Metadata.outputs.loc_gh_pr_commit_message }}
+      hetzner_cloud_packer_hcl_file:
+        value: ${{ jobs.Create-Metadata.outputs.loc_hetzner_cloud_packer_hcl_file }}
+      hetzner_cloud_object_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_hetzner_cloud_object_name }}
+      hetzner_cloud_image_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_hetzner_cloud_image_name }}
+      container_registry:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_registry }}
+      container_repo:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_repo }}
+      container_repo_tag:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_repo_tag }}
+      container_repo_cache_tag:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_repo_cache_tag }}
+      container_platform:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_platform }}
+      container_image_owner:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_image_owner }}
+      container_image_version:
+        value: ${{ jobs.Create-Metadata.outputs.loc_container_image_version }}
+      app_sw_report_file_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_app_sw_report_file_name }}
+      app_working_dir:
+        value: ${{ jobs.Create-Metadata.outputs.loc_app_working_dir }}
+      app_readme_file:
+        value: ${{ jobs.Create-Metadata.outputs.loc_app_readme_file }}
+
+
+permissions:
+  contents: read
+
+
+jobs:
+  Create-Metadata:
+    runs-on: ubuntu-slim
+    name: Collect build metadata
+
+    steps:
+      - name: Define the name of the OS
+        id: os
+        shell: bash
+        run: |
+
+          # Alle Zeichen klein geschrieben
+          os_dist=ubuntu
+          echo  "os_dist=ubuntu" >> $GITHUB_OUTPUT
+
+          # Alle Zeichen Case sensitive
+          os_dist_cs=Ubuntu
+          echo  "os_dist_cs=Ubuntu" >> $GITHUB_OUTPUT
+
+          if [ "${{ inputs.os }}" == "ubuntu22" ]; then
+            echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-22_04" >> $GITHUB_OUTPUT
+            echo "osimage=ubuntu-22.04" >> $GITHUB_OUTPUT
+            echo "readme=Ubuntu2204-Readme.md" >> $GITHUB_OUTPUT
+            echo "ghprlabels=OS: Ubuntu,OS: Ubuntu22" >> $GITHUB_OUTPUT
+
+          elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
+            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
+            echo "packerfile=ubuntu-24_04" >> $GITHUB_OUTPUT
+            echo "osimage=ubuntu-24.04" >> $GITHUB_OUTPUT
+            echo "readme=Ubuntu2404-Readme.md" >> $GITHUB_OUTPUT
+            echo "ghprlabels=OS: Ubuntu,OS: Ubuntu24" >> $GITHUB_OUTPUT
+
+          elif [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
+            os_version=slim
+            echo "os_version=slim" >> $GITHUB_OUTPUT
+
+            os_version_cs=Slim
+            echo "os_version_cs=Slim" >> $GITHUB_OUTPUT
+
+            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24" >> $GITHUB_OUTPUT
+
+            echo "app_sw_report_file_name=ubuntu-slim-Report.json" >> $GITHUB_OUTPUT
+            echo "app_working_dir=images/ubuntu-slim" >> $GITHUB_OUTPUT
+            echo "app_readme_file=ubuntu-slim-Readme.md" >> $GITHUB_OUTPUT
+
+            echo "hcloud_os_image_name=ubuntu-24_04" >> $GITHUB_OUTPUT
+            echo "hcloud_packer_file_name=ubuntu-24_04.pkl.hcl" >> $GITHUB_OUTPUT
+
+          else
+            exit 1
+          fi
+
+#      - name: Checkout the current repository
+#        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+
+      - name: Create necessary metadatas
+        id: metadata
+        shell: bash
+        run: |
+
+          # Determines the current date in YYYYMMDD format. Using the Europe/Berlin timezone.
+          current_date=$(TZ='Europe/Berlin' date +'%Y%m%d')
+
+          # Formats the GitHub run number to exactly 4 digits and pads missing digits with leading zeros.
+          gh_action_run_number=$(printf "%04d" "${GITHUB_RUN_NUMBER}")
+
+          # Contains the current attempt number of the same workflow run. This value increases when the workflow is re-run.
+          gh_action_run_attempt=${{ github.run_attempt }}
+
+          # Builds the version string using the format: YYYYMMDD.gh_action_run_number.gh_action_run_attempt. Example: 20260523.0042.1
+          # echo "version_full=$(echo $current_date.$gh_action_run_number.$gh_action_run_attempt)" >> $GITHUB_OUTPUT
+          echo "version_full=${current_date}.${gh_action_run_number}.${gh_action_run_attempt}" >> "$GITHUB_OUTPUT"
+
+          # Builds the version string using the format: YYYYMMDD.gh_action_run_number. Example: 20260523.0042
+          # echo "version_long=$(echo $current_date.$gh_action_run_number)" >> $GITHUB_OUTPUT
+          echo "version_long=${current_date}.${gh_action_run_number}" >> "$GITHUB_OUTPUT"
+
+          # Builds the version string using the format: YYYYMMDD. Example: 20260523
+          # echo "version_short=$(echo $current_date)" >> $GITHUB_OUTPUT
+          echo "version_short=${current_date}" >> "$GITHUB_OUTPUT"
+
+    outputs:
+      loc_gh_branch_name: "releases/${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_tag: "${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+
+      loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
+      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
+
+      loc_gh_pr_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
+      loc_gh_pr_commit_message: "Updating readme file for ubuntu-slim version ${{ steps.metadata.outputs.version_full }}"
+
+      loc_hetzner_cloud_object_name: "${{ inputs.os }}-${{ steps.metadata.outputs.version_full }}"
+      loc_hetzner_cloud_image_name: "${{ steps.os.outputs.hcloud_os_image_name }}"
+      loc_hetzner_cloud_packer_hcl_file: "${{ steps.os.outputs.hcloud_packer_file_name }}"
+
+      loc_container_registry: "${{ inputs.container_registry }}"
+      loc_container_repo: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}"
+      loc_container_repo_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ steps.metadata.outputs.version_full }}"
+      loc_container_platform: "${{ inputs.container_platform }}"
+      loc_container_image_owner: "${{ github.repository_owner }}"
+      loc_container_image_version: "${{ steps.metadata.outputs.version_full }}"
+      loc_container_repo_cache_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ inputs.container_registry_repo_tag_cache_name }}"
+
+      loc_app_sw_report_file_name: "${{ steps.os.outputs.app_sw_report_file_name }}"
+      loc_app_working_dir: "${{ steps.os.outputs.app_working_dir }}"
+      loc_app_readme_file: "${{ steps.os.outputs.app_readme_file }}"
+
+
+  Show-Metadata:
+    runs-on: ubuntu-slim
+    name: Show build metadata
+    needs:
+      - Create-Metadata
+
+    steps:
+      - name: Display GitHub Repository Default Branch Name
+        shell: bash
+        run: echo "${{ github.event.repository.default_branch }}"
+
+      - name: Display GitHub Repository Branch Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_branch_name }}"
+
+      - name: Display GitHub Repository Tag Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_tag }}"
+
+      - name: Display GitHub Repository Release Titel
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_release_title }}"
+
+      - name: Display GitHub Repository Versionsnummer
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_release_no }}"
+
+      - name: Display GitHub Repository Pull Request Titel
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_title }}"
+
+      - name: Display GitHub Repository Pull Request Labels
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_labels }}"
+
+      - name: Display GitHub Repository Pull Request Commit Message
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_commit_message }}"
+
+
+      - name: Display Hetzner Cloud Objekt Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_object_name }}"
+
+      - name: Display Hetzner Cloud Server Image Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_image_name }}"
+
+      - name: Display Github Repository Packer HCL Dateiname
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_packer_hcl_file }}"
+
+
+      - name: Display Container Registry Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_registry }}"
+
+      - name: Display Container Registry Repository
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo }}"
+
+      - name: Display Container Repository Tag
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo_tag }}"
+
+      - name: Display Container Repository Cache Tag
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo_cache_tag }}"
+
+      - name: Display Container Repository Container Platform
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_platform }}"
+
+      - name: Display Container Repository Container Image Owner
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_image_owner }}"
+
+      - name: Display Container Repository Container Image Version No.
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_container_image_version }}"
+
+
+      - name: Display App Software Report File Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_app_sw_report_file_name}}"
+
+      - name: Display App Working Directory
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_app_working_dir }}"
+
+      - name: Display App Readme File Name
+        shell: bash      
+        run: echo "${{ needs.Create-Metadata.outputs.loc_app_readme_file }}"

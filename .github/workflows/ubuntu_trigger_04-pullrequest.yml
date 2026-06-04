@@ -1,0 +1,84 @@
+---
+name: Ubuntu - Trigger Pull Request
+
+"on":
+  workflow_call:
+    inputs:
+      gh_branch_name:
+        required: true
+        type: string
+      gh_tag:
+        required: true
+        type: string
+      gh_pr_title:
+        required: true
+        type: string
+      gh_pr_body:
+        required: true
+        type: string
+      gh_pr_labels:
+        required: true
+        type: string
+      gh_pr_commit_message:
+        required: true
+        type: string
+      gh_release_no:
+        required: true
+        type: string
+      gh_default_branch_name:
+        required: true
+        type: string
+    secrets:
+      gh_app_rihc_id:
+        required: true
+      gh_app_rihc_pk:
+        required: true
+
+
+jobs:
+  Create-PullRequest:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1  # v3.2.0
+        id: generate-token
+        with:
+          client-id: "${{ secrets.gh_app_rihc_id }}"
+          private-key: "${{ secrets.gh_app_rihc_pk }}"
+
+      - name: Checkout new created branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          fetch-depth: '0'
+          ref: ${{ inputs.gh_branch_name }}
+
+      - name: Create pull request
+        id: pullrequest
+        uses: devops-infra/action-pull-request@c5a99ac1b5457fc14b5586d68b15f2f23fda8f6f  # v1.2.1
+        with:
+          github_token: ${{ steps.generate-token.outputs.token }}
+          source_branch: ${{ inputs.gh_branch_name }}
+          target_branch: ${{ inputs.gh_default_branch_name }}
+          title: ${{ inputs.gh_pr_title }}
+          body: ${{ inputs.gh_pr_body }}
+          label: ${{ inputs.gh_pr_labels }}
+          assignee: dwydler
+
+      - name: Merge the pull request
+        uses: pascalgn/automerge-action@7961b8b5eec56cc088c140b56d864285eabd3f67  # v0.16.4
+        env:
+          GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
+          PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
+          MERGE_LABELS: ${{ inputs.gh_tag }}
+          UPDATE_LABELS: ${{ inputs.gh_tag }}
+          MERGE_COMMIT_MESSAGE: "${{ inputs.gh_pr_commit_message }} (#${{ steps.pullrequest.outputs.pr_number }})"
+          # Updating readme file for macos-15-arm64 version 20260527.0100.1 (#14171)
+          MERGE_METHOD: "squash"
+          MERGE_RETRIES: 10
+          MERGE_RETRY_SLEEP: 30000  # milliseconds
+          MERGE_READY_STATE: clean

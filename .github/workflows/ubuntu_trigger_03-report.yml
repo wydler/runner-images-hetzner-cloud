@@ -1,0 +1,159 @@
+---
+name: Ubuntu - Trigger Software Reporting
+
+"on":
+  workflow_call:
+    inputs:
+      gh_branch_name:
+        required: true
+        type: string
+      gh_tag:
+        required: true
+        type: string
+      app_working_dir:
+        required: true
+        type: string
+      app_swrp_file_name:
+        required: true
+        type: string
+      app_readme_file:
+        required: true
+        type: string
+      app_swrp_difference_file_name:
+        required: false
+        type: string
+        default: "ImagesDifference.md"
+    secrets:
+      gh_app_rihc_id:
+        required: true
+      gh_app_rihc_pk:
+        required: true
+    outputs:
+      app_swrp_difference_body:
+        value: ${{ jobs.Create-SoftwareReportDiff.outputs.loc_app_swrp_difference_body }}
+
+
+jobs:
+  Create-SoftwareReportDiff:
+    runs-on: ubuntu-slim
+
+    permissions:
+      contents: read
+
+    outputs:
+      loc_app_swrp_difference_body: ${{ steps.readme.outputs.FileContent }}
+
+    steps:
+      - name: Generate app token
+        uses: actions/create-github-app-token@bcd2ba49218906704ab6c1aa796996da409d3eb1  # v3.2.0
+        id: generate-token
+        with:
+          client-id: "${{ secrets.gh_app_rihc_id }}"
+          private-key: "${{ secrets.gh_app_rihc_pk }}"
+
+      - name: Checkout new created branch
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd  # v6.0.2
+        with:
+          fetch-depth: '0'
+          ref: ${{ inputs.gh_branch_name }}
+
+      - name: Get previous Release Tag
+        id: get-previous-release
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Continue"
+
+          Write-Host "Finding previous release for OS '$($env:ReleaseTag.Split("/")[0])'..."
+
+          $PREVIOUS_RELEASE = (
+            gh release list `
+              --repo $env:GITHUB_REPOSITORY `
+              --limit 25 `
+              --json tagName `
+              --jq ".[] | select(.tagName | startswith(`"$($env:ReleaseTag.Split("/")[0])/`")) | .tagName" |
+            Select-Object -First 1
+          ).Trim()
+
+          "tag=$PREVIOUS_RELEASE" >> $env:GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          ReleaseTag: ${{ inputs.gh_tag }}
+
+      - name: Download file software-report.json from artifact
+        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c  # v8.0.1
+        with:
+          name: ${{ inputs.app_swrp_file_name }}
+
+      - name: Download previous software report
+        if: steps.get-previous-release.outputs.tag != ''
+        shell: bash
+        run: |
+          gh release download "$PREVIOUS_RELEASE" \
+            --pattern "${{ inputs.app_swrp_file_name }}" \
+            --dir "$RUNNER_TEMP"
+        env:
+          GH_TOKEN: ${{ steps.generate-token.outputs.token }}
+          PREVIOUS_RELEASE: ${{ steps.get-previous-release.outputs.tag }}            
+
+      - name: Generate previous ${{ inputs.app_swrp_file_name }}
+        if: steps.get-previous-release.outputs.tag == ''
+        shell: pwsh
+        run: |
+          $data = @{
+            NodeType = "HeaderNode"
+            Title    = "Ubuntu"
+            Children = @()
+          }
+
+          $data |
+            ConvertTo-Json -Depth 10 |
+            Set-Content "$env:SoftwareReportPreviousFile" -Encoding utf8
+
+          cat "$env:SoftwareReportPreviousFile"
+        env:
+          SoftwareReportPreviousFile: ${{ runner.temp }}/${{ inputs.app_swrp_file_name }}
+
+      - name: Generate software report differences
+        id: software-report-diff
+        shell: pwsh
+        run: |
+          $ErrorActionPreference = "Stop"
+
+          Write-Host "Calculating image differences..."
+
+          helpers/software-report-base/Calculate-ImagesDifference.ps1 `
+            $env:PreviousJsonReportPath `
+            $env:CurrentJsonReportPath `
+            $env:OutputFile `
+            $env:ReleaseBranchName `
+            $env:ReadmePath
+
+          Write-Host "Done"
+        env:
+          PreviousJsonReportPath: ${{ runner.temp }}/${{ inputs.app_swrp_file_name }}
+          CurrentJsonReportPath: "./${{ inputs.app_swrp_file_name }}"
+          OutputFile: ${{ runner.temp }}/${{ inputs.app_swrp_difference_file_name }}
+          ReleaseBranchName: ${{ inputs.gh_tag }}
+          ReadmePath: "${{ inputs.app_working_dir }}/${{ inputs.app_readme_file }}"
+
+      - name: Save file '${{ inputs.app_swrp_difference_file_name }}' in variable
+        id: readme
+        shell: bash        
+        run: |
+          {
+            echo 'FileContent<<EOF'
+            cat $ImagesDifferenceFile
+            echo 'EOF'
+          } >> $GITHUB_OUTPUT
+        env:
+          ImagesDifferenceFile: ${{ runner.temp }}/${{ inputs.app_swrp_difference_file_name }}
+
+      - name: Use output
+        shell: bash
+        run: |
+          echo "${{ steps.readme.outputs.FileContent }}"
+
+      - name: Remove ${{ inputs.app_swrp_file_name }}
+        shell: bash      
+        run: |
+          rm ${{ inputs.app_swrp_file_name }}

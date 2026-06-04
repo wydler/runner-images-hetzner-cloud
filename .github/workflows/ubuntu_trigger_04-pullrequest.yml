@@ -21,7 +21,7 @@ name: Ubuntu - Trigger Pull Request
         type: string
       gh_pr_commit_message:
         required: true
-        type: string        
+        type: string
       gh_release_no:
         required: true
         type: string

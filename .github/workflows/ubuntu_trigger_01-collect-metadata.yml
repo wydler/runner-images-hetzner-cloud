@@ -139,15 +139,12 @@ jobs:
           gh_action_run_attempt=${{ github.run_attempt }}
 
           # Builds the version string using the format: YYYYMMDD.gh_action_run_number.gh_action_run_attempt. Example: 20260523.0042.1
-          # echo "version_full=$(echo $current_date.$gh_action_run_number.$gh_action_run_attempt)" >> $GITHUB_OUTPUT
           echo "version_full=${current_date}.${gh_action_run_number}.${gh_action_run_attempt}" >> "$GITHUB_OUTPUT"
 
           # Builds the version string using the format: YYYYMMDD.gh_action_run_number. Example: 20260523.0042
-          # echo "version_long=$(echo $current_date.$gh_action_run_number)" >> $GITHUB_OUTPUT
           echo "version_long=${current_date}.${gh_action_run_number}" >> "$GITHUB_OUTPUT"
 
           # Builds the version string using the format: YYYYMMDD. Example: 20260523
-          # echo "version_short=$(echo $current_date)" >> $GITHUB_OUTPUT
           echo "version_short=${current_date}" >> "$GITHUB_OUTPUT"
 
     outputs:

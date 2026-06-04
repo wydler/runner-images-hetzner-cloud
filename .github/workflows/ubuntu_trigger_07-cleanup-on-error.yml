@@ -6,7 +6,7 @@ name: Ubuntu - Trigger cleanup on failure or cancel
     inputs:
       gh_branch_name:
         required: true
-        type: string    
+        type: string
       gh_tag:
         required: true
         type: string
@@ -65,10 +65,10 @@ jobs:
         uses: hetznercloud/setup-hcloud@ac9e7d74fb41a3ca44a6a3da123bd5aa70731e3a  # v2.0.0
 
       - name: Delete temporary SSH Key on Hetzner Cloud
-        shell: bash      
+        shell: bash
         run: |
           set -euo pipefail
-          
+
           sshkey_id=$(hcloud ssh-key list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
 
           if [ -n "$sshkey_id" ]; then
@@ -80,10 +80,10 @@ jobs:
           HCLOUD_NAME: ${{ inputs.hetzner_cloud_object_name }}
 
       - name: Delete Server on Hetzner Cloud
-        shell: bash      
+        shell: bash
         run: |
           set -euo pipefail
-          
+
           server_id=$(hcloud server list --output "columns=ID" --output "noheader" -l "server=$HCLOUD_NAME")
 
           if [ -n "$server_id" ]; then
@@ -97,10 +97,10 @@ jobs:
           HCLOUD_NAME: ${{ inputs.hetzner_cloud_object_name }}
 
       - name: Delete Snapshot on Hetzner Cloud
-        shell: bash      
+        shell: bash
         run: |
           set -euo pipefail
-          
+
           snapshot_id=$(hcloud image list --output "columns=ID" --output "noheader" --type "snapshot" -l "server=$HCLOUD_NAME")
 
           if [ -n "$snapshot_id" ]; then
@@ -122,7 +122,7 @@ jobs:
 
     steps:
       - name: Delete Docker Hub tag
-        shell: bash      
+        shell: bash
         run: |
           set -euo pipefail
 

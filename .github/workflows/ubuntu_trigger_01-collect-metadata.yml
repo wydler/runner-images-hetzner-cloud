@@ -192,73 +192,73 @@ jobs:
         run: echo "${{ github.event.repository.default_branch }}"
 
       - name: Display GitHub Repository Branch Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_branch_name }}"
 
       - name: Display GitHub Repository Tag Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_tag }}"
 
       - name: Display GitHub Repository Release Titel
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_release_title }}"
 
       - name: Display GitHub Repository Versionsnummer
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_release_no }}"
 
       - name: Display GitHub Repository Pull Request Titel
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_title }}"
 
       - name: Display GitHub Repository Pull Request Labels
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_labels }}"
 
       - name: Display GitHub Repository Pull Request Commit Message
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_gh_pr_commit_message }}"
 
 
       - name: Display Hetzner Cloud Objekt Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_object_name }}"
 
       - name: Display Hetzner Cloud Server Image Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_image_name }}"
 
       - name: Display Github Repository Packer HCL Dateiname
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_hetzner_cloud_packer_hcl_file }}"
 
 
       - name: Display Container Registry Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_registry }}"
 
       - name: Display Container Registry Repository
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo }}"
 
       - name: Display Container Repository Tag
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo_tag }}"
 
       - name: Display Container Repository Cache Tag
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_repo_cache_tag }}"
 
       - name: Display Container Repository Container Platform
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_platform }}"
 
       - name: Display Container Repository Container Image Owner
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_image_owner }}"
 
       - name: Display Container Repository Container Image Version No.
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_container_image_version }}"
 
 
@@ -267,9 +267,9 @@ jobs:
         run: echo "${{ needs.Create-Metadata.outputs.loc_app_sw_report_file_name}}"
 
       - name: Display App Working Directory
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_app_working_dir }}"
 
       - name: Display App Readme File Name
-        shell: bash      
+        shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_app_readme_file }}"

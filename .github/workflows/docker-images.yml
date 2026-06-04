@@ -29,4 +29,4 @@ jobs:
 
       - name: Run test.sh
         working-directory: ${{ matrix.directory }}
-        run: ./test.sh
+        run: bash ./test.sh

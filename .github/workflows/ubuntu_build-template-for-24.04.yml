@@ -166,7 +166,6 @@ jobs:
     if: ${{ failure() || cancelled() }}
 
     needs:
-      - Set-Variables
       - Trigger-CollectInformations
       - Trigger-ImageBuilder
 

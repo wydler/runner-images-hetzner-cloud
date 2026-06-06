@@ -1,7 +1,7 @@
 ---
 name: Ubuntu - Build template for Ubuntu 24.04
 
-on:      
+"on":      
    workflow_dispatch:
      inputs:
        location:

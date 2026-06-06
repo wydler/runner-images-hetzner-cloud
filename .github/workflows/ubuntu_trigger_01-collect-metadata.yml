@@ -64,6 +64,8 @@ name: Ubuntu - Trigger collect metadata
         value: ${{ jobs.Create-Metadata.outputs.loc_app_working_dir }}
       app_readme_file:
         value: ${{ jobs.Create-Metadata.outputs.loc_app_readme_file }}
+      app_sw_sbom_file_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_app_sw_sbom_file_name }}
 
 
 permissions:
@@ -173,6 +175,7 @@ jobs:
       loc_app_sw_report_file_name: "${{ steps.os.outputs.app_sw_report_file_name }}"
       loc_app_working_dir: "${{ steps.os.outputs.app_working_dir }}"
       loc_app_readme_file: "${{ steps.os.outputs.app_readme_file }}"
+      loc_app_sw_sbom_file_name: "${{ steps.os.outputs.app_sw_sbom_file_name }}"
 
 
   Show-Metadata:
@@ -268,3 +271,7 @@ jobs:
       - name: Display App Readme File Name
         shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_app_readme_file }}"
+
+      - name: Display App SBOM File Name
+        shell: bash
+        run: echo "${{ needs.Create-Metadata.outputs.loc_app_sw_sbom_file_name }}"

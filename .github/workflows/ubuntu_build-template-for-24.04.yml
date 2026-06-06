@@ -47,9 +47,6 @@ jobs:
       - name: Display Variable server os
         run: echo "${{ steps.env.outputs.os }}"
 
-      - name: Display Variable server location
-        run: echo "${{ inputs.location }}"
-     
     outputs:      
       os: ${{ steps.env.outputs.os }}
      

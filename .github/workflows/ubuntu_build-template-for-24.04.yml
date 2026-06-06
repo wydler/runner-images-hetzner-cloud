@@ -41,6 +41,7 @@ jobs:
     steps:
       - name: Assign ENV variable to workflow variable
         id: env
+        shell: bash
         run: |
            echo "os=$OS" >> $GITHUB_OUTPUT
 

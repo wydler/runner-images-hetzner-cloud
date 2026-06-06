@@ -175,7 +175,7 @@ jobs:
     permissions:
       contents: write
 
-    uses: ./.github/workflows/ubuntu_trigger-cleanup-on-failure.yml
+    uses: ./.github/workflows/ubuntu_trigger_07-cleanup-on-error.yml
     with:
       ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
       HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName  }}

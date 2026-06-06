@@ -1,26 +1,26 @@
 ---
 name: Ubuntu - Build template for Ubuntu 24.04
 
-"on":      
+"on":
    workflow_dispatch:
      inputs:
        location:
-        type: choice 
+        type: choice
         required: true
-        options: 
+        options:
           - hel1
           - fsn1
           - nbg1
         default: "hel1"
        servertype:
-        type: choice 
+        type: choice
         required: true
         options:
           - cx33
           - cpx22
-          - ccx13  
+          - ccx13
         default: "cx33"
-         
+
 
 env:
   OS: "ubuntu24"
@@ -37,7 +37,7 @@ jobs:
 
     permissions:
       contents: read
-      
+
     steps:
       - name: Assign ENV variable to workflow variable
         id: env
@@ -50,8 +50,8 @@ jobs:
 
     outputs:      
       os: ${{ steps.env.outputs.os }}
-     
-     
+
+
   Trigger-CollectInformations:
     needs:
       - Set-Variables
@@ -63,7 +63,7 @@ jobs:
     with:
       os: ${{ needs.Set-Variables.outputs.os }}
 
-    
+
   Trigger-ImageBuilder:
     needs:
       - Set-Variables

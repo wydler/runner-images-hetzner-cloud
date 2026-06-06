@@ -52,13 +52,13 @@ jobs:
      
      
   Trigger-CollectInformations:
-    needs: Set-Variables
-    
+    needs:
+      - Set-Variables
+
     permissions:
       contents: read
-      pull-requests: read
 
-    uses: ./.github/workflows/ubutnu_trigger-collect-informations.yml
+    uses: ./.github/workflows/ubuntu_trigger_01-collect-metadata.yml
     with:
       os: ${{ needs.Set-Variables.outputs.os }}
 

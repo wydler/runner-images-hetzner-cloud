@@ -49,9 +49,6 @@ jobs:
 
       - name: Display Variable server location
         run: echo "${{ inputs.location }}"
-
-      - name: Display Variable server type
-        run: echo "${{ inputs.servertype }}"
      
     outputs:      
       os: ${{ steps.env.outputs.os }}

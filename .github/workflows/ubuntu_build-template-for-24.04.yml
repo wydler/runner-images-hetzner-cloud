@@ -67,27 +67,29 @@ jobs:
     needs:
       - Set-Variables
       - Trigger-CollectInformations
-    
+
     permissions:
       contents: write
-      pull-requests: write
-    
-    uses: ./.github/workflows/ubuntu_trigger-build-new-templates.yml
-    with:
-      release_name: ${{ needs.Trigger-CollectInformations.outputs.ReleaseName }}
-      release_tag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
-      hcl_filename: ${{ needs.Trigger-CollectInformations.outputs.HclFile }}
-      release_no: ${{ needs.Trigger-CollectInformations.outputs.ReleaseNo }}
-      readme_file: ${{ needs.Trigger-CollectInformations.outputs.ReadmeFile }}
-      gh_pr_labels: ${{ needs.Trigger-CollectInformations.outputs.GitHubPrLabels }}
 
-      hcloud_server_location: ${{ inputs.location }}
-      hcloud_server_type: ${{ inputs.servertype }}
-      
-      hcloud_name: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName }}
-      hcloud_server_image: ${{ needs.Trigger-CollectInformations.outputs.HCloudServerImage }}
-      
-    secrets: inherit
+    uses: ./.github/workflows/ubuntu_trigger_02-build-snaphot.yml
+    with:
+      gh_branch_name: ${{ needs.Trigger-CollectInformations.outputs.gh_branch_name }}
+      gh_tag: ${{ needs.Trigger-CollectInformations.outputs.gh_tag }}
+      gh_release_no: ${{ needs.Trigger-CollectInformations.outputs.gh_release_no }}
+      gh_pr_commit_message: ${{ needs.Trigger-CollectInformations.outputs.gh_pr_commit_message }}
+      app_working_dir: ${{ needs.Trigger-CollectInformations.outputs.app_working_dir }}
+      app_sw_report_file_name: ${{ needs.Trigger-CollectInformations.outputs.app_sw_report_file_name }}
+      app_sw_sbom_file_name: ${{ needs.Trigger-CollectInformations.outputs.app_sw_sbom_file_name }}
+      hetzner_cloud_object_name: ${{ needs.Trigger-CollectInformations.outputs.hetzner_cloud_object_name }}
+      hetzner_cloud_image_name: ${{ needs.Trigger-CollectInformations.outputs.hetzner_cloud_image_name }}
+      hetzner_cloud_server_location: ${{ inputs.location }}
+      hetzner_cloud_server_type: ${{ inputs.servertype }}
+      hetzner_cloud_packer_hcl_file: ${{ needs.Trigger-CollectInformations.outputs.hetzner_cloud_packer_hcl_file }}
+
+    secrets:
+      gh_app_rihc_id: ${{ secrets.GH_APP_RIHC_ID }}
+      gh_app_rihc_pk: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
+      hetzner_cloud_token: ${{ secrets.HCLOUD_TOKEN }}
 
 
   Trigger-CleanupOnFailure:

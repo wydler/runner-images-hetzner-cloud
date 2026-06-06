@@ -168,6 +168,9 @@ jobs:
     needs:
       - Trigger-CollectInformations
       - Trigger-ImageBuilder
+      - Trigger-SoftwareReport
+      - Trigger-PullRequest
+      - Trigger-Release      
 
     permissions:
       contents: write

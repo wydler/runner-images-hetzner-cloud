@@ -163,7 +163,14 @@ jobs:
 
 
   Trigger-CleanupOnFailure:
-    if: ${{ failure() || cancelled() }}
+    if: >
+      always() &&
+      (
+        needs.Trigger-ImageBuilder.result != 'success' ||
+        needs.Trigger-SoftwareReport.result != 'success' ||
+        needs.Trigger-PullRequest.result != 'success' ||
+        needs.Trigger-Release.result != 'success'
+      )
 
     needs:
       - Trigger-CollectInformations

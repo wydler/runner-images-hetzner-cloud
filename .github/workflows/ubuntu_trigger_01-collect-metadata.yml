@@ -8,19 +8,19 @@ name: Ubuntu - Trigger collect metadata
         required: true
         type: string
       container_registry:
-        required: true
+        required: false
         type: string
       container_registry_account:
-        required: true
+        required: false
         type: string
       container_registry_repo:
-        required: true
+        required: false
         type: string
       container_registry_repo_tag_cache_name:
-        required: true
+        required: false
         type: string
       container_platform:
-        required: true
+        required: false
         type: string
 
     outputs:

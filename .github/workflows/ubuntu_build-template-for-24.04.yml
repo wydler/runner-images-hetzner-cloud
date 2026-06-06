@@ -177,8 +177,11 @@ jobs:
 
     uses: ./.github/workflows/ubuntu_trigger_07-cleanup-on-error.yml
     with:
-      ReleaseTag: ${{ needs.Trigger-CollectInformations.outputs.ReleaseTag }}
-      HCloudObjectName: ${{ needs.Trigger-CollectInformations.outputs.HCloudObjectName  }}
+      gh_branch_name: ${{ needs.Trigger-CollectInformations.outputs.gh_branch_name }}
+      gh_tag: ${{ needs.Trigger-CollectInformations.outputs.gh_tag }}
+      gh_release_no: ${{ needs.Trigger-CollectInformations.outputs.gh_release_no }}
+      hetzner_cloud_object_name: ${{ needs.Trigger-CollectInformations.outputs.hetzner_cloud_object_name }}
+      container_repo: ${{ needs.Trigger-CollectInformations.outputs.container_repo }}
 
     secrets:
       gh_app_rihc_id: ${{ secrets.GH_APP_RIHC_ID }}

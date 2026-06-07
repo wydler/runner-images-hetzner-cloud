@@ -152,3 +152,5 @@ jobs:
           github_token: ${{ steps.generate-token.outputs.token }}
           message: ${{ inputs.gh_pr_commit_message }}
           force: true
+          author_name: "${{ steps.generate-token.outputs.app-slug }}[bot]"
+          author_email: "${{ steps.generate-token.outputs.app-slug }}[bot]@users.noreply.github.com"

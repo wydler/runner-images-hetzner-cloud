@@ -168,7 +168,7 @@ jobs:
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_pr_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
-      loc_gh_pr_commit_message: "Updating readme file for ubuntu-slim version ${{ steps.metadata.outputs.version_full }}"
+      loc_gh_pr_commit_message: "Updating readme file for ${{ inputs.os }} version ${{ steps.metadata.outputs.version_full }}"
 
       loc_hetzner_cloud_object_name: "${{ inputs.os }}-${{ steps.metadata.outputs.version_full }}"
       loc_hetzner_cloud_image_name: "${{ steps.os.outputs.hcloud_os_image_name }}"

@@ -92,7 +92,6 @@ jobs:
           echo  "os_dist_cs=Ubuntu" >> $GITHUB_OUTPUT
 
           if [ "${{ inputs.os }}" == "ubuntu22" ]; then
-            echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
 
             echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
 

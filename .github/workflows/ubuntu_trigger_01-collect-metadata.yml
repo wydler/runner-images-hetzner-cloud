@@ -95,6 +95,9 @@ jobs:
             os_version=22
             echo "os_version=22" >> $GITHUB_OUTPUT
 
+            os_version_cs=22.04
+            echo "os_version_cs=22.04" >> $GITHUB_OUTPUT
+
             echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
 
             echo "app_sw_report_file_name=software-report.json" >> $GITHUB_OUTPUT

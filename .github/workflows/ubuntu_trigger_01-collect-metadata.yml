@@ -94,7 +94,6 @@ jobs:
           if [ "${{ inputs.os }}" == "ubuntu22" ]; then
             echo "osname=Ubuntu 22.04" >> $GITHUB_OUTPUT
             echo "packerfile=ubuntu-22_04" >> $GITHUB_OUTPUT
-            echo "osimage=ubuntu-22.04" >> $GITHUB_OUTPUT
 
             echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
 

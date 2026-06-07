@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260604.0001.1
+- Image Version: 20260607.0002.1
 - Systemd version: 255.4-1ubuntu8.15
 
 ## Installed Software
@@ -30,11 +30,11 @@
 - jq 1.7
 - nvm 0.40.5
 - OpenSSL 3.0.13-0ubuntu3.9
-- yq 4.53.2
+- yq 4.53.3
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.34.61
+- AWS CLI 2.34.63
 - AWS CLI Session Manager Plugin 1.2.814.0
 - AWS SAM CLI 1.161.1
 - Azure CLI 2.87.0

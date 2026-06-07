@@ -8,19 +8,19 @@ name: Ubuntu - Trigger collect metadata
         required: true
         type: string
       container_registry:
-        required: true
+        required: false
         type: string
       container_registry_account:
-        required: true
+        required: false
         type: string
       container_registry_repo:
-        required: true
+        required: false
         type: string
       container_registry_repo_tag_cache_name:
-        required: true
+        required: false
         type: string
       container_platform:
-        required: true
+        required: false
         type: string
 
     outputs:
@@ -64,6 +64,8 @@ name: Ubuntu - Trigger collect metadata
         value: ${{ jobs.Create-Metadata.outputs.loc_app_working_dir }}
       app_readme_file:
         value: ${{ jobs.Create-Metadata.outputs.loc_app_readme_file }}
+      app_sw_sbom_file_name:
+        value: ${{ jobs.Create-Metadata.outputs.loc_app_sw_sbom_file_name }}
 
 
 permissions:
@@ -97,11 +99,21 @@ jobs:
             echo "ghprlabels=OS: Ubuntu,OS: Ubuntu22" >> $GITHUB_OUTPUT
 
           elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
-            echo "osname=Ubuntu 24.04" >> $GITHUB_OUTPUT
-            echo "packerfile=ubuntu-24_04" >> $GITHUB_OUTPUT
-            echo "osimage=ubuntu-24.04" >> $GITHUB_OUTPUT
-            echo "readme=Ubuntu2404-Readme.md" >> $GITHUB_OUTPUT
-            echo "ghprlabels=OS: Ubuntu,OS: Ubuntu24" >> $GITHUB_OUTPUT
+            os_version=24
+            echo "os_version=24" >> $GITHUB_OUTPUT
+
+            os_version_cs=24.04
+            echo "os_version_cs=24.04" >> $GITHUB_OUTPUT
+
+            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
+
+            echo "app_sw_report_file_name=software-report.json" >> $GITHUB_OUTPUT
+            echo "app_working_dir=images/ubuntu" >> $GITHUB_OUTPUT
+            echo "app_readme_file=Ubuntu2404-Readme.md" >> $GITHUB_OUTPUT
+            echo "app_sw_sbom_file_name=sbom.json.zip" >> $GITHUB_OUTPUT
+
+            echo "hcloud_os_image_name=ubuntu-24.04" >> $GITHUB_OUTPUT
+            echo "hcloud_packer_file_name=ubuntu-24_04" >> $GITHUB_OUTPUT
 
           elif [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
             os_version=slim
@@ -148,11 +160,11 @@ jobs:
           echo "version_short=${current_date}" >> "$GITHUB_OUTPUT"
 
     outputs:
-      loc_gh_branch_name: "releases/${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
-      loc_gh_tag: "${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_branch_name: "releases/${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
 
       loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
-      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_pr_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
@@ -173,6 +185,7 @@ jobs:
       loc_app_sw_report_file_name: "${{ steps.os.outputs.app_sw_report_file_name }}"
       loc_app_working_dir: "${{ steps.os.outputs.app_working_dir }}"
       loc_app_readme_file: "${{ steps.os.outputs.app_readme_file }}"
+      loc_app_sw_sbom_file_name: "${{ steps.os.outputs.app_sw_sbom_file_name }}"
 
 
   Show-Metadata:
@@ -268,3 +281,7 @@ jobs:
       - name: Display App Readme File Name
         shell: bash
         run: echo "${{ needs.Create-Metadata.outputs.loc_app_readme_file }}"
+
+      - name: Display App SBOM File Name
+        shell: bash
+        run: echo "${{ needs.Create-Metadata.outputs.loc_app_sw_sbom_file_name }}"

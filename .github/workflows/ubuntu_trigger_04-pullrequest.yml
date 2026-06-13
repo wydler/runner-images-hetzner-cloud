@@ -59,7 +59,7 @@ jobs:
 
       - name: Create pull request
         id: pullrequest
-        uses: devops-infra/action-pull-request@c5a99ac1b5457fc14b5586d68b15f2f23fda8f6f  # v1.2.1
+        uses: devops-infra/action-pull-request@aa7651a994452de96d97c764dd4976cf88be8778  # v1.3.0
         with:
           github_token: ${{ steps.generate-token.outputs.token }}
           source_branch: ${{ inputs.gh_branch_name }}

@@ -12,7 +12,18 @@ build {
     expect_disconnect = true
     inline            = ["echo 'Increase tmpfs to 8GB'", "mount -o remount,size=8G /tmp"]
   }
-  
+
+  provisioner "shell" {
+    inline = [
+      "echo 'Create swap file with 4GB'",
+      "sudo fallocate -l 4G /swapfile",
+      "sudo chmod 600 /swapfile",
+      "sudo mkswap /swapfile",
+      "sudo swapon /swapfile",
+      "free -h"
+    ]
+  }
+
   provisioner "shell" {
     execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     inline          = ["mkdir ${var.image_folder}", "chmod 777 ${var.image_folder}"]

@@ -8,6 +8,12 @@ build {
   }
 
   provisioner "shell" {
+    execute_command   = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
+    expect_disconnect = true
+    inline            = ["echo 'Increase tmpfs to 8GB'", "mount -o remount,size=8G /tmp"]
+  }
+  
+  provisioner "shell" {
     execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     inline          = ["mkdir ${var.image_folder}", "chmod 777 ${var.image_folder}"]
   }

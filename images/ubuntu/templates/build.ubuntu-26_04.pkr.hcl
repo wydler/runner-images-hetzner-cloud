@@ -258,6 +258,14 @@ build {
   }
 
   provisioner "shell" {
+    inline = [
+      "sudo swapoff /swapfile || true",
+      "sudo rm -f /swapfile",
+      "free -h"
+    ]
+  }
+
+  provisioner "shell" {
     inline           = ["cloud-init clean --machine-id --seed --logs", "rm -rf /run/cloud-init/\\*", "rm -rf /var/lib/cloud/\\*"]
     valid_exit_codes = [0, 2]
   }

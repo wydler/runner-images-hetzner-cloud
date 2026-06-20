@@ -152,6 +152,7 @@ jobs:
           if-no-files-found: error
           overwrite: true
           retention-days: 1
+          archive: false
 
       - name: Remove ${{ inputs.app_sw_report_file_name }} and ${{ inputs.app_sw_sbom_file_name }}
         shell: bash

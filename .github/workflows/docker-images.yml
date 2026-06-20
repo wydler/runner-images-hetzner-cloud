@@ -14,12 +14,15 @@ name: Test Docker Images
       - '.github/workflows/docker-images.yml'
   workflow_dispatch:
 
+
 permissions:
   contents: read
+
 
 jobs:
   test-images:
     runs-on: ubuntu-latest
+    if: ${{ !startsWith(github.head_ref, 'releases/') }}
 
     strategy:
       matrix:

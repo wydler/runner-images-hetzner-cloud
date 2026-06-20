@@ -20,7 +20,8 @@ permissions:
 jobs:
   test-images:
     runs-on: ubuntu-latest
-
+    if: ${{ !startsWith(github.head_ref, 'releases/') }}
+    
     strategy:
       matrix:
         directory:

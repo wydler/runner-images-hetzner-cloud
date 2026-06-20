@@ -1,14 +1,14 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260607.0002.1
-- Systemd version: 255.4-1ubuntu8.15
+- Image Version: 20260620.0004.1
+- Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
 
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.16.0
+- Node.js 24.17.0
 - Perl 5.38.2
 - Python 3.12.3
 
@@ -16,34 +16,34 @@
 - Npm 11.13.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.14.0
+- Pipx 1.14.1
 
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
-- Bicep 0.43.8
+- Bicep 0.44.1
 - Docker Compose 5.1.4
 - Docker-Buildx 0.34.1
-- Docker Client 29.5.3
+- Docker Client 29.6.0
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
 - jq 1.7
 - nvm 0.40.5
-- OpenSSL 3.0.13-0ubuntu3.9
+- OpenSSL 3.0.13-0ubuntu3.11
 - yq 4.53.3
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.34.63
-- AWS CLI Session Manager Plugin 1.2.814.0
-- AWS SAM CLI 1.161.1
+- AWS CLI 2.35.9
+- AWS CLI Session Manager Plugin 1.2.835.0
+- AWS SAM CLI 1.162.1
 - Azure CLI 2.87.0
 - Azure CLI (azure-devops) 1.0.4
-- GitHub CLI 2.93.0
-- Google Cloud CLI 571.0.0
+- GitHub CLI 2.95.0
+- Google Cloud CLI 573.0.0
 
 ### PowerShell Tools
-- PowerShell 7.5.7
+- PowerShell 7.5.8
 
 ### Installed apt packages
 | Name                   | Version                      |
@@ -55,7 +55,7 @@
 | bc                     | 1.07.1-3ubuntu4              |
 | binutils               | 2.42-4ubuntu2.10             |
 | bzip2                  | 1.0.8-5.1build0.1            |
-| ca-certificates        | 20240203                     |
+| ca-certificates        | 20260601\~24.04.1            |
 | coreutils              | 9.4-3ubuntu6.2               |
 | curl                   | 8.5.0-2ubuntu10.9            |
 | dbus                   | 1.14.10-4ubuntu4.1           |
@@ -77,7 +77,7 @@
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.1            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.5            |
-| libssl-dev             | 3.0.13-0ubuntu3.9            |
+| libssl-dev             | 3.0.13-0ubuntu3.11           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
 | locales                | 2.39-0ubuntu8.7              |
@@ -97,15 +97,15 @@
 | pollinate              | 4.33-3.1ubuntu1.3            |
 | python-is-python3      | 3.11.4-1                     |
 | rpm                    | 4.18.2+dfsg-2.1build2        |
-| rsync                  | 3.2.7-1ubuntu1.4             |
+| rsync                  | 3.2.7-1ubuntu1.5             |
 | shellcheck             | 0.9.0-1                      |
 | sqlite3                | 3.45.1-1ubuntu2.5            |
 | ssh                    | 1:9.6p1-3ubuntu13.16         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
-| systemd-coredump       | 255.4-1ubuntu8.15            |
+| systemd-coredump       | 255.4-1ubuntu8.16            |
 | tar                    | 1.35+dfsg-3build1            |
-| telnet                 | 0.17+2.5-3ubuntu4.1          |
+| telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |
 | time                   | 1.9-0.2build1                |
 | tk                     | 8.6.14build1                 |
@@ -114,7 +114,7 @@
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.1            |
-| xvfb                   | 2:21.1.12-1ubuntu1.5         |
+| xvfb                   | 2:21.1.12-1ubuntu1.6         |
 | xz-utils               | 5.6.1+really5.4.5-1ubuntu0.3 |
 | zip                    | 3.0-13ubuntu0.2              |
 | zsync                  | 0.6.2-5build1                |

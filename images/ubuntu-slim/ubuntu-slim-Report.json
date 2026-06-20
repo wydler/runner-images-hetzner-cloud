@@ -10,12 +10,12 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260607.0002.1"
+      "Version": "20260620.0004.1"
     },
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Systemd version:",
-      "Version": "255.4-1ubuntu8.15"
+      "Version": "255.4-1ubuntu8.16"
     },
     {
       "NodeType": "HeaderNode",
@@ -38,7 +38,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Node.js",
-              "Version": "24.16.0"
+              "Version": "24.17.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.14.0"
+              "Version": "1.14.1"
             }
           ]
         },
@@ -90,7 +90,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Bicep",
-              "Version": "0.43.8"
+              "Version": "0.44.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -105,7 +105,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Client",
-              "Version": "29.5.3"
+              "Version": "29.6.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -135,7 +135,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "OpenSSL",
-              "Version": "3.0.13-0ubuntu3.9"
+              "Version": "3.0.13-0ubuntu3.11"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,17 +156,17 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.34.63"
+              "Version": "2.35.9"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI Session Manager Plugin",
-              "Version": "1.2.814.0"
+              "Version": "1.2.835.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS SAM CLI",
-              "Version": "1.161.1"
+              "Version": "1.162.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -181,12 +181,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.93.0"
+              "Version": "2.95.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "571.0.0"
+              "Version": "573.0.0"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "Children": {
             "NodeType": "ToolVersionNode",
             "ToolName": "PowerShell",
-            "Version": "7.5.7"
+            "Version": "7.5.8"
           }
         },
         {
@@ -213,7 +213,7 @@
               "bc|1.07.1-3ubuntu4",
               "binutils|2.42-4ubuntu2.10",
               "bzip2|1.0.8-5.1build0.1",
-              "ca-certificates|20240203",
+              "ca-certificates|20260601\\~24.04.1",
               "coreutils|9.4-3ubuntu6.2",
               "curl|8.5.0-2ubuntu10.9",
               "dbus|1.14.10-4ubuntu4.1",
@@ -235,7 +235,7 @@
               "jq|1.7.1-3ubuntu0.24.04.2",
               "libnss3-tools|2:3.98-1ubuntu0.1",
               "libsqlite3-dev|3.45.1-1ubuntu2.5",
-              "libssl-dev|3.0.13-0ubuntu3.9",
+              "libssl-dev|3.0.13-0ubuntu3.11",
               "libtool|2.4.7-7build1",
               "libyaml-dev|0.2.5-1build1",
               "locales|2.39-0ubuntu8.7",
@@ -255,15 +255,15 @@
               "pollinate|4.33-3.1ubuntu1.3",
               "python-is-python3|3.11.4-1",
               "rpm|4.18.2+dfsg-2.1build2",
-              "rsync|3.2.7-1ubuntu1.4",
+              "rsync|3.2.7-1ubuntu1.5",
               "shellcheck|0.9.0-1",
               "sqlite3|3.45.1-1ubuntu2.5",
               "ssh|1:9.6p1-3ubuntu13.16",
               "sshpass|1.09-1",
               "sudo|1.9.15p5-3ubuntu5.24.04.2",
-              "systemd-coredump|255.4-1ubuntu8.15",
+              "systemd-coredump|255.4-1ubuntu8.16",
               "tar|1.35+dfsg-3build1",
-              "telnet|0.17+2.5-3ubuntu4.1",
+              "telnet|0.17+2.5-3ubuntu4.2",
               "texinfo|7.1-3build2",
               "time|1.9-0.2build1",
               "tk|8.6.14build1",
@@ -272,7 +272,7 @@
               "unzip|6.0-28ubuntu4.1",
               "upx|4.2.2-3",
               "wget|1.21.4-1ubuntu4.1",
-              "xvfb|2:21.1.12-1ubuntu1.5",
+              "xvfb|2:21.1.12-1ubuntu1.6",
               "xz-utils|5.6.1+really5.4.5-1ubuntu0.3",
               "zip|3.0-13ubuntu0.2",
               "zsync|0.6.2-5build1"

@@ -14,17 +14,6 @@ build {
   }
 
   provisioner "shell" {
-    inline = [
-      "echo 'Create swap file with 4GB'",
-      "sudo fallocate -l 4G /swapfile",
-      "sudo chmod 600 /swapfile",
-      "sudo mkswap /swapfile",
-      "sudo swapon /swapfile",
-      "free -h"
-    ]
-  }
-
-  provisioner "shell" {
     execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     inline          = ["mkdir ${var.image_folder}", "chmod 777 ${var.image_folder}"]
   }
@@ -256,14 +245,6 @@ build {
     environment_vars = ["HELPER_SCRIPTS=${var.helper_script_folder}"]
     execute_command  = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     scripts          = ["${path.root}/../scripts/build/post-build-validation.sh"]
-  }
-
-  provisioner "shell" {
-    inline = [
-      "sudo swapoff /swapfile || true",
-      "sudo rm -f /swapfile",
-      "free -h"
-    ]
   }
 
   provisioner "shell" {

@@ -14,17 +14,6 @@ build {
   }
 
   provisioner "shell" {
-    inline = [
-      "echo 'Create swap file with 4GB'",
-      "sudo fallocate -l 4G /swapfile",
-      "sudo chmod 600 /swapfile",
-      "sudo mkswap /swapfile",
-      "sudo swapon /swapfile",
-      "free -h"
-    ]
-  }
-
-  provisioner "shell" {
     execute_command = "sudo sh -c '{{ .Vars }} {{ .Path }}'"
     inline          = ["mkdir ${var.image_folder}", "chmod 777 ${var.image_folder}"]
   }

@@ -19,7 +19,7 @@ name: Ubuntu - Build template for Ubuntu 22.04
           - cx33
           - cpx32
           - ccx13
-        default: "cx33"
+        default: "cpx32"
 
 
 env:

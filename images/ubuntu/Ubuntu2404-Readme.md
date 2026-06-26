@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-90-generic
-- Image Version: 20260620.0142.1
+- Kernel Version: 6.8.0-117-generic
+- Image Version: 20260626.0143.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -16,7 +16,7 @@
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
 - Julia 1.12.6
 - Kotlin 2.4.0-release-281
-- Node.js 22.23.0
+- Node.js 22.23.1
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
@@ -24,15 +24,15 @@
 
 ### Package Management
 - cpan 1.64
-- Helm 3.21.1
-- Homebrew 6.0.2
+- Helm 3.21.2
+- Homebrew 6.0.5
 - Miniconda 26.3.2
 - Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.14.1
+- Pipx 1.15.0
 - RubyGems 3.4.20
-- Vcpkg (build from commit a0b1c8d3a4)
+- Vcpkg (build from commit ba9f458e20)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,7 +51,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.6.0
+- Gradle 9.6.1
 - Lerna 9.0.7
 - Maven 3.9.16
 
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.15.4
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.247.0
+- Pulumi 3.248.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.35.9
+- AWS CLI 2.35.11
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.162.1
 - Azure CLI 2.87.0
-- Azure CLI (azure-devops) 1.0.4
+- Azure CLI (azure-devops) 1.0.5
 - GitHub CLI 2.95.0
-- Google Cloud CLI 573.0.0
+- Google Cloud CLI 574.0.0
 
 ### Java
 | Version              | Environment Variable |
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 149.0.7827.155
+- Google Chrome 149.0.7827.200
 - ChromeDriver 149.0.7827.155
 - Chromium 149.0.7827.0
-- Microsoft Edge 149.0.4022.80
-- Microsoft Edge WebDriver 149.0.4022.80
+- Microsoft Edge 149.0.4022.98
+- Microsoft Edge WebDriver 149.0.4022.96
 - Selenium server 4.45.0
-- Mozilla Firefox 152.0
+- Mozilla Firefox 152.0.3
 - Geckodriver 0.37.0
 
 #### Environment variables
@@ -171,7 +171,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 ```
 
 #### MySQL
-- MySQL 8.0.46-0ubuntu0.24.04.2
+- MySQL 8.0.46-0ubuntu0.24.04.3
 ```
 User: root
 Password: root
@@ -182,14 +182,13 @@ Use the following command as a part of your job to start the service: 'sudo syst
 ### Cached Tools
 
 #### Go
-- 1.22.12
-- 1.23.12
 - 1.24.13
 - 1.25.11
+- 1.26.4
 
 #### Node.js
-- 22.23.0
-- 24.17.0
+- 22.23.1
+- 24.18.0
 
 #### Python
 - 3.10.20
@@ -277,6 +276,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | iproute2               | 6.1.0-1ubuntu6.3             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
+| libicu-dev             | 74.2-1ubuntu3.1              |
 | libnss3-tools          | 2:3.98-1ubuntu0.1            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.5            |
 | libssl-dev             | 3.0.13-0ubuntu3.11           |
@@ -309,7 +309,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | swig                   | 4.2.0-2ubuntu1               |
 | systemd-coredump       | 255.4-1ubuntu8.16            |
-| tar                    | 1.35+dfsg-3build1            |
+| tar                    | 1.35+dfsg-3ubuntu0.1         |
 | telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |
 | time                   | 1.9-0.2build1                |

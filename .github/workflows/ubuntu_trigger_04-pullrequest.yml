@@ -7,9 +7,6 @@ name: Ubuntu - Trigger Pull Request
       gh_branch_name:
         required: true
         type: string
-      gh_tag:
-        required: true
-        type: string
       gh_pr_title:
         required: true
         type: string

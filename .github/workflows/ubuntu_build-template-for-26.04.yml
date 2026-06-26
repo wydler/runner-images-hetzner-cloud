@@ -127,7 +127,6 @@ jobs:
     uses: ./.github/workflows/ubuntu_trigger_04-pullrequest.yml
     with:
       gh_branch_name: ${{ needs.Trigger-CollectInformations.outputs.gh_branch_name }}
-      gh_tag: ${{ needs.Trigger-CollectInformations.outputs.gh_tag }}
       gh_pr_title: ${{ needs.Trigger-CollectInformations.outputs.gh_pr_title }}
       gh_pr_body: ${{ needs.Trigger-SoftwareReport.outputs.app_swrp_difference_body }}
       gh_pr_commit_message: ${{ needs.Trigger-CollectInformations.outputs.gh_pr_commit_message }}

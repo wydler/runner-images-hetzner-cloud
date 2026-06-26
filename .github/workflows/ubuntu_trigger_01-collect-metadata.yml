@@ -191,7 +191,7 @@ jobs:
       loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
 
       loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
-      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}"
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_pr_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"

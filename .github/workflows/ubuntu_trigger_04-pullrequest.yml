@@ -74,8 +74,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ steps.generate-token.outputs.token }}
           PULL_REQUEST: ${{ steps.pullrequest.outputs.pr_number }}
-          MERGE_LABELS: ${{ inputs.gh_tag }}
-          UPDATE_LABELS: ${{ inputs.gh_tag }}
+          MERGE_LABELS: ${{ inputs.gh_pr_labels }}
+          UPDATE_LABELS: ${{ inputs.gh_pr_labels }}
           MERGE_COMMIT_MESSAGE: "${{ inputs.gh_pr_commit_message }} (#${{ steps.pullrequest.outputs.pr_number }})"
           # Updating readme file for macos-15-arm64 version 20260527.0100.1 (#14171)
           MERGE_METHOD: "squash"

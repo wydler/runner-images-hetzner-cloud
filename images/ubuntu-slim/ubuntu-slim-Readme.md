@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260626.0006.1
+- Image Version: 20260703.0007.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -21,7 +21,7 @@
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.44.1
-- Docker Compose 5.2.0
+- Docker Compose 5.3.0
 - Docker-Buildx 0.35.0
 - Docker Client 29.6.1
 - Git 2.54.0
@@ -34,13 +34,13 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.35.11
+- AWS CLI 2.35.15
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.162.1
+- AWS SAM CLI 1.163.0
 - Azure CLI 2.87.0
 - Azure CLI (azure-devops) 1.0.5
-- GitHub CLI 2.95.0
-- Google Cloud CLI 574.0.0
+- GitHub CLI 2.96.0
+- Google Cloud CLI 575.0.0
 
 ### PowerShell Tools
 - PowerShell 7.5.8
@@ -57,7 +57,7 @@
 | bzip2                  | 1.0.8-5.1build0.1            |
 | ca-certificates        | 20260601\~24.04.1            |
 | coreutils              | 9.4-3ubuntu6.2               |
-| curl                   | 8.5.0-2ubuntu10.9            |
+| curl                   | 8.5.0-2ubuntu10.10           |
 | dbus                   | 1.14.10-4ubuntu4.1           |
 | dnsutils               | 1:9.18.39-0ubuntu0.24.04.5   |
 | dpkg                   | 1.22.6ubuntu6.6              |
@@ -72,11 +72,11 @@
 | gcc                    | 4:13.2.0-7ubuntu1            |
 | gnupg2                 | 2.4.4-2ubuntu17.4            |
 | haveged                | 1.9.14-1ubuntu2              |
-| iproute2               | 6.1.0-1ubuntu6.3             |
+| iproute2               | 6.1.0-1ubuntu6.4             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
-| libnss3-tools          | 2:3.98-1ubuntu0.1            |
-| libsqlite3-dev         | 3.45.1-1ubuntu2.5            |
+| libnss3-tools          | 2:3.98-1ubuntu0.2            |
+| libsqlite3-dev         | 3.45.1-1ubuntu2.6            |
 | libssl-dev             | 3.0.13-0ubuntu3.11           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
@@ -99,7 +99,7 @@
 | rpm                    | 4.18.2+dfsg-2.1build2        |
 | rsync                  | 3.2.7-1ubuntu1.5             |
 | shellcheck             | 0.9.0-1                      |
-| sqlite3                | 3.45.1-1ubuntu2.5            |
+| sqlite3                | 3.45.1-1ubuntu2.6            |
 | ssh                    | 1:9.6p1-3ubuntu13.16         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |

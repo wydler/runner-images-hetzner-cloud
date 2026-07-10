@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260703.0007.1
+- Image Version: 20260710.0008.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -21,7 +21,7 @@
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.44.1
-- Docker Compose 5.3.0
+- Docker Compose 5.3.1
 - Docker-Buildx 0.35.0
 - Docker Client 29.6.1
 - Git 2.54.0
@@ -34,13 +34,13 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.35.15
+- AWS CLI 2.35.20
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.163.0
-- Azure CLI 2.87.0
-- Azure CLI (azure-devops) 1.0.5
+- Azure CLI 2.88.0
+- Azure CLI (azure-devops) 1.0.6
 - GitHub CLI 2.96.0
-- Google Cloud CLI 575.0.0
+- Google Cloud CLI 575.0.1
 
 ### PowerShell Tools
 - PowerShell 7.5.8
@@ -57,7 +57,7 @@
 | bzip2                  | 1.0.8-5.1build0.1            |
 | ca-certificates        | 20260601\~24.04.1            |
 | coreutils              | 9.4-3ubuntu6.2               |
-| curl                   | 8.5.0-2ubuntu10.10           |
+| curl                   | 8.5.0-2ubuntu10.11           |
 | dbus                   | 1.14.10-4ubuntu4.1           |
 | dnsutils               | 1:9.18.39-0ubuntu0.24.04.5   |
 | dpkg                   | 1.22.6ubuntu6.6              |
@@ -104,13 +104,13 @@
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | systemd-coredump       | 255.4-1ubuntu8.16            |
-| tar                    | 1.35+dfsg-3ubuntu0.1         |
+| tar                    | 1.35+dfsg-3ubuntu0.2         |
 | telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |
 | time                   | 1.9-0.2build1                |
 | tk                     | 8.6.14build1                 |
 | tree                   | 2.1.1-2ubuntu3.24.04.2       |
-| tzdata                 | 2026a-0ubuntu0.24.04.1       |
+| tzdata                 | 2026b-0ubuntu0.24.04.1       |
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.1            |

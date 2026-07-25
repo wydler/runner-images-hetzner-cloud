@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260721.0009.1
+- Image Version: 20260725.0010.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -16,7 +16,7 @@
 - Npm 11.16.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.1
+- Pipx 1.16.2
 
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
@@ -34,16 +34,16 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.4
+- AWS CLI 2.36.8
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.163.0
+- AWS SAM CLI 1.164.0
 - Azure CLI 2.88.0
 - Azure CLI (azure-devops) 1.0.6
 - GitHub CLI 2.96.0
-- Google Cloud CLI 576.0.0
+- Google Cloud CLI 577.0.0
 
 ### PowerShell Tools
-- PowerShell 7.5.8
+- PowerShell 7.5.9
 
 ### Installed apt packages
 | Name                   | Version                      |
@@ -104,7 +104,7 @@
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | systemd-coredump       | 255.4-1ubuntu8.16            |
-| tar                    | 1.35+dfsg-3ubuntu0.3         |
+| tar                    | 1.35+dfsg-3ubuntu0.4         |
 | telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |
 | time                   | 1.9-0.2build1                |

@@ -10,7 +10,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260721.0009.1"
+      "Version": "20260725.0010.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.16.1"
+              "Version": "1.16.2"
             }
           ]
         },
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.36.4"
+              "Version": "2.36.8"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -166,7 +166,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS SAM CLI",
-              "Version": "1.163.0"
+              "Version": "1.164.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -186,7 +186,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "576.0.0"
+              "Version": "577.0.0"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "Children": {
             "NodeType": "ToolVersionNode",
             "ToolName": "PowerShell",
-            "Version": "7.5.8"
+            "Version": "7.5.9"
           }
         },
         {
@@ -262,7 +262,7 @@
               "sshpass|1.09-1",
               "sudo|1.9.15p5-3ubuntu5.24.04.2",
               "systemd-coredump|255.4-1ubuntu8.16",
-              "tar|1.35+dfsg-3ubuntu0.3",
+              "tar|1.35+dfsg-3ubuntu0.4",
               "telnet|0.17+2.5-3ubuntu4.2",
               "texinfo|7.1-3build2",
               "time|1.9-0.2build1",

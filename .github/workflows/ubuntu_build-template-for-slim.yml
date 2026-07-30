@@ -107,6 +107,8 @@ jobs:
       gh_app_rihc_pk: ${{ secrets.GH_APP_RIHC_PRIVATE_KEY }}
       container_registry_username: ${{ secrets.DOCKERHUB_USERNAME }}
       container_registry_password: ${{ secrets.DOCKERHUB_TOKEN }}
+      cosign_private_key: ${{ secrets.cosign_private_key }}
+      cosign_password: ${{ secrets.cosign_password }}
 
 
   Trigger-SoftwareReport:

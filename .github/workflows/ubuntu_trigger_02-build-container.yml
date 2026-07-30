@@ -151,8 +151,12 @@ jobs:
 
       - name: Verify image signature
         if: steps.sign.outcome == 'success'      
-        run: |
-          cosign verify ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }} --key cosign.pub -o text        
+        run: |        
+          cosign verify \
+            --key cosign.pub \
+            --output text \
+            ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}
+
         env:
           COSIGN_EXPERIMENTAL: "${{ inputs.cosign_experimental }}"
 

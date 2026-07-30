@@ -145,7 +145,7 @@ If the signature is valid, Cosign outputs the following message:
  >  - The cosign claims were validated
  >  - Existence of the claims in the transparency log was verified offline
  >  - The signatures were verified against the specified public key
- 
+
 ## FAQs
 
 <details>

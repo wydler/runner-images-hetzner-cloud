@@ -142,9 +142,9 @@ Hint: The first line finds the date of the latest release on GitHub. If you want
 If the signature is valid, Cosign outputs the following message:
 > Verification for index.docker.io/wydler/runner-images-hetzner-cloud:20260725.0010.1 --
 > The following checks were performed on each of these signatures:
->  - The cosign claims were validated
->  - Existence of the claims in the transparency log was verified offline
->  - The signatures were verified against the specified public key
+> - The cosign claims were validated
+> - Existence of the claims in the transparency log was verified offline
+> - The signatures were verified against the specified public key
 
 ## FAQs
 

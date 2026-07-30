@@ -34,6 +34,9 @@ name: Ubuntu - Trigger build Container Image
       container_platform:
         required: true
         type: string
+      cosign_experimental:
+        required: true
+        type: string
     secrets:
       gh_app_rihc_id:
         required: true
@@ -42,6 +45,10 @@ name: Ubuntu - Trigger build Container Image
       container_registry_username:
         required: true
       container_registry_password:
+        required: true
+      cosign_private_key:
+         required: true
+      cosign_password:
         required: true
 
 
@@ -102,6 +109,7 @@ jobs:
 
       - name: Build and push
         uses: docker/build-push-action@53b7df96c91f9c12dcc8a07bcb9ccacbed38856a  # v7.3.0
+        id: build
         with:
           context: ./${{ inputs.app_working_dir }}/
           file: ./${{ inputs.app_working_dir }}/Dockerfile
@@ -123,6 +131,26 @@ jobs:
           bash test.sh "$docker_tag"
         env:
           docker_tag: "${{ inputs.container_repo_tag }}"
+
+      - name: Install Cosign
+        uses: sigstore/cosign-installer@faadad0cce49287aee09b3a48701e75088a2c6ad # v4.0.0
+        
+      - name: Sign docker image with a key
+        if: steps.build.outcome == 'success'
+        id: sign
+        run: |
+          cosign sign --verbose --new-bundle-format=false --use-signing-config=false --yes --key env://COSIGN_PRIVATE_KEY ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }}
+
+        env:
+          COSIGN_PRIVATE_KEY: ${{ secrets.cosign_private_key }}
+          COSIGN_PASSWORD: ${{ secrets.cosign_password }}
+
+      - name: Verify image signature
+        if: steps.sign.outcome == 'success'      
+        run: |
+          cosign verify ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }} --key cosign.pub -o text        
+        env:
+          COSIGN_EXPERIMENTAL: "${{ inputs.cosign_experimental }}"
 
       - name: Generating software report
         shell: bash

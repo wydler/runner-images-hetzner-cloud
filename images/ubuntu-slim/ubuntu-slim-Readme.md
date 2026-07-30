@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260725.0010.1
+- Image Version: 20260730.0011.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -8,7 +8,7 @@
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.18.0
+- Node.js 24.18.1
 - Perl 5.38.2
 - Python 3.12.3
 
@@ -16,31 +16,31 @@
 - Npm 11.16.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.2
+- Pipx 1.16.5
 
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.45.15
 - Docker Compose 5.3.1
-- Docker-Buildx 0.35.0
+- Docker-Buildx 0.36.0
 - Docker Client 29.6.2
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
 - jq 1.7
 - nvm 0.40.6
-- OpenSSL 3.0.13-0ubuntu3.11
+- OpenSSL 3.0.13-0ubuntu3.12
 - yq 4.53.3
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.8
+- AWS CLI 2.36.11
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.164.0
 - Azure CLI 2.88.0
 - Azure CLI (azure-devops) 1.0.6
 - GitHub CLI 2.96.0
-- Google Cloud CLI 577.0.0
+- Google Cloud CLI 578.0.0
 
 ### PowerShell Tools
 - PowerShell 7.5.9
@@ -77,10 +77,10 @@
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.2            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.7            |
-| libssl-dev             | 3.0.13-0ubuntu3.11           |
+| libssl-dev             | 3.0.13-0ubuntu3.12           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
-| locales                | 2.39-0ubuntu8.7              |
+| locales                | 2.39-0ubuntu8.8              |
 | lz4                    | 1.9.4-1build1.1              |
 | lzma                   | 9.22-2.2                     |
 | make                   | 4.3-4.1build2                |
@@ -110,7 +110,7 @@
 | time                   | 1.9-0.2build1                |
 | tk                     | 8.6.14build1                 |
 | tree                   | 2.1.1-2ubuntu3.24.04.2       |
-| tzdata                 | 2026b-0ubuntu0.24.04.1       |
+| tzdata                 | 2026c-0ubuntu0.24.04.1       |
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.4            |

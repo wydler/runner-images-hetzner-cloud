@@ -8,6 +8,7 @@
 - [Image Releases](#image-releases)
 - [Software and Image Support](#software-and-image-support)
 - [How to Interact with the Repo](#how-to-interact-with-the-repo)
+- [How to image verification with Cosign](#cosign)
 - [FAQs](#faqs)
 
 ## About

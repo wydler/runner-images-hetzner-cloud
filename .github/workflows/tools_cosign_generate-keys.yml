@@ -1,5 +1,5 @@
 ---
-name: Cosign - Generate Key pair
+name: "Tools - Generate Cosign key pair"
 
 "on":      
    workflow_dispatch:

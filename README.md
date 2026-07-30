@@ -121,7 +121,7 @@ In general, these are the guidelines we follow when deciding what to pre-install
 Cosign is a command-line tool from the Sigstore project used to sign and verify software artifacts such as container images. It enables the digital signing of artifacts to guarantee their origin and integrity. Signed artifacts can be stored in the registry, and verification is possible using public-key/private-key cryptography.
 
 ### Installation with dpkg package
-```
+```bash
 LATEST_VERSION=$(curl https://api.github.com/repos/sigstore/cosign/releases/latest | grep tag_name | cut -d : -f2 | tr -d "v\", ")
 curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign_${LATEST_VERSION}_amd64.deb"
 sudo dpkg -i cosign_${LATEST_VERSION}_amd64.deb
@@ -130,7 +130,7 @@ sudo dpkg -i cosign_${LATEST_VERSION}_amd64.deb
 
 ### Verifying Signature
 Verify with an on-disk public key provided by the signer:
-```
+```bash
 DOCKER_IMAGE_VERSION=$(curl https://api.github.com/repos/wydler/runner-images-hetzner-cloud/releases/latest | grep tag_name | cut -d : -f2 | tr -d "v\", ")
 curl -O -L https://raw.githubusercontent.com/wydler/runner-images-hetzner-cloud/refs/tags/${DOCKER_IMAGE_VERSION}/cosign.pub
 RESULT=$(cosign verify --key cosign.pub wydler/runner-images-hetzner-cloud:${DOCKER_IMAGE_VERSION})

@@ -139,7 +139,11 @@ jobs:
         if: steps.build.outcome == 'success'
         id: sign
         run: |
-          cosign sign --verbose --new-bundle-format=false --use-signing-config=false --yes --key env://COSIGN_PRIVATE_KEY ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }}
+          cosign sign \
+            --new-bundle-format=true \
+            --use-signing-config=false \
+            --yes \
+            --key env://COSIGN_PRIVATE_KEY ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}
 
         env:
           COSIGN_PRIVATE_KEY: ${{ secrets.cosign_private_key }}

@@ -126,7 +126,7 @@ LATEST_VERSION=$(curl https://api.github.com/repos/sigstore/cosign/releases/late
 curl -O -L "https://github.com/sigstore/cosign/releases/latest/download/cosign_${LATEST_VERSION}_amd64.deb"
 sudo dpkg -i cosign_${LATEST_VERSION}_amd64.deb
 ```
-Source: https://docs.sigstore.dev/cosign/system_config/installation/#with-the-cosign-binary-or-rpmdpkg-package
+[Source](https://docs.sigstore.dev/cosign/system_config/installation/#with-the-cosign-binary-or-rpmdpkg-package)
 
 ### Verifying Signature
 Verify with an on-disk public key provided by the signer:

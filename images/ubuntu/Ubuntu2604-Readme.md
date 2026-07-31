@@ -1,7 +1,7 @@
 # Ubuntu 26.04 LTS
 - OS Version: 26.04 LTS
 - Kernel Version: 7.0.0-15-generic
-- Image Version: 20260725.0013.1
+- Image Version: 20260731.0015.1
 - Systemd version: 259.5-0ubuntu3
 
 ## Installed Software
@@ -15,7 +15,7 @@
 - GNU C++: 13.4.0, 14.3.0, 15.2.0
 - GNU Fortran: 13.4.0, 14.3.0, 15.2.0
 - Kotlin 2.4.10-release-377
-- Node.js 24.18.0
+- Node.js 24.18.1
 - Perl 5.40.1
 - Python 3.14.4
 - Ruby 3.3.8
@@ -23,13 +23,13 @@
 ### Package Management
 - cpan 1.64
 - Helm 4.2.3
-- Homebrew 6.0.12
+- Homebrew 6.0.14
 - Npm 11.16.0
 - Pip 25.1.1
 - Pip3 25.1.1
-- Pipx 1.16.2
+- Pipx 1.16.5
 - RubyGems 3.6.7
-- Vcpkg (build from commit 40f3c709db)
+- Vcpkg (build from commit bf144d19bb)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -56,13 +56,13 @@ to accomplish this.
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.2.0
 - Bazelisk 1.28.1
-- Bicep 0.45.15
+- Bicep 0.46.1
 - Buildah 1.42.1
-- CMake 4.4.0
-- CodeQL Action Bundle 2.26.1
+- CMake 4.4.2
+- CodeQL Action Bundle 2.26.2
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 5.1.3
-- Docker-Buildx 0.35.0
+- Docker-Buildx 0.36.0
 - Docker Client 29.4.2
 - Docker Server 29.4.2
 - Git 2.54.0
@@ -85,13 +85,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.36.8
+- AWS CLI 2.36.14
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.164.0
+- AWS SAM CLI 1.165.0
 - Azure CLI 2.88.0
 - Azure CLI (azure-devops) 1.0.6
-- GitHub CLI 2.96.0
-- Google Cloud CLI 577.0.0
+- GitHub CLI 2.97.0
+- Google Cloud CLI 578.0.0
 
 ### Java
 | Version            | Environment Variable |
@@ -99,7 +99,7 @@ to accomplish this.
 | 11.0.32+9          | JAVA_HOME_11_X64     |
 | 17.0.20+8          | JAVA_HOME_17_X64     |
 | 21.0.12+8          | JAVA_HOME_21_X64     |
-| 25.0.3+9 (default) | JAVA_HOME_25_X64     |
+| 25.0.4+7 (default) | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.5.4
@@ -125,13 +125,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 150.0.7871.186
-- ChromeDriver 150.0.7871.124
-- Chromium 150.0.7871.0
-- Microsoft Edge 150.0.4078.99
-- Microsoft Edge WebDriver 150.0.4078.96
+- Google Chrome 151.0.7922.71
+- ChromeDriver 151.0.7922.71
+- Chromium 151.0.7922.0
+- Microsoft Edge 151.0.4129.59
+- Microsoft Edge WebDriver 151.0.4129.59
 - Selenium server 4.46.0
-- Mozilla Firefox 153.0
+- Mozilla Firefox 153.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -186,7 +186,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Android Command Line Tools | 20.0                                                                                                                                                                                                                                                                                                                                                                                                |
 | Android SDK Build-tools    | 37.0.0<br>36.0.0 36.1.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                                                                                                                  |
-| Android SDK Platform-Tools | 37.0.0                                                                                                                                                                                                                                                                                                                                                                                              |
+| Android SDK Platform-Tools | 37.0.1                                                                                                                                                                                                                                                                                                                                                                                              |
 | Android SDK Platforms      | android-37.2-beta1 (rev 1)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
 | Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                                                                                                                              |
 | CMake                      | 3.31.5<br>4.1.2                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -241,7 +241,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libssl-dev             | 3.5.5-1ubuntu3.2             |
 | libtool                | 2.5.4-9                      |
 | libyaml-dev            | 0.2.5-2build3                |
-| locales                | 2.43-2ubuntu2                |
+| locales                | 2.43-2ubuntu2.3              |
 | lz4                    | 1.10.0-8                     |
 | m4                     | 1.4.21-1                     |
 | make                   | 4.4.1-3                      |
@@ -269,7 +269,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | time                   | 1.9-0.4                      |
 | tk                     | 8.6.16build1                 |
 | tree                   | 2.3.1-1                      |
-| tzdata                 | 2026b-0ubuntu0.26.04.1       |
+| tzdata                 | 2026c-0ubuntu0.26.04.1       |
 | unzip                  | 6.0-29ubuntu1                |
 | upx                    | 4.2.4-1.1build1              |
 | wget                   | 1.25.0-2ubuntu4.3            |

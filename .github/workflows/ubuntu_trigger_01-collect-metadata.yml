@@ -188,7 +188,7 @@ jobs:
 
     outputs:
       loc_gh_branch_name: "releases/${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
-      loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
       loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}"

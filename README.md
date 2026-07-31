@@ -149,7 +149,8 @@ MANIFEST_SHA=$(curl -fsS \
     ')
 
 RESULT=$(cosign verify --key cosign.pub docker.io/${REPOSITORY}:${TAG#*/}@${MANIFEST_SHA})
-# echo $RESULT | jq .
+echo $RESULT | jq .
+
 rm cosign.pub
 ```
 Hint: The first line finds the date of the latest release on GitHub. If you want to check an older version, statically assign the desired version number to the variable `DOCKER_IMAGE_VERSION` (e.g., `DOCKER_IMAGE_VERSION=20260725.0010.1`).

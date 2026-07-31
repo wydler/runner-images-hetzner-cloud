@@ -180,6 +180,11 @@ jobs:
           echo "ERROR: Signature could not be verified after 60 seconds."
           exit 1
 
+      - name: Show Cosign artifact tree
+        shell: bash
+        run: |
+          cosign tree ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }}
+
       - name: Generating software report
         shell: bash
         run: |

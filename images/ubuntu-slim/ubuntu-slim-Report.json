@@ -10,7 +10,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260730.0011.1"
+      "Version": "20260731.0021.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -90,7 +90,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Bicep",
-              "Version": "0.45.15"
+              "Version": "0.46.1"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -105,7 +105,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Client",
-              "Version": "29.6.2"
+              "Version": "29.7.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.36.11"
+              "Version": "2.36.13"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -181,7 +181,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.96.0"
+              "Version": "2.97.0"
             },
             {
               "NodeType": "ToolVersionNode",

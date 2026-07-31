@@ -148,7 +148,7 @@ MANIFEST_SHA=$(curl -fsS \
       | .digest
     ')
 
-RESULT=$(cosign verify --key cosign.pub wydler/runner-images-hetzner-cloud:${DOCKER_IMAGE_VERSION})
+RESULT=$(cosign verify --key cosign.pub docker.io/${REPOSITORY}:${TAG#*/}@${MANIFEST_SHA})
 # echo $RESULT | jq .
 rm cosign.pub
 ```

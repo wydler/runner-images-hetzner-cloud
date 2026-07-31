@@ -34,9 +34,6 @@ name: Ubuntu - Trigger build Container Image
       container_platform:
         required: true
         type: string
-      cosign_experimental:
-        required: true
-        type: string
     secrets:
       gh_app_rihc_id:
         required: true

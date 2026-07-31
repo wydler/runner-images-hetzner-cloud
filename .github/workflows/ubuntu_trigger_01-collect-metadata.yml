@@ -187,7 +187,7 @@ jobs:
           echo "version_short=${current_date}" >> "$GITHUB_OUTPUT"
 
     outputs:
-      loc_gh_branch_name: "releases/${{ inputs.os }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_branch_name: "releases/${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
       loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"

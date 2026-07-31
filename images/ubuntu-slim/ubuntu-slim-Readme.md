@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260730.0011.1
+- Image Version: 20260731.0021.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -20,10 +20,10 @@
 
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
-- Bicep 0.45.15
+- Bicep 0.46.1
 - Docker Compose 5.3.1
 - Docker-Buildx 0.36.0
-- Docker Client 29.6.2
+- Docker Client 29.7.0
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
@@ -34,12 +34,12 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.11
+- AWS CLI 2.36.13
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.164.0
 - Azure CLI 2.88.0
 - Azure CLI (azure-devops) 1.0.6
-- GitHub CLI 2.96.0
+- GitHub CLI 2.97.0
 - Google Cloud CLI 578.0.0
 
 ### PowerShell Tools

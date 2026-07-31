@@ -151,7 +151,11 @@ jobs:
 
       - name: Verify image signature
         if: steps.sign.outcome == 'success'      
-        run: |        
+        run: |
+          sleep 60
+
+          cosign tree ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}
+
           cosign verify \
             --key cosign.pub \
             --output text \

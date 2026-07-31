@@ -135,6 +135,9 @@ REPOSITORY=wydler/runner-images-hetzner-cloud
 
 TAG=$(curl -fsS https://api.github.com/repos/${REPOSITORY}/releases | grep '"tag_name"' | cut -d'"' -f4 | grep '^ubuntu-slim' | head -n1)
 curl -O -L https://raw.githubusercontent.com/${REPOSITORY}/refs/tags/${TAG}/cosign.pub
+
+DOCKER_TOKEN=$(curl -fsS "https://auth.docker.io/token?service=registry.docker.io&scope=repository:${REPOSITORY}:pull" | jq -r '.token')
+
 RESULT=$(cosign verify --key cosign.pub wydler/runner-images-hetzner-cloud:${DOCKER_IMAGE_VERSION})
 # echo $RESULT | jq .
 rm cosign.pub

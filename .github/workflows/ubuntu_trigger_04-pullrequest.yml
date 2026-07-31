@@ -65,6 +65,7 @@ jobs:
           body: ${{ inputs.gh_pr_body }}
           label: ${{ inputs.gh_pr_labels }}
           assignee: dwydler
+          create_missing_labels: true          
 
       - name: Merge the pull request
         uses: pascalgn/automerge-action@7961b8b5eec56cc088c140b56d864285eabd3f67  # v0.16.4

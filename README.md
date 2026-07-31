@@ -138,6 +138,16 @@ curl -O -L https://raw.githubusercontent.com/${REPOSITORY}/refs/tags/${TAG}/cosi
 
 DOCKER_TOKEN=$(curl -fsS "https://auth.docker.io/token?service=registry.docker.io&scope=repository:${REPOSITORY}:pull" | jq -r '.token')
 
+MANIFEST_SHA=$(curl -fsS \
+  -H "Authorization: Bearer ${DOCKER_TOKEN}" \
+  -H "Accept: application/vnd.oci.image.index.v1+json" \
+  "https://registry-1.docker.io/v2/${REPOSITORY}/manifests/${TAG#*/}" \
+  | jq -r '
+      .manifests[]
+      | select(.platform.os=="linux" and .platform.architecture=="amd64")
+      | .digest
+    ')
+
 RESULT=$(cosign verify --key cosign.pub wydler/runner-images-hetzner-cloud:${DOCKER_IMAGE_VERSION})
 # echo $RESULT | jq .
 rm cosign.pub

@@ -154,11 +154,31 @@ jobs:
           COSIGN_PASSWORD: ${{ secrets.cosign_password }}
 
       - name: Verify image signature
-        if: steps.sign.outcome == 'success'      
+        if: steps.sign.outcome == 'success'
+        shell: bash
         run: |
-          cosign verify ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }} --key cosign.pub -o text        
-        env:
-          COSIGN_EXPERIMENTAL: "${{ inputs.cosign_experimental }}"
+          set -euo pipefail
+
+          IMAGE="${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}@${{ steps.build.outputs.digest }}"
+
+          for i in {1..12}; do
+            echo "Verification attempt ${i}/12..."
+
+            if cosign verify \
+                --key cosign.pub \
+                --output text \
+                "${IMAGE}"; then
+              echo "Signature verified."
+
+              exit 0
+            fi
+
+            echo "Signature not yet available. Waiting 5 seconds..."
+            sleep 5
+          done
+
+          echo "ERROR: Signature could not be verified after 60 seconds."
+          exit 1
 
       - name: Generating software report
         shell: bash

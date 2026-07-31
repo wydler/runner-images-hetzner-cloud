@@ -139,6 +139,9 @@ jobs:
         if: steps.build.outcome == 'success'
         id: sign
         run: |
+          cosign version
+          which cosign
+                  
           cosign sign \
             --new-bundle-format=true \
             --use-signing-config=false \
@@ -153,6 +156,9 @@ jobs:
         if: steps.sign.outcome == 'success'      
         run: |
           sleep 60
+
+          cosign version
+          which cosign
 
           cosign tree ${{ inputs.container_registry_name }}/${{ inputs.container_repo_tag }}
 

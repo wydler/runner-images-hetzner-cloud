@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-117-generic
-- Image Version: 20260726.0148.1
+- Kernel Version: 6.8.0-101-generic
+- Image Version: 20260801.0149.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -16,7 +16,7 @@
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
 - Julia 1.12.6
 - Kotlin 2.4.10-release-377
-- Node.js 22.23.1
+- Node.js 22.23.2
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.21.3
-- Homebrew 6.0.12
+- Homebrew 6.0.14
 - Miniconda 26.5.3
 - Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.2
+- Pipx 1.16.5
 - RubyGems 3.4.20
-- Vcpkg (build from commit 40f3c709db)
+- Vcpkg (build from commit 39344dff01)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -52,7 +52,7 @@ to accomplish this.
 ### Project Management
 - Ant 1.10.14
 - Gradle 9.6.1
-- Lerna 9.0.7
+- Lerna 10.0.0
 - Maven 3.9.16
 
 ### Tools
@@ -60,13 +60,13 @@ to accomplish this.
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.2.0
 - Bazelisk 1.28.1
-- Bicep 0.45.15
+- Bicep 0.46.1
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.26.1
+- CodeQL Action Bundle 2.26.2
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.35.0
+- Docker-Buildx 0.36.0
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.237.0
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.16.0
 - Parcel 2.16.4
 - Podman 5.8.4
-- Pulumi 3.254.0
+- Pulumi 3.255.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,22 +97,22 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.36.8
+- AWS CLI 2.36.14
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.164.0
+- AWS SAM CLI 1.165.0
 - Azure CLI 2.88.0
 - Azure CLI (azure-devops) 1.0.6
-- GitHub CLI 2.96.0
-- Google Cloud CLI 577.0.0
+- GitHub CLI 2.97.0
+- Google Cloud CLI 578.0.0
 
 ### Java
 | Version             | Environment Variable |
 | ------------------- | -------------------- |
-| 8.0.492+9           | JAVA_HOME_8_X64      |
+| 8.0.502+7           | JAVA_HOME_8_X64      |
 | 11.0.32+9           | JAVA_HOME_11_X64     |
 | 17.0.20+8 (default) | JAVA_HOME_17_X64     |
 | 21.0.12+8           | JAVA_HOME_21_X64     |
-| 25.0.3+9            | JAVA_HOME_25_X64     |
+| 25.0.4+7            | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.3.6
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 150.0.7871.186
-- ChromeDriver 150.0.7871.124
-- Chromium 150.0.7871.0
-- Microsoft Edge 150.0.4078.99
-- Microsoft Edge WebDriver 150.0.4078.99
+- Google Chrome 151.0.7922.71
+- ChromeDriver 151.0.7922.71
+- Chromium 151.0.7922.0
+- Microsoft Edge 151.0.4129.59
+- Microsoft Edge WebDriver 151.0.4129.59
 - Selenium server 4.46.0
-- Mozilla Firefox 153.0
+- Mozilla Firefox 153.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -187,8 +187,8 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 1.26.5
 
 #### Node.js
-- 22.23.1
-- 24.18.0
+- 22.23.2
+- 24.18.1
 
 #### Python
 - 3.10.20
@@ -228,7 +228,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | Android Command Line Tools | 12.0                                                                                                                                                                                                                                                                                                                                                                                                |
 | Android SDK Build-tools    | 37.0.0<br>36.0.0 36.1.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                                                                                                                  |
-| Android SDK Platform-Tools | 37.0.0                                                                                                                                                                                                                                                                                                                                                                                              |
+| Android SDK Platform-Tools | 37.0.1                                                                                                                                                                                                                                                                                                                                                                                              |
 | Android SDK Platforms      | android-37.2-beta1 (rev 1)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
 | Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                                                                                                                              |
 | CMake                      | 3.31.5<br>4.1.2                                                                                                                                                                                                                                                                                                                                                                                     |
@@ -282,7 +282,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libssl-dev             | 3.0.13-0ubuntu3.11           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
-| locales                | 2.39-0ubuntu8.7              |
+| locales                | 2.39-0ubuntu8.8              |
 | lz4                    | 1.9.4-1build1.1              |
 | m4                     | 1.4.19-4build1               |
 | make                   | 4.3-4.1build2                |
@@ -315,7 +315,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | time                   | 1.9-0.2build1                |
 | tk                     | 8.6.14build1                 |
 | tree                   | 2.1.1-2ubuntu3.24.04.2       |
-| tzdata                 | 2026b-0ubuntu0.24.04.1       |
+| tzdata                 | 2026c-0ubuntu0.24.04.1       |
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.4            |

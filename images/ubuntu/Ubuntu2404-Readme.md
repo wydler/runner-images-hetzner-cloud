@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.4 LTS
-- Kernel Version: 6.8.0-101-generic
-- Image Version: 20260801.0149.1
+- Kernel Version: 6.8.0-124-generic
+- Image Version: 20260807.0150.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.21.3
-- Homebrew 6.0.14
+- Homebrew 6.0.15
 - Miniconda 26.5.3
 - Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.5
+- Pipx 1.16.6
 - RubyGems 3.4.20
-- Vcpkg (build from commit 39344dff01)
+- Vcpkg (build from commit d92484ed3c)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,7 +51,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.6.1
+- Gradle 9.7.0
 - Lerna 10.0.0
 - Maven 3.9.16
 
@@ -66,7 +66,7 @@ to accomplish this.
 - CodeQL Action Bundle 2.26.2
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.36.0
+- Docker-Buildx 0.36.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.237.0
@@ -84,11 +84,11 @@ to accomplish this.
 - n 10.2.0
 - Newman 6.2.2
 - nvm 0.40.6
-- OpenSSL 3.0.13-0ubuntu3.11
+- OpenSSL 3.0.13-0ubuntu3.12
 - Packer 1.16.0
 - Parcel 2.16.4
 - Podman 5.8.4
-- Pulumi 3.255.0
+- Pulumi 3.256.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.36.14
+- AWS CLI 2.36.19
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.165.0
-- Azure CLI 2.88.0
+- Azure CLI 2.89.0
 - Azure CLI (azure-devops) 1.0.6
 - GitHub CLI 2.97.0
-- Google Cloud CLI 578.0.0
+- Google Cloud CLI 579.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 151.0.7922.71
-- ChromeDriver 151.0.7922.71
+- Google Chrome 151.0.7922.108
+- ChromeDriver 151.0.7922.77
 - Chromium 151.0.7922.0
-- Microsoft Edge 151.0.4129.59
-- Microsoft Edge WebDriver 151.0.4129.59
+- Microsoft Edge 151.0.4129.72
+- Microsoft Edge WebDriver 151.0.4129.72
 - Selenium server 4.46.0
-- Mozilla Firefox 153.0.1
+- Mozilla Firefox 153.0.3
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -188,14 +188,14 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Node.js
 - 22.23.2
-- 24.18.1
+- 24.19.0
 
 #### Python
 - 3.10.20
 - 3.11.15
 - 3.12.13
-- 3.13.14
-- 3.14.6
+- 3.13.15
+- 3.14.7
 
 #### PyPy
 - 3.9.19 [PyPy 7.3.16]
@@ -213,7 +213,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### PowerShell Modules
 - Az: 15.6.1
-- Microsoft.Graph: 2.38.1
+- Microsoft.Graph: 2.39.0
 - Pester: 5.9.0
 - PSScriptAnalyzer: 1.25.0
 
@@ -224,17 +224,17 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | nginx   | 1.24.0  | /etc/nginx/nginx.conf     | inactive      | 80         |
 
 ### Android
-| Package Name               | Version                                                                                                                                                                                                                                                                                                                                                                                             |
-| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Android Command Line Tools | 12.0                                                                                                                                                                                                                                                                                                                                                                                                |
-| Android SDK Build-tools    | 37.0.0<br>36.0.0 36.1.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                                                                                                                  |
-| Android SDK Platform-Tools | 37.0.1                                                                                                                                                                                                                                                                                                                                                                                              |
-| Android SDK Platforms      | android-37.2-beta1 (rev 1)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
-| Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                                                                                                                              |
-| CMake                      | 3.31.5<br>4.1.2                                                                                                                                                                                                                                                                                                                                                                                     |
-| Google Play services       | 49                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Google Repository          | 58                                                                                                                                                                                                                                                                                                                                                                                                  |
-| NDK                        | 27.3.13750724 (default)<br>28.2.13676358<br>29.0.14206865                                                                                                                                                                                                                                                                                                                                           |
+| Package Name               | Version                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Android Command Line Tools | 12.0                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| Android SDK Build-tools    | 37.0.0<br>36.0.0 36.1.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                                                                                                                                                |
+| Android SDK Platform-Tools | 37.0.1                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Android SDK Platforms      | android-37.2-beta2 (rev 2)<br>android-37.2-beta1 (rev 1)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
+| Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| CMake                      | 3.31.5<br>4.1.2                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Google Play services       | 49                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Google Repository          | 58                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| NDK                        | 27.3.13750724 (default)<br>28.2.13676358<br>29.0.14206865                                                                                                                                                                                                                                                                                                                                                                         |
 
 #### Environment variables
 | Name                    | Value                                        |
@@ -279,7 +279,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libicu-dev             | 74.2-1ubuntu3.1              |
 | libnss3-tools          | 2:3.98-1ubuntu0.2            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.7            |
-| libssl-dev             | 3.0.13-0ubuntu3.11           |
+| libssl-dev             | 3.0.13-0ubuntu3.12           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
 | locales                | 2.39-0ubuntu8.8              |

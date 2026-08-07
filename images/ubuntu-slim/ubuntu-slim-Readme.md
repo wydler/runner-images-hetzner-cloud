@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260731.0021.1
+- Image Version: 20260807.0038.1
 - Systemd version: 255.4-1ubuntu8.16
 
 ## Installed Software
@@ -8,22 +8,22 @@
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.18.1
+- Node.js 24.19.0
 - Perl 5.38.2
 - Python 3.12.3
 
 ### Package Management
-- Npm 11.16.0
+- Npm 11.17.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.5
+- Pipx 1.16.6
 
 ### Tools
 - AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.46.1
-- Docker Compose 5.3.1
-- Docker-Buildx 0.36.0
-- Docker Client 29.7.0
+- Docker Compose 5.4.0
+- Docker-Buildx 0.36.1
+- Docker Client 29.7.2
 - Git 2.54.0
 - Git LFS 3.7.1
 - Git-ftp 1.6.0
@@ -34,13 +34,13 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.13
+- AWS CLI 2.36.18
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.164.0
-- Azure CLI 2.88.0
+- AWS SAM CLI 1.165.0
+- Azure CLI 2.89.0
 - Azure CLI (azure-devops) 1.0.6
 - GitHub CLI 2.97.0
-- Google Cloud CLI 578.0.0
+- Google Cloud CLI 579.0.0
 
 ### PowerShell Tools
 - PowerShell 7.5.9

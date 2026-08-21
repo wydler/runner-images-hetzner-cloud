@@ -44,7 +44,9 @@
 - **Building or testing an image:** follow [docs/create-image-and-hcloud-resources.md](../docs/create-image-and-hcloud-resources.md); validation runs through Pester.
 - **CI:** workflows in `.github/workflows/` (per-image builds, `linter.yml`, `powershell-tests.yml`, `check-pinned-versions.yml`, `validate-json-schema.yml`).
 - **Submitting changes:** fork, branch, make the change, validate, then open a focused pull request. See [CONTRIBUTING.md](../CONTRIBUTING.md#submitting-a-pull-request) and `.github/pull_request_template.md`.
-- **Good practices from real contributions:** keep install scripts thin and reuse existing helpers instead of re-implementing version resolution or download logic; prefer surgical compatibility fixes over broader runtime changes; register validation tests from the install script so the build proves the change on a real VM; fail fast when versions or assets cannot be resolved; and only add software-report or toolset entries when they are truly applicable to the tool's packaging and versioning model.
+- **Good practices from real contributions:** keep install scripts thin and reuse existing helpers instead of re-implementing version resolution or download logic; prefer surgical compatibility fixes over
+broader runtime changes; register validation tests from the install script so the build proves the change on a real VM; fail fast when versions or assets cannot be resolved; and only add software-report or
+toolset entries when they are truly applicable to the tool's packaging and versioning model.
 
 ## Onboarding new contributors
 

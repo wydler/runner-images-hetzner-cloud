@@ -71,11 +71,8 @@ what's coming and can jump around. Begin at Step 1 unless they ask for a specifi
 Explain in your own words, then point to the source:
 
 - This repo holds the **source used to build the VM images** for GitHub-hosted runners
-  (Actions) and Microsoft-hosted agents (Azure Pipelines).
-- Images exist for **Ubuntu**, **Windows**, and **macOS**, across several versions and
-  architectures (x64/arm64).
-- Open `README.md` -> **About** and **Available Images** to show the supported labels
-  (e.g. `ubuntu-latest`, `windows-2025`, `macos-15`).
+  (Actions).
+- Images exist for **Ubuntu** across several versions and architectures (x64/arm64).
 
 > **Checkpoint:** "Does the purpose make sense? Want to see the full image list, or move on to
 > how these images are actually built?"
@@ -84,16 +81,13 @@ Explain in your own words, then point to the source:
 
 Give the big picture before details:
 
-- **Windows and Ubuntu** images are built with **Packer** (HCL2 templates) on **Azure**.
-- **macOS** images are also built with **Packer**, but use the **Anka** builder (`*.anka.pkr.hcl`)
-  for virtualization instead of Azure (and macOS CI does not yet accept external contributions —
-  see `CONTRIBUTING.md`).
-- The flow: a Packer template provisions a temporary Azure VM -> runs **install scripts** one by
+- **Ubuntu** images are built with **Packer** (HCL2 templates) on **Hetzner Cloud**.
+- The flow: a Packer template provisions a temporary Hetzner Cloud VM -> runs **install scripts** one by
   one -> runs **validation tests** -> captures a **managed image** -> generates the image's
   software **README**. If any step fails, the build aborts and resources are cleaned up.
-- Read the top of `docs/create-image-and-azure-resources.md` for the authoritative description.
+- Read the top of `docs/create-image-and-hcloud-resources.md` for the authoritative description.
 
-> **Checkpoint:** "Clear on the Packer -> Azure -> image flow? Ready to see where each piece lives
+> **Checkpoint:** "Clear on the Packer -> Hetzner Cloud -> image flow? Ready to see where each piece lives
 > in the repo?"
 
 ## Step 3 — Repository map (where everything lives)
@@ -101,7 +95,7 @@ Give the big picture before details:
 Walk the key directories from the brain (`.github/copilot-instructions.md` -> Repository map).
 Open folders as you go so the structure feels real:
 
-- `images/<os>/` contains the files that define each image. `ubuntu`, `windows`, and `macos`
+- `images/<os>/` contains the files that define each image. `ubuntu`
   are Packer-based images. `ubuntu-slim` is a Docker-based image with a `Dockerfile` and tests.
 - `helpers/` has repo-level orchestration scripts (for example `GenerateResourcesAndImage.ps1`).
 - `docs/` contains build and topic documentation.
@@ -122,8 +116,7 @@ Choose a platform (Ubuntu is easiest for new contributors). Look inside `images/
   `images/ubuntu/scripts/build/install-github-cli.sh`).
 - `scripts/tests/` — **Pester v5** tests (`*.Tests.ps1`) that verify a tool was installed
   correctly.
-- `scripts/helpers/` — shared helpers (Ubuntu: `install.sh`, `os.sh`, `etc-environment.sh`;
-  Windows: `ImageHelpers.psm1`, `InstallHelpers.ps1`, ...).
+- `scripts/helpers/` — shared helpers (Ubuntu: `install.sh`, `os.sh`, `etc-environment.sh`, ...).
 - `scripts/docs-gen/Generate-SoftwareReport.ps1` — generates the image's `*-Readme.md`
   software list.
 
@@ -140,8 +133,7 @@ link `CONTRIBUTING.md` -> **Adding a new tool to an image**:
    re-implementing downloads or version resolution when an existing helper already handles it.
 2. **Validation test** in `images/<os>/scripts/tests/` — Pester `*.Tests.ps1`; keep it simple,
    non-mutating, and aligned with the real install behavior. Register it at the end of the install
-   script: `invoke_tests "<TestFile>" "<TestName>"` in Bash scripts (Ubuntu/macOS), or
-   `Invoke-PesterTests -TestFile "<name>" [-TestName "<name>"]` in PowerShell scripts (Windows).
+   script: `invoke_tests "<TestFile>" "<TestName>"` in Bash scripts (Ubuntu).
 3. **Software report** — update `images/<os>/scripts/docs-gen/Generate-SoftwareReport.ps1` only when
    the tool is user-facing in the generated README. Tool-cache/action-consumed tools may not need a
    software report entry.
@@ -151,9 +143,7 @@ link `CONTRIBUTING.md` -> **Adding a new tool to an image**:
 
 Platform notes:
 
-- Windows usually uses Chocolatey and module helpers like `ImageHelpers`.
 - Ubuntu uses APT, pipx, and shared `install.sh` helpers.
-- macOS uses Homebrew. Note that macOS builds may not accept external PRs.
 
 Local conventions and good practices:
 
@@ -185,12 +175,12 @@ Point to `CONTRIBUTING.md` -> **Code style guide** and highlight what matters mo
 
 Show how changes are verified, opening `.github/workflows/`:
 
-- **Per-image build** workflows (e.g. `ubuntu2404.yml`, `windows2025.yml`).
+- **Per-image build** workflows (e.g. `ubuntu_build-template-for-24.04.yml`).
 - **`linter.yml`** and **`powershell-tests.yml`** — linting and PS module tests.
 - **`check-pinned-versions.yml`** and **`validate-json-schema.yml`** — toolset hygiene.
-- Locally, validation runs through **Pester**, invoked via `invoke_tests` (Bash, Ubuntu/macOS) or
-  `Invoke-PesterTests` (PowerShell, Windows). The most useful tests are the ones that exercise the
-  real install behavior on the VM and fail loudly when the tool is missing or broken.
+- Locally, validation runs through **Pester**, invoked via `invoke_tests` (Bash, Ubuntu). 
+  The most useful tests are the ones that exercise the   real install behavior on the VM
+  and fail loudly when the tool is missing or broken.
 
 > **Checkpoint:** "Want to peek at one workflow file, or move on to how changes get submitted?"
 

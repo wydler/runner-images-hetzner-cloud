@@ -178,7 +178,7 @@ Show how changes are verified, opening `.github/workflows/`:
 - **Per-image build** workflows (e.g. `ubuntu_build-template-for-24.04.yml`).
 - **`linter.yml`** and **`powershell-tests.yml`** — linting and PS module tests.
 - **`check-pinned-versions.yml`** and **`validate-json-schema.yml`** — toolset hygiene.
-- Locally, validation runs through **Pester**, invoked via `invoke_tests` (Bash, Ubuntu). 
+- Locally, validation runs through **Pester**, invoked via `invoke_tests` (Bash, Ubuntu).
   The most useful tests are the ones that exercise the   real install behavior on the VM
   and fail loudly when the tool is missing or broken.
 

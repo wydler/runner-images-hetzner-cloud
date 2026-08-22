@@ -178,6 +178,13 @@ jobs:
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
           gh_tag="${{ inputs.os }}${arch_suffix}/${version_full}"
           gh_release_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
+
+          if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
+            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24"
+          else
+            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version},OS: ${os_dist}-${os_version}/${version_long}"
+          fi
+
           gh_release_no="${version_full}"
           gh_pr_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
@@ -187,12 +194,6 @@ jobs:
           container_repo_tag="${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${version_full}"
           container_image_version="${version_full}"
 
-          # GitHub labels
-          if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
-            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24"
-          else
-            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version},OS: ${os_dist}-${os_version}/${version_long}"
-          fi
 
           # GitHub Outputs
           {

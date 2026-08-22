@@ -137,7 +137,7 @@ jobs:
               os_version_cs="${os_version}.04"
 
               app_readme_file="${os_dist_cs}${os_version}04${arch_suffix_cs}-Readme.md"
-              hcloud_os_image_name="${os_dist}-${os_version}.04${arch_suffix}"
+              hcloud_os_image_name="${os_dist}-${os_version}.04"
               hcloud_packer_file_name="${os_dist}-${os_version}_04${arch_suffix}"
               ;;
 

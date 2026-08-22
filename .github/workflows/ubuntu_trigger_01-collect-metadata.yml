@@ -133,9 +133,9 @@ jobs:
             ubuntu22)
               os_version="22"
               os_version_cs="22.04"
-              app_readme_file="Ubuntu2204${arch_suffix_cs}-Readme.md"
-              hcloud_os_image_name="ubuntu-22.04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-22_04${arch_suffix}"
+              app_readme_file="${os_dist_cs}${os_version}04${arch_suffix_cs}-Readme.md"
+              hcloud_os_image_name="${os_dist}-${os_version}.04${arch_suffix}"
+              hcloud_packer_file_name="${os_dist}-${os_version}_04${arch_suffix}"
               ;;
 
             ubuntu24)

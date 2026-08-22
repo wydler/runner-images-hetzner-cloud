@@ -180,6 +180,8 @@ jobs:
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
 
+          hetzner_cloud_object_name="${{ inputs.os }}-${version_full}"
+
           # GitHub labels
           if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
             gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24"
@@ -207,6 +209,8 @@ jobs:
             echo "gh_pr_labels=${gh_pr_labels}"
             echo "gh_pr_title=${gh_pr_title}"
             echo "gh_pr_commit_message=${gh_pr_commit_message}"
+
+            echo "hetzner_cloud_object_name=${hetzner_cloud_object_name}"
           } >> "$GITHUB_OUTPUT"          
 
     outputs:
@@ -220,7 +224,7 @@ jobs:
       loc_gh_pr_title: "${{ steps.metadata.outputs.gh_pr_title }}"
       loc_gh_pr_commit_message: "${{ steps.metadata.outputs.gh_pr_commit_message }}"
 
-      loc_hetzner_cloud_object_name: "${{ inputs.os }}-${{ steps.metadata.outputs.version_full }}"
+      loc_hetzner_cloud_object_name: "${{ steps.metadata.outputs.hetzner_cloud_object_name }}"
       loc_hetzner_cloud_image_name: "${{ steps.metadata.outputs.hcloud_os_image_name }}"
       loc_hetzner_cloud_packer_hcl_file: "${{ steps.metadata.outputs.hcloud_packer_file_name }}"
 

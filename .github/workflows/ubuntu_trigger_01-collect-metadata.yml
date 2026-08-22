@@ -178,7 +178,7 @@ jobs:
           gh_release_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
 
           if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
-            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24"
+            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24,OS: ${os_dist}-${os_version}/${version_long}"
           else
             gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version},OS: ${os_dist}-${os_version}/${version_long}"
           fi

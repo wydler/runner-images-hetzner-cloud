@@ -20,7 +20,13 @@ name: Ubuntu - Build template for Ubuntu 26.04
           - cpx32
           - ccx13
         default: "cpx32"
-
+       architecture:
+        type: choice
+        required: true
+        options:
+          - x64
+          - arm64
+        default: "x64"
 
 env:
   OS: "ubuntu26"

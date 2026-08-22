@@ -160,8 +160,6 @@ jobs:
               app_readme_file="ubuntu-slim-Readme.md"
               app_sw_report_file_name="ubuntu-slim-Report.json"
               app_working_dir="images/ubuntu-slim"
-              hcloud_os_image_name="ubuntu-24_04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-24_04.pkl.hcl${arch_suffix}"
               ;;
 
             *)

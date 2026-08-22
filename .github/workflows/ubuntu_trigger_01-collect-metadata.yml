@@ -194,28 +194,30 @@ jobs:
             gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version},OS: ${os_dist}-${os_version}/${version_long}"
           fi
 
-
           # GitHub Outputs
           {
-            echo "app_sw_report_file_name=${app_sw_report_file_name}"
-            echo "app_working_dir=${app_working_dir}"
-            echo "app_readme_file=${app_readme_file}"
-            echo "app_sw_sbom_file_name=${app_sw_sbom_file_name}"
-            echo "hcloud_os_image_name=${hcloud_os_image_name}"
-            echo "hcloud_packer_file_name=${hcloud_packer_file_name}"
             echo "gh_branch_name=${gh_branch_name}"
             echo "gh_tag=${gh_tag}"
+
             echo "gh_release_title=${gh_release_title}"
             echo "gh_pr_labels=${gh_pr_labels}"
             echo "gh_release_no=${gh_release_no}"
+
             echo "gh_pr_title=${gh_pr_title}"
             echo "gh_pr_commit_message=${gh_pr_commit_message}"
 
             echo "hetzner_cloud_object_name=${hetzner_cloud_object_name}"
+            echo "hcloud_os_image_name=${hcloud_os_image_name}"
+            echo "hcloud_packer_file_name=${hcloud_packer_file_name}"
 
             echo "container_repo_tag=${container_repo_tag}"
             echo "container_image_version=${container_image_version}"
-          } >> "$GITHUB_OUTPUT"          
+
+            echo "app_sw_report_file_name=${app_sw_report_file_name}"
+            echo "app_working_dir=${app_working_dir}"
+            echo "app_readme_file=${app_readme_file}"
+            echo "app_sw_sbom_file_name=${app_sw_sbom_file_name}"
+          } >> "$GITHUB_OUTPUT"
 
     outputs:
       loc_gh_branch_name: "${{ steps.metadata.outputs.gh_branch_name }}"

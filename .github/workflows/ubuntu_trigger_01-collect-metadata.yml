@@ -176,6 +176,7 @@ jobs:
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
           gh_tag="${{ inputs.os }}/${version_full}"
           gh_release_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
+          gh_pr_labels="${gh_pr_labels}, ${outputs.os_dist}-${os_version}/${version_long}"
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
 
@@ -193,7 +194,7 @@ jobs:
             echo "os_dist_cs=${os_dist_cs}"
             echo "os_version=${os_version}"
             echo "os_version_cs=${os_version_cs}"
-            echo "gh_pr_labels=${gh_pr_labels}"
+
             echo "app_sw_report_file_name=${app_sw_report_file_name}"
             echo "app_working_dir=${app_working_dir}"
             echo "app_readme_file=${app_readme_file}"
@@ -203,6 +204,7 @@ jobs:
             echo "gh_branch_name=${gh_branch_name}"
             echo "gh_tag=${gh_tag}"
             echo "gh_release_title=${gh_release_title}"
+            echo "gh_pr_labels=${gh_pr_labels}"
             echo "gh_pr_title=${gh_pr_title}"
             echo "gh_pr_commit_message=${gh_pr_commit_message}"
           } >> "$GITHUB_OUTPUT"          
@@ -212,7 +214,7 @@ jobs:
       loc_gh_tag: "${{ steps.metadata.outputs.gh_tag }}"
 
       loc_gh_release_title: "${{ steps.metadata.outputs.gh_release_title }}"
-      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}, ${{ steps.metadata.outputs.os_dist }}-${{ steps.metadata.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}}"
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 
       loc_gh_pr_title: "${{ steps.metadata.outputs.gh_pr_title }}"

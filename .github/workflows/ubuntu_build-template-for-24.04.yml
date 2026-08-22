@@ -20,6 +20,13 @@ name: Ubuntu - Build template for Ubuntu 24.04
           - cpx32
           - ccx13
         default: "cpx32"
+       architecture:
+        type: choice
+        required: true
+        options:
+          - amd64
+          - arm64
+        default: "amd64"
 
 
 env:

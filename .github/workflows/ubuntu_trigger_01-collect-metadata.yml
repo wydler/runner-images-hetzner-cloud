@@ -206,19 +206,19 @@ jobs:
           } >> "$GITHUB_OUTPUT"          
 
     outputs:
-      loc_gh_branch_name: "${{ steps.os.outputs.gh_branch_name }}"
+      loc_gh_branch_name: "${{ steps.metadata.outputs.gh_branch_name }}"
       loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
 
-      loc_gh_release_title: "${{ steps.os.outputs.gh_release_title }}"
-      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
+      loc_gh_release_title: "${{ steps.metadata.outputs.gh_release_title }}"
+      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}, ${{ steps.metadata.outputs.os_dist }}-${{ steps.metadata.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 
-      loc_gh_pr_title: "${{ steps.os.outputs.gh_pr_title }}"
+      loc_gh_pr_title: "${{ steps.metadata.outputs.gh_pr_title }}"
       loc_gh_pr_commit_message: "${{ steps.metadata.outputs.gh_pr_commit_message }}"
 
       loc_hetzner_cloud_object_name: "${{ inputs.os }}-${{ steps.metadata.outputs.version_full }}"
-      loc_hetzner_cloud_image_name: "${{ steps.os.outputs.hcloud_os_image_name }}"
-      loc_hetzner_cloud_packer_hcl_file: "${{ steps.os.outputs.hcloud_packer_file_name }}"
+      loc_hetzner_cloud_image_name: "${{ steps.metadata.outputs.hcloud_os_image_name }}"
+      loc_hetzner_cloud_packer_hcl_file: "${{ steps.metadata.outputs.hcloud_packer_file_name }}"
 
       loc_container_registry: "${{ inputs.container_registry }}"
       loc_container_repo: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}"
@@ -228,10 +228,10 @@ jobs:
       loc_container_image_version: "${{ steps.metadata.outputs.version_full }}"
       loc_container_repo_cache_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ inputs.container_registry_repo_tag_cache_name }}"
 
-      loc_app_sw_report_file_name: "${{ steps.os.outputs.app_sw_report_file_name }}"
-      loc_app_working_dir: "${{ steps.os.outputs.app_working_dir }}"
-      loc_app_readme_file: "${{ steps.os.outputs.app_readme_file }}"
-      loc_app_sw_sbom_file_name: "${{ steps.os.outputs.app_sw_sbom_file_name }}"
+      loc_app_sw_report_file_name: "${{ steps.metadata.outputs.app_sw_report_file_name }}"
+      loc_app_working_dir: "${{ steps.metadata.outputs.app_working_dir }}"
+      loc_app_readme_file: "${{ steps.metadata.outputs.app_readme_file }}"
+      loc_app_sw_sbom_file_name: "${{ steps.metadata.outputs.app_sw_sbom_file_name }}"
 
 
   Show-Metadata:

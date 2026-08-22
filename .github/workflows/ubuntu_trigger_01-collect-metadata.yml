@@ -177,7 +177,7 @@ jobs:
           app_sw_sbom_file_name="sbom.json.zip"
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
           gh_tag="${{ inputs.os }}${arch_suffix}/${version_full}"
-          gh_release_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
+          gh_release_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
           gh_release_no="${version_full}"
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"

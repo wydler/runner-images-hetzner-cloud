@@ -24,9 +24,9 @@ name: Ubuntu - Build template for Ubuntu 26.04
         type: choice
         required: true
         options:
-          - x64
+          - amd64
           - arm64
-        default: "x64"
+        default: "amd64"
 
 env:
   OS: "ubuntu26"

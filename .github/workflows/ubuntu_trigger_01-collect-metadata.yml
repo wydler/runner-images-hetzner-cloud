@@ -112,7 +112,7 @@ jobs:
             ubuntu22)
               os_version="22"
               os_version_cs="22.04"
-              app_readme_file="Ubuntu2204-Readme.md"
+              app_readme_file="Ubuntu2204{arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-22.04${arch_suffix}"
               hcloud_packer_file_name="ubuntu-22_04${arch_suffix_cs}"
               ;;
@@ -120,7 +120,7 @@ jobs:
             ubuntu24)
               os_version="24"
               os_version_cs="24.04"
-              app_readme_file="Ubuntu2404-Readme.md"
+              app_readme_file="Ubuntu2404{arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-24.04${arch_suffix}"
               hcloud_packer_file_name="ubuntu-24_04${arch_suffix_cs}"
               ;;
@@ -128,7 +128,7 @@ jobs:
             ubuntu26)
               os_version="26"
               os_version_cs="26.04"
-              app_readme_file="Ubuntu${os_version}04-Readme.md"
+              app_readme_file="Ubuntu${os_version}04{arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-${os_version}.04${arch_suffix}"
               hcloud_packer_file_name="ubuntu-${os_version}_04${arch_suffix_cs}"
               ;;

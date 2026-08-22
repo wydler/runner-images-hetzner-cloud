@@ -174,6 +174,7 @@ jobs:
           app_working_dir="${app_working_dir:-images/ubuntu}"
           app_sw_sbom_file_name="sbom.json.zip"
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
+          gh_tag="${{ inputs.os }}/${version_full}"
           gh_release_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
@@ -200,6 +201,7 @@ jobs:
             echo "hcloud_os_image_name=${hcloud_os_image_name}"
             echo "hcloud_packer_file_name=${hcloud_packer_file_name}"
             echo "gh_branch_name=${gh_branch_name}"
+            echo "gh_tag=${gh_tag}"
             echo "gh_release_title=${gh_release_title}"
             echo "gh_pr_title=${gh_pr_title}"
             echo "gh_pr_commit_message=${gh_pr_commit_message}"
@@ -207,7 +209,7 @@ jobs:
 
     outputs:
       loc_gh_branch_name: "${{ steps.metadata.outputs.gh_branch_name }}"
-      loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
+      loc_gh_tag: "${{ steps.metadata.outputs.gh_tag }}"
 
       loc_gh_release_title: "${{ steps.metadata.outputs.gh_release_title }}"
       loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}, ${{ steps.metadata.outputs.os_dist }}-${{ steps.metadata.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"

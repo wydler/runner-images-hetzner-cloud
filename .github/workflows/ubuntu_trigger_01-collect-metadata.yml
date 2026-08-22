@@ -114,7 +114,7 @@ jobs:
               os_version_cs="22.04"
               app_readme_file="Ubuntu2204${arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-22.04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-22_04${arch_suffix_cs}"
+              hcloud_packer_file_name="ubuntu-22_04${arch_suffix}"
               ;;
 
             ubuntu24)
@@ -122,7 +122,7 @@ jobs:
               os_version_cs="24.04"
               app_readme_file="Ubuntu2404${arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-24.04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-24_04${arch_suffix_cs}"
+              hcloud_packer_file_name="ubuntu-24_04${arch_suffix}"
               ;;
 
             ubuntu26)
@@ -130,7 +130,7 @@ jobs:
               os_version_cs="26.04"
               app_readme_file="Ubuntu${os_version}04${arch_suffix_cs}-Readme.md"
               hcloud_os_image_name="ubuntu-${os_version}.04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-${os_version}_04${arch_suffix_cs}"
+              hcloud_packer_file_name="ubuntu-${os_version}_04${arch_suffix}"
               ;;
 
             ubuntu-slim)
@@ -140,7 +140,7 @@ jobs:
               app_sw_report_file_name="ubuntu-slim-Report.json"
               app_working_dir="images/ubuntu-slim"
               hcloud_os_image_name="ubuntu-24_04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-24_04.pkl.hcl${arch_suffix_cs}"
+              hcloud_packer_file_name="ubuntu-24_04.pkl.hcl${arch_suffix}"
               ;;
 
             *)

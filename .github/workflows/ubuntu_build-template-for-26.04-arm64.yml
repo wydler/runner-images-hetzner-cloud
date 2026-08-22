@@ -1,5 +1,5 @@
 ---
-name: Ubuntu - Build template for Ubuntu 22.04
+name: Ubuntu - Build template for Ubuntu 26.04 Arm64
 
 "on":
    workflow_dispatch:
@@ -11,20 +11,18 @@ name: Ubuntu - Build template for Ubuntu 22.04
           - hel1
           - fsn1
           - nbg1
-        default: "hel1"
+        default: "nbg1"
        servertype:
         type: choice
         required: true
         options:
-          - cx33
-          - cpx32
-          - ccx13
-        default: "cpx32"
+          - cax21
+        default: "cax21"
 
 
 env:
-  OS: "ubuntu22"
-  ARCH: "amd64"
+  OS: "ubuntu26"
+  ARCH: "arm64"
 
 
 concurrency:

@@ -7,6 +7,9 @@ name: Ubuntu - Trigger collect metadata
       os:
         required: true
         type: string
+      arch:
+        required: true
+        type: string        
       container_registry:
         required: false
         type: string
@@ -78,91 +81,6 @@ jobs:
     name: Collect build metadata
 
     steps:
-      - name: Define the name of the OS
-        id: os
-        shell: bash
-        run: |
-
-          # Alle Zeichen klein geschrieben
-          os_dist=ubuntu
-          echo  "os_dist=ubuntu" >> $GITHUB_OUTPUT
-
-          # Alle Zeichen Case sensitive
-          os_dist_cs=Ubuntu
-          echo  "os_dist_cs=Ubuntu" >> $GITHUB_OUTPUT
-
-          if [ "${{ inputs.os }}" == "ubuntu22" ]; then
-            os_version=22
-            echo "os_version=22" >> $GITHUB_OUTPUT
-
-            os_version_cs=22.04
-            echo "os_version_cs=22.04" >> $GITHUB_OUTPUT
-
-            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
-
-            echo "app_sw_report_file_name=software-report.json" >> $GITHUB_OUTPUT
-            echo "app_working_dir=images/ubuntu" >> $GITHUB_OUTPUT
-            echo "app_readme_file=Ubuntu2204-Readme.md" >> $GITHUB_OUTPUT      
-            echo "app_sw_sbom_file_name=sbom.json.zip" >> $GITHUB_OUTPUT                  
-
-            echo "hcloud_os_image_name=ubuntu-22.04" >> $GITHUB_OUTPUT
-            echo "hcloud_packer_file_name=ubuntu-22_04" >> $GITHUB_OUTPUT
-
-          elif [ "${{ inputs.os }}" == "ubuntu24" ]; then
-            os_version=24
-            echo "os_version=24" >> $GITHUB_OUTPUT
-
-            os_version_cs=24.04
-            echo "os_version_cs=24.04" >> $GITHUB_OUTPUT
-
-            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
-
-            echo "app_sw_report_file_name=software-report.json" >> $GITHUB_OUTPUT
-            echo "app_working_dir=images/ubuntu" >> $GITHUB_OUTPUT
-            echo "app_readme_file=Ubuntu2404-Readme.md" >> $GITHUB_OUTPUT
-            echo "app_sw_sbom_file_name=sbom.json.zip" >> $GITHUB_OUTPUT
-
-            echo "hcloud_os_image_name=ubuntu-24.04" >> $GITHUB_OUTPUT
-            echo "hcloud_packer_file_name=ubuntu-24_04" >> $GITHUB_OUTPUT
-
-          elif [ "${{ inputs.os }}" == "ubuntu26" ]; then
-            os_version=26
-            echo "os_version=26" >> $GITHUB_OUTPUT
-
-            os_version_cs=26.04
-            echo "os_version_cs=26.04" >> $GITHUB_OUTPUT
-
-            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version}" >> $GITHUB_OUTPUT
-
-            echo "app_sw_report_file_name=software-report.json" >> $GITHUB_OUTPUT
-            echo "app_working_dir=images/ubuntu" >> $GITHUB_OUTPUT
-            echo "app_readme_file=Ubuntu${os_version}04-Readme.md" >> $GITHUB_OUTPUT
-            echo "app_sw_sbom_file_name=sbom.json.zip" >> $GITHUB_OUTPUT
-
-            echo "hcloud_os_image_name=ubuntu-${os_version}.04" >> $GITHUB_OUTPUT
-            echo "hcloud_packer_file_name=ubuntu-${os_version}_04" >> $GITHUB_OUTPUT
-
-          elif [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
-            os_version=slim
-            echo "os_version=slim" >> $GITHUB_OUTPUT
-
-            os_version_cs=Slim
-            echo "os_version_cs=Slim" >> $GITHUB_OUTPUT
-
-            echo "gh_pr_labels=OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24" >> $GITHUB_OUTPUT
-
-            echo "app_sw_report_file_name=ubuntu-slim-Report.json" >> $GITHUB_OUTPUT
-            echo "app_working_dir=images/ubuntu-slim" >> $GITHUB_OUTPUT
-            echo "app_readme_file=ubuntu-slim-Readme.md" >> $GITHUB_OUTPUT
-
-            echo "hcloud_os_image_name=ubuntu-24_04" >> $GITHUB_OUTPUT
-            echo "hcloud_packer_file_name=ubuntu-24_04.pkl.hcl" >> $GITHUB_OUTPUT
-
-          else
-            exit 1
-          fi
-
-
       - name: Create necessary metadatas
         id: metadata
         shell: bash
@@ -175,44 +93,145 @@ jobs:
           gh_action_run_number=$(printf "%04d" "${GITHUB_RUN_NUMBER}")
 
           # Contains the current attempt number of the same workflow run. This value increases when the workflow is re-run.
-          gh_action_run_attempt=${{ github.run_attempt }}
+          gh_action_run_attempt="${{ github.run_attempt }}"
 
           # Builds the version string using the format: YYYYMMDD.gh_action_run_number.gh_action_run_attempt. Example: 20260523.0042.1
-          echo "version_full=${current_date}.${gh_action_run_number}.${gh_action_run_attempt}" >> "$GITHUB_OUTPUT"
+          version_full=${current_date}.${gh_action_run_number}.${gh_action_run_attempt}
 
           # Builds the version string using the format: YYYYMMDD.gh_action_run_number. Example: 20260523.0042
-          echo "version_long=${current_date}.${gh_action_run_number}" >> "$GITHUB_OUTPUT"
+          version_long=${current_date}.${gh_action_run_number}
 
           # Builds the version string using the format: YYYYMMDD. Example: 20260523
-          echo "version_short=${current_date}" >> "$GITHUB_OUTPUT"
+          version_short=${current_date}
+
+
+          # Distribution
+          os_dist="ubuntu"
+          os_dist_cs="Ubuntu"
+
+          # Architecture
+          case "${{ inputs.arch }}" in
+            amd64)
+              arch_suffix=""
+              arch_suffix_cs=""
+              arch_suffix_title=""
+              ;;
+            arm64)
+              arch_suffix="-arm64"
+              arch_suffix_cs="-Arm64"
+              arch_suffix_title=" Arm64"
+              ;;
+            *)
+              echo "Unsupported architecture: ${{ inputs.arch }}"
+              exit 1
+              ;;
+          esac
+
+
+          # OS
+          case "${{ inputs.os }}" in
+            ubuntu22|ubuntu24|ubuntu26)
+              os_version="${{ inputs.os }}"
+              os_version="${os_version#ubuntu}"
+
+              os_version_cs="${os_version}.04"
+
+              app_readme_file="${os_dist_cs}${os_version}04${arch_suffix_cs}-Readme.md"
+              hcloud_os_image_name="${os_dist}-${os_version}.04${arch_suffix}"
+              hcloud_packer_file_name="${os_dist}-${os_version}_04${arch_suffix}"
+              ;;
+
+            ubuntu-slim)
+              os_version="slim"
+              os_version_cs="Slim"
+              app_readme_file="${os_dist}-${os_version}-Readme.md"
+              app_sw_report_file_name="${os_dist}-${os_version}-Report.json"
+              app_working_dir="images/${os_dist}-${os_version}"
+              ;;
+
+            *)
+              echo "Unsupported OS: ${{ inputs.os }}"
+              exit 1
+              ;;
+          esac
+
+
+          # Common values
+          app_sw_report_file_name="${app_sw_report_file_name:-software-report.json}"
+          app_working_dir="${app_working_dir:-images/ubuntu}"
+          app_sw_sbom_file_name="sbom.json.zip"
+          gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
+          gh_tag="${{ inputs.os }}${arch_suffix}/${version_full}"
+          gh_release_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
+
+          if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
+            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version_cs},OS: ${os_dist_cs}24,OS: ${os_dist}-${os_version}/${version_long}"
+          else
+            gh_pr_labels="OS: ${os_dist_cs},OS: ${os_dist_cs}${os_version},OS: ${os_dist}-${os_version}/${version_long}"
+          fi
+
+          gh_release_no="${version_full}"
+          gh_pr_title="${os_dist_cs} ${os_version_cs}${arch_suffix_title} (${version_full}) Image Update"
+          gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
+
+          hetzner_cloud_object_name="${{ inputs.os }}${arch_suffix}-${version_full}"
+
+          container_repo_tag="${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${version_full}"
+          container_image_version="${version_full}"
+
+
+          # GitHub Outputs
+          {
+            echo "gh_branch_name=${gh_branch_name}"
+            echo "gh_tag=${gh_tag}"
+
+            echo "gh_release_title=${gh_release_title}"
+            echo "gh_pr_labels=${gh_pr_labels}"
+            echo "gh_release_no=${gh_release_no}"
+
+            echo "gh_pr_title=${gh_pr_title}"
+            echo "gh_pr_commit_message=${gh_pr_commit_message}"
+
+            echo "hetzner_cloud_object_name=${hetzner_cloud_object_name}"
+            echo "hcloud_os_image_name=${hcloud_os_image_name}"
+            echo "hcloud_packer_file_name=${hcloud_packer_file_name}"
+
+            echo "container_repo_tag=${container_repo_tag}"
+            echo "container_image_version=${container_image_version}"
+
+            echo "app_sw_report_file_name=${app_sw_report_file_name}"
+            echo "app_working_dir=${app_working_dir}"
+            echo "app_readme_file=${app_readme_file}"
+            echo "app_sw_sbom_file_name=${app_sw_sbom_file_name}"
+          } >> "$GITHUB_OUTPUT"
 
     outputs:
-      loc_gh_branch_name: "releases/${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
-      loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
+      loc_gh_branch_name: "${{ steps.metadata.outputs.gh_branch_name }}"
+      loc_gh_tag: "${{ steps.metadata.outputs.gh_tag }}"
 
-      loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
-      loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
-      loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
+      loc_gh_release_title: "${{ steps.metadata.outputs.gh_release_title }}"
+      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}"
+      loc_gh_release_no: "${{ steps.metadata.outputs.gh_release_no }}"
 
-      loc_gh_pr_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
-      loc_gh_pr_commit_message: "Updating readme file for ${{ inputs.os }} version ${{ steps.metadata.outputs.version_full }}"
+      loc_gh_pr_title: "${{ steps.metadata.outputs.gh_pr_title }}"
+      loc_gh_pr_commit_message: "${{ steps.metadata.outputs.gh_pr_commit_message }}"
 
-      loc_hetzner_cloud_object_name: "${{ inputs.os }}-${{ steps.metadata.outputs.version_full }}"
-      loc_hetzner_cloud_image_name: "${{ steps.os.outputs.hcloud_os_image_name }}"
-      loc_hetzner_cloud_packer_hcl_file: "${{ steps.os.outputs.hcloud_packer_file_name }}"
+      loc_hetzner_cloud_object_name: "${{ steps.metadata.outputs.hetzner_cloud_object_name }}"
+      loc_hetzner_cloud_image_name: "${{ steps.metadata.outputs.hcloud_os_image_name }}"
+      loc_hetzner_cloud_packer_hcl_file: "${{ steps.metadata.outputs.hcloud_packer_file_name }}"
 
       loc_container_registry: "${{ inputs.container_registry }}"
       loc_container_repo: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}"
-      loc_container_repo_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ steps.metadata.outputs.version_full }}"
+      loc_container_repo_tag: "${{ steps.metadata.outputs.container_repo_tag }}"
       loc_container_platform: "${{ inputs.container_platform }}"
       loc_container_image_owner: "${{ github.repository_owner }}"
-      loc_container_image_version: "${{ steps.metadata.outputs.version_full }}"
+      loc_container_image_version: "${{ steps.metadata.outputs.container_image_version }}"
       loc_container_repo_cache_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ inputs.container_registry_repo_tag_cache_name }}"
 
-      loc_app_sw_report_file_name: "${{ steps.os.outputs.app_sw_report_file_name }}"
-      loc_app_working_dir: "${{ steps.os.outputs.app_working_dir }}"
-      loc_app_readme_file: "${{ steps.os.outputs.app_readme_file }}"
-      loc_app_sw_sbom_file_name: "${{ steps.os.outputs.app_sw_sbom_file_name }}"
+      loc_app_sw_report_file_name: "${{ steps.metadata.outputs.app_sw_report_file_name }}"
+      loc_app_working_dir: "${{ steps.metadata.outputs.app_working_dir }}"
+      loc_app_readme_file: "${{ steps.metadata.outputs.app_readme_file }}"
+      loc_app_sw_sbom_file_name: "${{ steps.metadata.outputs.app_sw_sbom_file_name }}"
 
 
   Show-Metadata:

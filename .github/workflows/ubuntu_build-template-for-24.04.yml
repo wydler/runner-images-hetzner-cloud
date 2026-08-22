@@ -24,6 +24,7 @@ name: Ubuntu - Build template for Ubuntu 24.04
 
 env:
   OS: "ubuntu24"
+  ARCH: "amd64"
 
 
 concurrency:
@@ -44,12 +45,17 @@ jobs:
         shell: bash
         run: |
            echo "os=$OS" >> $GITHUB_OUTPUT
+           echo "arch=$ARCH" >> $GITHUB_OUTPUT
 
       - name: Display Variable server os
         run: echo "${{ steps.env.outputs.os }}"
 
-    outputs:      
+      - name: Display Variable server arch
+        run: echo "${{ steps.env.outputs.arch }}"
+
+    outputs:
       os: ${{ steps.env.outputs.os }}
+      arch: ${{ steps.env.outputs.arch }}
 
 
   Trigger-CollectInformations:
@@ -62,6 +68,7 @@ jobs:
     uses: ./.github/workflows/ubuntu_trigger_01-collect-metadata.yml
     with:
       os: ${{ needs.Set-Variables.outputs.os }}
+      arch: ${{ needs.Set-Variables.outputs.arch }}
 
 
   Trigger-ImageBuilder:

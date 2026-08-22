@@ -73,6 +73,7 @@ jobs:
     uses: ./.github/workflows/ubuntu_trigger_01-collect-metadata.yml
     with:
       os: ${{ needs.Set-Variables.outputs.os }}
+      arch: ${{ vars.REGISTRY_PLATFORMS }}
       container_registry: ${{ vars.REGISTRY }}
       container_registry_account: ${{ vars.REGISTRY_ACCOUNT }}
       container_registry_repo: ${{ vars.REGISTRY_REPO }}

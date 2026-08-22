@@ -180,7 +180,7 @@ jobs:
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"
 
-          hetzner_cloud_object_name="${{ inputs.os }}-${version_full}"
+          hetzner_cloud_object_name="${{ inputs.os }}${arch_suffix}-${version_full}"
 
           container_repo_tag="${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${version_full}"
           container_image_version="${version_full}"

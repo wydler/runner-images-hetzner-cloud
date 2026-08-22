@@ -69,6 +69,7 @@ jobs:
     uses: ./.github/workflows/ubuntu_trigger_01-collect-metadata.yml
     with:
       os: ${{ needs.Set-Variables.outputs.os }}
+      arch: ${{ inputs.architecture }}
 
 
   Trigger-ImageBuilder:

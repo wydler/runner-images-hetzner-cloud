@@ -149,9 +149,9 @@ jobs:
             ubuntu26)
               os_version="26"
               os_version_cs="26.04"
-              app_readme_file="Ubuntu${os_version}04${arch_suffix_cs}-Readme.md"
-              hcloud_os_image_name="ubuntu-${os_version}.04${arch_suffix}"
-              hcloud_packer_file_name="ubuntu-${os_version}_04${arch_suffix}"
+              app_readme_file="${os_dist_cs}${os_version}04${arch_suffix_cs}-Readme.md"
+              hcloud_os_image_name="${os_dist}-${os_version}.04${arch_suffix}"
+              hcloud_packer_file_name="${os_dist}-${os_version}_04${arch_suffix}"
               ;;
 
             ubuntu-slim)

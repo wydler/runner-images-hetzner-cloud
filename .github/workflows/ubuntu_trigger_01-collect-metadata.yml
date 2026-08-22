@@ -225,7 +225,7 @@ jobs:
       loc_gh_tag: "${{ steps.metadata.outputs.gh_tag }}"
 
       loc_gh_release_title: "${{ steps.metadata.outputs.gh_release_title }}"
-      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}}"
+      loc_gh_pr_labels: "${{ steps.metadata.outputs.gh_pr_labels }}"
       loc_gh_release_no: "${{ steps.metadata.outputs.gh_release_no }}"
 
       loc_gh_pr_title: "${{ steps.metadata.outputs.gh_pr_title }}"

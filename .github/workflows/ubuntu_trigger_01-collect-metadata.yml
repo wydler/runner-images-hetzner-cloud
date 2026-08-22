@@ -197,11 +197,6 @@ jobs:
 
           # GitHub Outputs
           {
-            echo "os_dist=${os_dist}"
-            echo "os_dist_cs=${os_dist_cs}"
-            echo "os_version=${os_version}"
-            echo "os_version_cs=${os_version_cs}"
-
             echo "app_sw_report_file_name=${app_sw_report_file_name}"
             echo "app_working_dir=${app_working_dir}"
             echo "app_readme_file=${app_readme_file}"

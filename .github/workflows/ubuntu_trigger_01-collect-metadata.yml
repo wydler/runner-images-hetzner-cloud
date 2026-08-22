@@ -184,6 +184,7 @@ jobs:
           hetzner_cloud_object_name="${{ inputs.os }}-${version_full}"
 
           container_repo_tag="${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${version_full}"
+          container_image_version="${version_full}"
 
           # GitHub labels
           if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
@@ -217,6 +218,7 @@ jobs:
             echo "hetzner_cloud_object_name=${hetzner_cloud_object_name}"
 
             echo "container_repo_tag=${container_repo_tag}"
+            echo "container_image_version=${container_image_version}"
           } >> "$GITHUB_OUTPUT"          
 
     outputs:
@@ -239,7 +241,7 @@ jobs:
       loc_container_repo_tag: "${{ steps.metadata.outputs.container_repo_tag }}"
       loc_container_platform: "${{ inputs.container_platform }}"
       loc_container_image_owner: "${{ github.repository_owner }}"
-      loc_container_image_version: "${{ steps.metadata.outputs.version_full }}"
+      loc_container_image_version: "${{ steps.metadata.outputs.container_image_version }}"
       loc_container_repo_cache_tag: "${{ inputs.container_registry_account }}/${{ inputs.container_registry_repo }}:${{ inputs.container_registry_repo_tag_cache_name }}"
 
       loc_app_sw_report_file_name: "${{ steps.metadata.outputs.app_sw_report_file_name }}"

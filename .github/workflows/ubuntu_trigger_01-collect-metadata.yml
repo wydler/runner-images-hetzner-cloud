@@ -176,7 +176,6 @@ jobs:
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
           gh_tag="${{ inputs.os }}/${version_full}"
           gh_release_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
-          gh_pr_labels="${gh_pr_labels}, ${os_dist}-${os_version}/${version_long}"
           gh_release_no="${version_full}"
           gh_pr_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
           gh_pr_commit_message="Updating readme file for ${{ inputs.os }}${arch_suffix} version ${version_full}"

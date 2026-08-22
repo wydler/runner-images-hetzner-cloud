@@ -114,10 +114,12 @@ jobs:
             amd64)
               arch_suffix=""
               arch_suffix_cs=""
+              arch_suffix_title=""
               ;;
             arm64)
               arch_suffix="-arm64"
               arch_suffix_cs="-Arm64"
+              arch_suffix_title=" Arm64"
               ;;
             *)
               echo "Unsupported architecture: ${{ inputs.arch }}"

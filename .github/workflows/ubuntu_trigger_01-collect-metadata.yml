@@ -174,6 +174,7 @@ jobs:
           app_working_dir="${app_working_dir:-images/ubuntu}"
           app_sw_sbom_file_name="sbom.json.zip"
           gh_branch_name="releases/${{ inputs.os }}${arch_suffix}/${version_full}"
+          gh_release_title="${os_dist_cs} ${os_version_cs} (${version_full}) Image Update"
 
           # GitHub labels
           if [ "${{ inputs.os }}" == "ubuntu-slim" ]; then
@@ -197,13 +198,14 @@ jobs:
             echo "hcloud_os_image_name=${hcloud_os_image_name}"
             echo "hcloud_packer_file_name=${hcloud_packer_file_name}"
             echo "gh_branch_name=${gh_branch_name}"
+            echo "gh_release_title=${gh_release_title}"
           } >> "$GITHUB_OUTPUT"          
 
     outputs:
       loc_gh_branch_name: "${{ steps.os.outputs.gh_branch_name }}"
       loc_gh_tag: "${{ inputs.os }}/${{ steps.metadata.outputs.version_full }}"
 
-      loc_gh_release_title: "${{ steps.os.outputs.os_dist_cs }} ${{ steps.os.outputs.os_version_cs }} (${{ steps.metadata.outputs.version_full }}) Image Update"
+      loc_gh_release_title: "${{ steps.os.outputs.gh_release_title }}"
       loc_gh_pr_labels: "${{ steps.os.outputs.gh_pr_labels }}, ${{ steps.os.outputs.os_dist }}-${{ steps.os.outputs.os_version }}/${{ steps.metadata.outputs.version_long }}"
       loc_gh_release_no: "${{ steps.metadata.outputs.version_full }}"
 

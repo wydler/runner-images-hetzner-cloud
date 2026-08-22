@@ -157,9 +157,9 @@ jobs:
             ubuntu-slim)
               os_version="slim"
               os_version_cs="Slim"
-              app_readme_file="ubuntu-slim-Readme.md"
-              app_sw_report_file_name="ubuntu-slim-Report.json"
-              app_working_dir="images/ubuntu-slim"
+              app_readme_file="${os_dist}-${os_version}-Readme.md"
+              app_sw_report_file_name="${os_dist}-${os_version}-Report.json"
+              app_working_dir="images/${os_dist}-${os_version}"
               ;;
 
             *)

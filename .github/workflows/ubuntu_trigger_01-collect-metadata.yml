@@ -7,6 +7,9 @@ name: Ubuntu - Trigger collect metadata
       os:
         required: true
         type: string
+      arch:
+        required: true
+        type: string        
       container_registry:
         required: false
         type: string

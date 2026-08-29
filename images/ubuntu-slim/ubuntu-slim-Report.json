@@ -10,12 +10,12 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260807.0038.1"
+      "Version": "20260829.0045.1"
     },
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Systemd version:",
-      "Version": "255.4-1ubuntu8.16"
+      "Version": "255.4-1ubuntu8.17"
     },
     {
       "NodeType": "HeaderNode",
@@ -38,7 +38,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Node.js",
-              "Version": "24.19.0"
+              "Version": "24.20.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -59,7 +59,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Npm",
-              "Version": "11.17.0"
+              "Version": "11.19.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.16.6"
+              "Version": "1.16.7"
             }
           ]
         },
@@ -85,7 +85,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AzCopy",
-              "Version": "10.32.4 - available by `azcopy` and `azcopy10` aliases"
+              "Version": "10.32.7 - available by `azcopy` and `azcopy10` aliases"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -95,7 +95,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Compose",
-              "Version": "5.4.0"
+              "Version": "5.5.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -110,12 +110,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Git",
-              "Version": "2.54.0"
+              "Version": "2.55.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Git LFS",
-              "Version": "3.7.1"
+              "Version": "3.8.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -130,17 +130,17 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "nvm",
-              "Version": "0.40.6"
+              "Version": "0.40.7"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "OpenSSL",
-              "Version": "3.0.13-0ubuntu3.12"
+              "Version": "3.0.13-0ubuntu3.15"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "yq",
-              "Version": "4.53.3"
+              "Version": "4.53.6"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.36.18"
+              "Version": "2.36.34"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -171,22 +171,22 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Azure CLI",
-              "Version": "2.89.0"
+              "Version": "2.89.1"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Azure CLI (azure-devops)",
-              "Version": "1.0.6"
+              "Version": "1.0.7"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.97.0"
+              "Version": "2.98.0"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "579.0.0"
+              "Version": "582.0.0"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "Children": {
             "NodeType": "ToolVersionNode",
             "ToolName": "PowerShell",
-            "Version": "7.5.9"
+            "Version": "7.5.10"
           }
         },
         {
@@ -215,9 +215,9 @@
               "bzip2|1.0.8-5.1build0.1",
               "ca-certificates|20260601\\~24.04.1",
               "coreutils|9.4-3ubuntu6.2",
-              "curl|8.5.0-2ubuntu10.11",
+              "curl|8.5.0-2ubuntu10.13",
               "dbus|1.14.10-4ubuntu4.1",
-              "dnsutils|1:9.18.39-0ubuntu0.24.04.5",
+              "dnsutils|1:9.18.39-0ubuntu0.24.04.6",
               "dpkg|1.22.6ubuntu6.6",
               "dpkg-dev|1.22.6ubuntu6.6",
               "fakeroot|1.33-1",
@@ -235,7 +235,7 @@
               "jq|1.7.1-3ubuntu0.24.04.2",
               "libnss3-tools|2:3.98-1ubuntu0.2",
               "libsqlite3-dev|3.45.1-1ubuntu2.7",
-              "libssl-dev|3.0.13-0ubuntu3.12",
+              "libssl-dev|3.0.13-0ubuntu3.15",
               "libtool|2.4.7-7build1",
               "libyaml-dev|0.2.5-1build1",
               "locales|2.39-0ubuntu8.8",
@@ -261,7 +261,7 @@
               "ssh|1:9.6p1-3ubuntu13.18",
               "sshpass|1.09-1",
               "sudo|1.9.15p5-3ubuntu5.24.04.2",
-              "systemd-coredump|255.4-1ubuntu8.16",
+              "systemd-coredump|255.4-1ubuntu8.17",
               "tar|1.35+dfsg-3ubuntu0.4",
               "telnet|0.17+2.5-3ubuntu4.2",
               "texinfo|7.1-3build2",
@@ -271,7 +271,7 @@
               "tzdata|2026c-0ubuntu0.24.04.1",
               "unzip|6.0-28ubuntu4.1",
               "upx|4.2.2-3",
-              "wget|1.21.4-1ubuntu4.4",
+              "wget|1.21.4-1ubuntu4.5",
               "xvfb|2:21.1.12-1ubuntu1.6",
               "xz-utils|5.6.1+really5.4.5-1ubuntu0.3",
               "zip|3.0-13ubuntu0.2",

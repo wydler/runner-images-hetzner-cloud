@@ -1,49 +1,49 @@
 # Ubuntu-Slim
 - OS Version: 24.04.4 LTS
-- Image Version: 20260807.0038.1
-- Systemd version: 255.4-1ubuntu8.16
+- Image Version: 20260829.0045.1
+- Systemd version: 255.4-1ubuntu8.17
 
 ## Installed Software
 
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.19.0
+- Node.js 24.20.0
 - Perl 5.38.2
 - Python 3.12.3
 
 ### Package Management
-- Npm 11.17.0
+- Npm 11.19.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.16.6
+- Pipx 1.16.7
 
 ### Tools
-- AzCopy 10.32.4 - available by `azcopy` and `azcopy10` aliases
+- AzCopy 10.32.7 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.46.1
-- Docker Compose 5.4.0
+- Docker Compose 5.5.0
 - Docker-Buildx 0.36.1
 - Docker Client 29.7.2
-- Git 2.54.0
-- Git LFS 3.7.1
+- Git 2.55.0
+- Git LFS 3.8.0
 - Git-ftp 1.6.0
 - jq 1.7
-- nvm 0.40.6
-- OpenSSL 3.0.13-0ubuntu3.12
-- yq 4.53.3
+- nvm 0.40.7
+- OpenSSL 3.0.13-0ubuntu3.15
+- yq 4.53.6
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.18
+- AWS CLI 2.36.34
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.165.0
-- Azure CLI 2.89.0
-- Azure CLI (azure-devops) 1.0.6
-- GitHub CLI 2.97.0
-- Google Cloud CLI 579.0.0
+- Azure CLI 2.89.1
+- Azure CLI (azure-devops) 1.0.7
+- GitHub CLI 2.98.0
+- Google Cloud CLI 582.0.0
 
 ### PowerShell Tools
-- PowerShell 7.5.9
+- PowerShell 7.5.10
 
 ### Installed apt packages
 | Name                   | Version                      |
@@ -57,9 +57,9 @@
 | bzip2                  | 1.0.8-5.1build0.1            |
 | ca-certificates        | 20260601\~24.04.1            |
 | coreutils              | 9.4-3ubuntu6.2               |
-| curl                   | 8.5.0-2ubuntu10.11           |
+| curl                   | 8.5.0-2ubuntu10.13           |
 | dbus                   | 1.14.10-4ubuntu4.1           |
-| dnsutils               | 1:9.18.39-0ubuntu0.24.04.5   |
+| dnsutils               | 1:9.18.39-0ubuntu0.24.04.6   |
 | dpkg                   | 1.22.6ubuntu6.6              |
 | dpkg-dev               | 1.22.6ubuntu6.6              |
 | fakeroot               | 1.33-1                       |
@@ -77,7 +77,7 @@
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.2            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.7            |
-| libssl-dev             | 3.0.13-0ubuntu3.12           |
+| libssl-dev             | 3.0.13-0ubuntu3.15           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
 | locales                | 2.39-0ubuntu8.8              |
@@ -103,7 +103,7 @@
 | ssh                    | 1:9.6p1-3ubuntu13.18         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
-| systemd-coredump       | 255.4-1ubuntu8.16            |
+| systemd-coredump       | 255.4-1ubuntu8.17            |
 | tar                    | 1.35+dfsg-3ubuntu0.4         |
 | telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |
@@ -113,7 +113,7 @@
 | tzdata                 | 2026c-0ubuntu0.24.04.1       |
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
-| wget                   | 1.21.4-1ubuntu4.4            |
+| wget                   | 1.21.4-1ubuntu4.5            |
 | xvfb                   | 2:21.1.12-1ubuntu1.6         |
 | xz-utils               | 5.6.1+really5.4.5-1ubuntu0.3 |
 | zip                    | 3.0-13ubuntu0.2              |

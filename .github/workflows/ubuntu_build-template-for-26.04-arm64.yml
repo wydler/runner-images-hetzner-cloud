@@ -17,6 +17,7 @@ name: Ubuntu - Build template for Ubuntu 26.04 Arm64
         required: true
         options:
           - cax21
+          - cax31          
         default: "cax21"
 
 

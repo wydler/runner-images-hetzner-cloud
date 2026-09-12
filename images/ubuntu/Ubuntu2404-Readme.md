@@ -1,7 +1,7 @@
 # Ubuntu 24.04
-- OS Version: 24.04.4 LTS
+- OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20260903.0159.2
+- Image Version: 20260912.0161.1
 - Systemd version: 255.4-1ubuntu8.17
 
 ## Installed Software
@@ -14,8 +14,8 @@
 - Dash 0.5.12-6ubuntu5
 - GNU C++: 12.4.0, 13.3.0, 14.2.0
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
-- Julia 1.12.7
-- Kotlin 2.4.10-release-377
+- Julia 1.13.0
+- Kotlin 2.4.20
 - Node.js 22.23.2
 - Perl 5.38.2
 - Python 3.12.3
@@ -24,15 +24,15 @@
 
 ### Package Management
 - cpan 1.64
-- Helm 3.21.4
-- Homebrew 6.0.21
+- Helm 3.22.0
+- Homebrew 6.0.22
 - Miniconda 26.7.1
 - Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.16.7
 - RubyGems 3.4.20
-- Vcpkg (build from commit 7ff71c6826)
+- Vcpkg (build from commit a1cae005c3)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -56,20 +56,20 @@ to accomplish this.
 - Maven 3.9.16
 
 ### Tools
-- Ansible 2.21.3
+- Ansible 2.21.4
 - AzCopy 10.32.7 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.2.0
 - Bazelisk 1.28.1
-- Bicep 0.46.1
+- Bicep 0.47.16
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.26.4
+- CodeQL Action Bundle 2.27.0
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.37.0
+- Docker-Buildx 0.37.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.238.0
+- Fastlane 2.239.0
 - Git 2.55.0
 - Git LFS 3.8.0
 - Git-ftp 1.6.0
@@ -88,7 +88,7 @@ to accomplish this.
 - Packer 1.16.0
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.261.0
+- Pulumi 3.262.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,13 +97,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.36.38
+- AWS CLI 2.36.44
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.165.0
+- AWS SAM CLI 1.166.2
 - Azure CLI 2.90.0
-- Azure CLI (azure-devops) 1.0.7
+- Azure CLI (azure-devops) 1.0.8
 - GitHub CLI 2.100.0
-- Google Cloud CLI 583.0.0
+- Google Cloud CLI 584.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -138,13 +138,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Google Chrome 152.0.7977.75
-- ChromeDriver 152.0.7977.75
-- Chromium 152.0.7977.0
-- Microsoft Edge 152.0.4191.62
-- Microsoft Edge WebDriver 152.0.4191.62
-- Selenium server 4.48.0
-- Mozilla Firefox 155.0
+- Google Chrome 153.0.8010.36
+- ChromeDriver 153.0.8010.36
+- Chromium 153.0.8010.0
+- Microsoft Edge 153.0.4234.32
+- Microsoft Edge WebDriver 153.0.4234.32
+- Selenium server 4.49.0
+- Mozilla Firefox 155.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -156,7 +156,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar   |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.130, 8.0.206, 8.0.319, 8.0.424, 9.0.120, 9.0.205, 9.0.317, 10.0.111, 10.0.204, 10.0.303, 10.0.400
+- .NET Core SDK: 8.0.131, 8.0.206, 8.0.319, 8.0.425, 9.0.121, 9.0.205, 9.0.318, 10.0.112, 10.0.204, 10.0.303, 10.0.401
 - nbgv 3.10.94+dea9a6c17c
 
 ### Databases
@@ -188,7 +188,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Node.js
 - 22.23.2
-- 24.20.0
+- 24.21.0
 
 #### Python
 - 3.10.21
@@ -209,7 +209,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 4.0.6
 
 ### PowerShell Tools
-- PowerShell 7.4.19
+- PowerShell 7.4.20
 
 #### PowerShell Modules
 - Az: 15.6.1
@@ -271,7 +271,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | ftp                    | 20230507-2build3             |
 | g++                    | 4:13.2.0-7ubuntu1            |
 | gcc                    | 4:13.2.0-7ubuntu1            |
-| gnupg2                 | 2.4.4-2ubuntu17.4            |
+| gnupg2                 | 2.4.4-2ubuntu17.6            |
 | haveged                | 1.9.14-1ubuntu2              |
 | iproute2               | 6.1.0-1ubuntu6.4             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
@@ -282,7 +282,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libssl-dev             | 3.0.13-0ubuntu3.15           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
-| locales                | 2.39-0ubuntu8.8              |
+| locales                | 2.39-0ubuntu8.9              |
 | lz4                    | 1.9.4-1build1.1              |
 | m4                     | 1.4.19-4build1               |
 | make                   | 4.3-4.1build2                |
@@ -290,7 +290,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | mercurial              | 6.7.2-1ubuntu2.2             |
 | net-tools              | 2.10-0.1ubuntu4.4            |
 | netcat                 | 1.226-1ubuntu2               |
-| openssh-client         | 1:9.6p1-3ubuntu13.18         |
+| openssh-client         | 1:9.6p1-3ubuntu13.19         |
 | p7zip-full             | 16.02+transitional.1         |
 | p7zip-rar              | 16.02+transitional.1         |
 | parallel               | 20231122+ds-1                |
@@ -304,7 +304,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | shellcheck             | 0.9.0-1                      |
 | sphinxsearch           | 2.2.11-8build1               |
 | sqlite3                | 3.45.1-1ubuntu2.7            |
-| ssh                    | 1:9.6p1-3ubuntu13.18         |
+| ssh                    | 1:9.6p1-3ubuntu13.19         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | swig                   | 4.2.0-2ubuntu1               |

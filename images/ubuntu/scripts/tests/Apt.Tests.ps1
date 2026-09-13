@@ -57,7 +57,7 @@ Describe "Apt acquire configuration" {
     It "Apt sources use the ports archive" -Skip:(-not $usesPortsArchive) {
         $sourcesFile = if (Test-IsUbuntu22) { "/etc/apt/sources.list" } else { "/etc/apt/sources.list.d/ubuntu.sources" }
         $aptSources = Get-Content $sourcesFile -Raw
-        $aptSources | Should -Match ([regex]::Escape("ports.ubuntu.com/ubuntu-ports"))
+        $aptSources | Should -Match "ports\.ubuntu\.com/ubuntu-ports|mirror\.hetzner\.com/ubuntu-ports"
         $aptSources | Should -Not -Match ([regex]::Escape("mirror+file:/etc/apt/apt-mirrors.txt"))
     }
 

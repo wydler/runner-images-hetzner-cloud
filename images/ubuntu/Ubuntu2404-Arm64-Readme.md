@@ -1,7 +1,7 @@
 # Ubuntu 24.04
-- OS Version: 24.04.4 LTS
+- OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20260901.0002.1
+- Image Version: 20260913.0005.1
 - Systemd version: 255.4-1ubuntu8.17
 
 ## Installed Software
@@ -14,7 +14,7 @@
 - Dash 0.5.12-6ubuntu5
 - GNU C++: 12.4.0, 13.3.0, 14.2.0
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
-- Kotlin 2.4.10-release-377
+- Kotlin 2.4.20
 - Node.js 22.23.2
 - Perl 5.38.2
 - Python 3.12.3
@@ -23,8 +23,8 @@
 
 ### Package Management
 - cpan 1.64
-- Helm 3.21.4
-- Homebrew 6.0.21
+- Helm 3.22.0
+- Homebrew 7.0.1
 - Npm 10.9.8
 - Pip 24.0
 - Pip3 24.0
@@ -54,7 +54,7 @@ to accomplish this.
 - Maven 3.9.12
 
 ### Tools
-- Ansible 2.21.3
+- Ansible 2.21.4
 - AzCopy 10.32.7 - available by `azcopy` and `azcopy10` aliases
 - Bazel 9.2.0
 - Bazelisk 1.28.1
@@ -62,10 +62,10 @@ to accomplish this.
 - CMake 3.31.6
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.36.1
+- Docker-Buildx 0.37.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.238.0
+- Fastlane 2.239.0
 - Git 2.55.0
 - Git LFS 3.8.0
 - Git-ftp 1.6.0
@@ -76,7 +76,7 @@ to accomplish this.
 - Kustomize 5.8.1
 - MediaInfo 24.01
 - Mercurial 6.7.2
-- Minikube 1.38.1
+- Minikube 1.39.0
 - n 10.2.0
 - Newman 6.2.2
 - nvm 0.40.7
@@ -84,7 +84,7 @@ to accomplish this.
 - Packer 1.16.0
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.260.0
+- Pulumi 3.262.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -93,13 +93,13 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.36.37
+- AWS CLI 2.36.44
 - AWS CLI Session Manager Plugin 1.2.835.0
-- AWS SAM CLI 1.165.0
+- AWS SAM CLI 1.166.2
 - Azure CLI 2.90.0
-- Azure CLI (azure-devops) 1.0.7
-- GitHub CLI 2.98.0
-- Google Cloud CLI 583.0.0
+- Azure CLI (azure-devops) 1.0.8
+- GitHub CLI 2.100.0
+- Google Cloud CLI 584.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -119,17 +119,17 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ```
 
 ### Rust Tools
-- Cargo 1.98.0
-- Rust 1.98.0
-- Rustdoc 1.98.0
+- Cargo 1.98.1
+- Rust 1.98.1
+- Rustdoc 1.98.1
 - Rustup 1.29.1
 
 #### Packages
 - Rustfmt 1.9.0
 
 ### Browsers and Drivers
-- Selenium server 4.48.0
-- Mozilla Firefox 154.0.1
+- Selenium server 4.49.0
+- Mozilla Firefox 155.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -141,7 +141,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.130, 8.0.206, 8.0.319, 8.0.424, 9.0.120, 9.0.205, 9.0.317, 10.0.111, 10.0.204, 10.0.303, 10.0.400
+- .NET Core SDK: 8.0.131, 8.0.206, 8.0.319, 8.0.425, 9.0.121, 9.0.205, 9.0.318, 10.0.112, 10.0.204, 10.0.303, 10.0.401
 - nbgv 3.10.94+dea9a6c17c
 
 ### Databases
@@ -169,11 +169,11 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### Go
 - 1.24.13
 - 1.25.14
-- 1.26.7
+- 1.26.8
 
 #### Node.js
 - 22.23.2
-- 24.20.0
+- 24.21.0
 
 #### Python
 - 3.10.21
@@ -189,7 +189,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 4.0.6
 
 ### PowerShell Tools
-- PowerShell 7.4.19
+- PowerShell 7.4.20
 
 #### PowerShell Modules
 - Az: 15.6.1
@@ -228,7 +228,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | ftp                    | 20230507-2build3             |
 | g++                    | 4:13.2.0-7ubuntu1            |
 | gcc                    | 4:13.2.0-7ubuntu1            |
-| gnupg2                 | 2.4.4-2ubuntu17.4            |
+| gnupg2                 | 2.4.4-2ubuntu17.6            |
 | haveged                | 1.9.14-1ubuntu2              |
 | iproute2               | 6.1.0-1ubuntu6.4             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
@@ -240,7 +240,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libssl-dev             | 3.0.13-0ubuntu3.15           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
-| locales                | 2.39-0ubuntu8.8              |
+| locales                | 2.39-0ubuntu8.9              |
 | lz4                    | 1.9.4-1build1.1              |
 | m4                     | 1.4.19-4build1               |
 | make                   | 4.3-4.1build2                |
@@ -248,7 +248,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | mercurial              | 6.7.2-1ubuntu2.2             |
 | net-tools              | 2.10-0.1ubuntu4.4            |
 | netcat                 | 1.226-1ubuntu2               |
-| openssh-client         | 1:9.6p1-3ubuntu13.18         |
+| openssh-client         | 1:9.6p1-3ubuntu13.19         |
 | p7zip-full             | 16.02+transitional.1         |
 | p7zip-rar              | 16.02+transitional.1         |
 | parallel               | 20231122+ds-1                |
@@ -262,7 +262,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | shellcheck             | 0.9.0-1                      |
 | sphinxsearch           | 2.2.11-8build1               |
 | sqlite3                | 3.45.1-1ubuntu2.7            |
-| ssh                    | 1:9.6p1-3ubuntu13.18         |
+| ssh                    | 1:9.6p1-3ubuntu13.19         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |
 | swig                   | 4.2.0-2ubuntu1               |

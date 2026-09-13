@@ -50,7 +50,7 @@ Describe "Apt acquire configuration" {
     It "Apt sources resolve through the mirror list" -Skip:$usesPortsArchive {
         $sourcesFile = if (Test-IsUbuntu22) { "/etc/apt/sources.list" } else { "/etc/apt/sources.list.d/ubuntu.sources" }
         $aptSources = Get-Content $sourcesFile -Raw
-        $aptSources | Should -Match "mirror\.hetzner\.com/ubuntu(-ports)?/|mirror\+file:/etc/apt/apt-mirrors\.txt"
+        $aptSources | Should -Match "mirror\.hetzner\.com/ubuntu/|mirror\+file:/etc/apt/apt-mirrors\.txt"
     }
 
     # The mirror list carries no arm64 packages for these releases, so pointing them at it would 404.

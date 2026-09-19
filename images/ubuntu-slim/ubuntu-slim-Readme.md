@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.5 LTS
-- Image Version: 20260912.0046.1
+- Image Version: 20260919.0048.1
 - Systemd version: 255.4-1ubuntu8.17
 
 ## Installed Software
@@ -16,14 +16,14 @@
 - Npm 11.19.0
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.17.2
+- Pipx 1.17.4
 
 ### Tools
 - AzCopy 10.32.7 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.47.16
 - Docker Compose 5.5.1
 - Docker-Buildx 0.37.1
-- Docker Client 29.8.0
+- Docker Client 29.8.1
 - Git 2.55.0
 - Git LFS 3.8.0
 - Git-ftp 1.6.0
@@ -34,13 +34,13 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.36.44
+- AWS CLI 2.36.49
 - AWS CLI Session Manager Plugin 1.2.835.0
 - AWS SAM CLI 1.166.2
 - Azure CLI 2.90.0
 - Azure CLI (azure-devops) 1.0.8
-- GitHub CLI 2.100.0
-- Google Cloud CLI 584.0.0
+- GitHub CLI 2.101.0
+- Google Cloud CLI 585.0.0
 
 ### PowerShell Tools
 - PowerShell 7.5.11
@@ -76,7 +76,7 @@
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.2            |
-| libsqlite3-dev         | 3.45.1-1ubuntu2.7            |
+| libsqlite3-dev         | 3.45.1-1ubuntu2.8            |
 | libssl-dev             | 3.0.13-0ubuntu3.15           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
@@ -99,7 +99,7 @@
 | rpm                    | 4.18.2+dfsg-2.1build2        |
 | rsync                  | 3.2.7-1ubuntu1.5             |
 | shellcheck             | 0.9.0-1                      |
-| sqlite3                | 3.45.1-1ubuntu2.7            |
+| sqlite3                | 3.45.1-1ubuntu2.8            |
 | ssh                    | 1:9.6p1-3ubuntu13.19         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.2    |

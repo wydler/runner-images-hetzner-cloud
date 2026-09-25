@@ -10,7 +10,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20260919.0048.1"
+      "Version": "20260925.0049.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.17.4"
+              "Version": "1.17.6"
             }
           ]
         },
@@ -130,7 +130,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "nvm",
-              "Version": "0.40.7"
+              "Version": "0.40.8"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.36.49"
+              "Version": "2.37.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -186,7 +186,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "585.0.0"
+              "Version": "586.0.0"
             }
           ]
         },
@@ -215,7 +215,7 @@
               "bzip2|1.0.8-5.1ubuntu0.1",
               "ca-certificates|20260601\\~24.04.1",
               "coreutils|9.4-3ubuntu6.3",
-              "curl|8.5.0-2ubuntu10.13",
+              "curl|8.5.0-2ubuntu10.15",
               "dbus|1.14.10-4ubuntu4.1",
               "dnsutils|1:9.18.39-0ubuntu0.24.04.7",
               "dpkg|1.22.6ubuntu6.6",
@@ -260,7 +260,7 @@
               "sqlite3|3.45.1-1ubuntu2.8",
               "ssh|1:9.6p1-3ubuntu13.19",
               "sshpass|1.09-1",
-              "sudo|1.9.15p5-3ubuntu5.24.04.2",
+              "sudo|1.9.15p5-3ubuntu5.24.04.3",
               "systemd-coredump|255.4-1ubuntu8.17",
               "tar|1.35+dfsg-3ubuntu0.4",
               "telnet|0.17+2.5-3ubuntu4.2",
@@ -272,7 +272,7 @@
               "unzip|6.0-28ubuntu4.1",
               "upx|4.2.2-3",
               "wget|1.21.4-1ubuntu4.5",
-              "xvfb|2:21.1.12-1ubuntu1.6",
+              "xvfb|2:21.1.12-1ubuntu1.8",
               "xz-utils|5.6.1+really5.4.5-1ubuntu0.3",
               "zip|3.0-13ubuntu0.2",
               "zsync|0.6.2-5build1"

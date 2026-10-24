@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.5 LTS
-- Image Version: 20261017.0053.1
+- Image Version: 20261024.0054.1
 - Systemd version: 255.4-1ubuntu8.18
 
 ## Installed Software
@@ -8,7 +8,7 @@
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.22.0
+- Node.js 24.22.1
 - Perl 5.38.2
 - Python 3.12.3
 
@@ -16,16 +16,16 @@
 - Npm 11.19.1
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.18.2
+- Pipx 1.18.4
 
 ### Tools
-- AzCopy 10.32.8 - available by `azcopy` and `azcopy10` aliases
+- AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.48.1
-- Docker Compose 5.6.0
-- Docker-Buildx 0.38.0
-- Docker Client 29.9.1
-- Git 2.55.0
-- Git LFS 3.8.0
+- Docker Compose 5.6.1
+- Docker-Buildx 0.38.1
+- Docker Client 29.9.2
+- Git 2.56.0
+- Git LFS 3.8.1
 - Git-ftp 1.6.0
 - jq 1.7
 - nvm 0.40.8
@@ -34,13 +34,13 @@
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.38.1
+- AWS CLI 2.38.5
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.169.0
+- AWS SAM CLI 1.170.0
 - Azure CLI 2.91.0
-- Azure CLI (azure-devops) 1.0.9
-- GitHub CLI 2.102.0
-- Google Cloud CLI 589.0.0
+- Azure CLI (azure-devops) 1.0.10
+- GitHub CLI 2.103.2
+- Google Cloud CLI 590.0.1
 
 ### PowerShell Tools
 - PowerShell 7.5.12
@@ -55,7 +55,7 @@
 | bc                     | 1.07.1-3ubuntu4              |
 | binutils               | 2.42-4ubuntu2.10             |
 | bzip2                  | 1.0.8-5.1ubuntu0.1           |
-| ca-certificates        | 20260601\~24.04.1            |
+| ca-certificates        | 20260816ubuntu0.24.04.1      |
 | coreutils              | 9.4-3ubuntu6.3               |
 | curl                   | 8.5.0-2ubuntu10.16           |
 | dbus                   | 1.14.10-4ubuntu4.1           |
@@ -75,7 +75,7 @@
 | iproute2               | 6.1.0-1ubuntu6.4             |
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
-| libnss3-tools          | 2:3.98-1ubuntu0.2            |
+| libnss3-tools          | 2:3.98-1ubuntu0.3            |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.8            |
 | libssl-dev             | 3.0.13-0ubuntu3.16           |
 | libtool                | 2.4.7-7build1                |
@@ -114,7 +114,7 @@
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.5            |
-| xvfb                   | 2:21.1.12-1ubuntu1.8         |
-| xz-utils               | 5.6.1+really5.4.5-1ubuntu0.3 |
+| xvfb                   | 2:21.1.12-1ubuntu1.9         |
+| xz-utils               | 5.6.1+really5.4.5-1ubuntu0.4 |
 | zip                    | 3.0-13ubuntu0.2              |
 | zsync                  | 0.6.2-5build1                |

@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20261017.0172.1
+- Image Version: 20261024.0173.1
 - Systemd version: 255.4-1ubuntu8.18
 
 ## Installed Software
@@ -16,7 +16,7 @@
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
 - Julia 1.13.2
 - Kotlin 2.4.21
-- Node.js 22.23.3
+- Node.js 22.23.4
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.9
-- Miniconda 26.7.1
+- Homebrew 7.0.10
+- Miniconda 26.9.4
 - Npm 10.9.9
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.16.7
 - RubyGems 3.4.20
-- Vcpkg (build from commit a5f736224e)
+- Vcpkg (build from commit 0c2a9ace19)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,27 +51,27 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.8.1
+- Gradle 9.8.2
 - Lerna 10.1.1
 - Maven 3.10.0
 
 ### Tools
 - Ansible 2.21.5
-- AzCopy 10.32.8 - available by `azcopy` and `azcopy10` aliases
-- Bazel 9.3.0
+- AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
+- Bazel 9.3.1
 - Bazelisk 1.28.1
 - Bicep 0.48.1
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.27.2
+- CodeQL Action Bundle 2.27.3
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.38.0
+- Docker-Buildx 0.38.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.241.1
-- Git 2.55.0
-- Git LFS 3.8.0
+- Git 2.56.0
+- Git LFS 3.8.1
 - Git-ftp 1.6.0
 - Haveged 1.9.14
 - jq 1.7
@@ -81,14 +81,14 @@ to accomplish this.
 - MediaInfo 24.01
 - Mercurial 6.7.2
 - Minikube 1.39.0
-- n 10.2.0
+- n 11.0.0
 - Newman 6.2.3
 - nvm 0.40.8
 - OpenSSL 3.0.13-0ubuntu3.16
-- Packer 1.16.1
+- Packer 1.16.2
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.270.0
+- Pulumi 3.272.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -97,22 +97,22 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.38.1
+- AWS CLI 2.38.5
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.169.0
+- AWS SAM CLI 1.170.0
 - Azure CLI 2.91.0
-- Azure CLI (azure-devops) 1.0.9
-- GitHub CLI 2.102.0
-- Google Cloud CLI 589.0.0
+- Azure CLI (azure-devops) 1.0.10
+- GitHub CLI 2.103.2
+- Google Cloud CLI 590.0.1
 
 ### Java
 | Version             | Environment Variable |
 | ------------------- | -------------------- |
 | 8.0.504+1           | JAVA_HOME_8_X64      |
 | 11.0.32+1           | JAVA_HOME_11_X64     |
-| 17.0.20+1 (default) | JAVA_HOME_17_X64     |
-| 21.0.12+1           | JAVA_HOME_21_X64     |
-| 25.0.4+1            | JAVA_HOME_25_X64     |
+| 17.0.21+9 (default) | JAVA_HOME_17_X64     |
+| 21.0.13+9           | JAVA_HOME_21_X64     |
+| 25.0.5+8            | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.3.6
@@ -123,7 +123,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ```
 
 ### Haskell Tools
-- Cabal 3.18.1.0
+- Cabal 3.18.2.0
 - GHC 9.14.1
 - GHCup 0.2.6.2
 - Stack 3.11.1
@@ -132,19 +132,19 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cargo 1.99.1
 - Rust 1.99.1
 - Rustdoc 1.99.1
-- Rustup 1.29.1
+- Rustup 1.29.2
 
 #### Packages
 - Rustfmt 1.10.0
 
 ### Browsers and Drivers
-- Google Chrome 155.0.8059.84
-- ChromeDriver 155.0.8059.84
-- Chromium 155.0.8059.0
-- Microsoft Edge 155.0.4283.62
-- Microsoft Edge WebDriver 155.0.4283.62
+- Google Chrome 156.0.8078.47
+- ChromeDriver 156.0.8078.47
+- Chromium 156.0.8078.0
+- Microsoft Edge 156.0.4314.42
+- Microsoft Edge WebDriver 156.0.4314.42
 - Selenium server 4.51.0
-- Mozilla Firefox 158.0
+- Mozilla Firefox 158.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -184,18 +184,18 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### Go
 - 1.24.13
 - 1.25.14
-- 1.26.9
+- 1.26.10
 
 #### Node.js
-- 22.23.3
-- 24.22.0
+- 22.23.4
+- 24.22.1
 
 #### Python
 - 3.11.17
 - 3.12.15
-- 3.13.16
-- 3.14.8
-- 3.15.0
+- 3.13.17
+- 3.14.9
+- 3.15.1
 
 #### PyPy
 - 3.9.19 [PyPy 7.3.16]
@@ -204,9 +204,9 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Ruby
 - 3.2.11
-- 3.3.12
-- 3.4.11
-- 4.0.7
+- 3.3.13
+- 3.4.12
+- 4.0.9
 
 ### PowerShell Tools
 - PowerShell 7.4.21
@@ -277,7 +277,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | iputils-ping           | 3:20240117-1ubuntu0.1         |
 | jq                     | 1.7.1-3ubuntu0.24.04.2        |
 | libicu-dev             | 74.2-1ubuntu3.1               |
-| libnss3-tools          | 2:3.98-1ubuntu0.2             |
+| libnss3-tools          | 2:3.98-1ubuntu0.3             |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.8             |
 | libssl-dev             | 3.0.13-0ubuntu3.16            |
 | libtool                | 2.4.7-7build1                 |
@@ -319,7 +319,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | unzip                  | 6.0-28ubuntu4.1               |
 | upx                    | 4.2.2-3                       |
 | wget                   | 1.21.4-1ubuntu4.5             |
-| xvfb                   | 2:21.1.12-1ubuntu1.8          |
-| xz-utils               | 5.6.1+really5.4.5-1ubuntu0.3  |
+| xvfb                   | 2:21.1.12-1ubuntu1.9          |
+| xz-utils               | 5.6.1+really5.4.5-1ubuntu0.4  |
 | zip                    | 3.0-13ubuntu0.2               |
 | zsync                  | 0.6.2-5build1                 |

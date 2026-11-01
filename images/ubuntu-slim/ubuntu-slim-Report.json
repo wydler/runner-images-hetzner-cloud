@@ -10,7 +10,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20261024.0054.1"
+      "Version": "20261101.0055.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -38,7 +38,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Node.js",
-              "Version": "24.22.1"
+              "Version": "24.22.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.18.4"
+              "Version": "1.18.11"
             }
           ]
         },
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.38.5"
+              "Version": "2.39.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -166,7 +166,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS SAM CLI",
-              "Version": "1.170.0"
+              "Version": "1.171.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -181,12 +181,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "GitHub CLI",
-              "Version": "2.103.2"
+              "Version": "2.103.3"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "590.0.1"
+              "Version": "591.0.0"
             }
           ]
         },
@@ -196,7 +196,7 @@
           "Children": {
             "NodeType": "ToolVersionNode",
             "ToolName": "PowerShell",
-            "Version": "7.5.12"
+            "Version": "7.5.13"
           }
         },
         {

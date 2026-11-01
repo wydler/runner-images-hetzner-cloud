@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20261024.0013.1
+- Image Version: 20261101.0014.1
 - Systemd version: 255.4-1ubuntu8.18
 
 ## Installed Software
@@ -19,12 +19,12 @@
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
-- Swift 6.4.1
+- Swift 6.4.2
 
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.10
+- Homebrew 7.0.11
 - Npm 10.9.9
 - Pip 24.0
 - Pip3 24.0
@@ -65,14 +65,14 @@ to accomplish this.
 - Docker-Buildx 0.38.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.241.1
+- Fastlane 2.241.2
 - Git 2.56.0
 - Git LFS 3.8.1
 - Git-ftp 1.6.0
 - Haveged 1.9.14
 - jq 1.7
 - Kind 0.33.0
-- Kubectl 1.37.1
+- Kubectl 1.37.2
 - Kustomize 5.8.3
 - MediaInfo 24.01
 - Mercurial 6.7.2
@@ -84,7 +84,7 @@ to accomplish this.
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.272.0
+- Pulumi 3.273.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -93,26 +93,26 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.38.5
+- AWS CLI 2.39.3
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.170.0
+- AWS SAM CLI 1.171.0
 - Azure CLI 2.91.0
 - Azure CLI (azure-devops) 1.0.10
-- GitHub CLI 2.103.2
-- Google Cloud CLI 590.0.1
+- GitHub CLI 2.103.3
+- Google Cloud CLI 591.0.0
 
 ### Java
 | Version             | Environment Variable |
 | ------------------- | -------------------- |
 | 8.0.504+1           | JAVA_HOME_8_X64      |
 | 11.0.32+1           | JAVA_HOME_11_X64     |
-| 17.0.20+1 (default) | JAVA_HOME_17_X64     |
+| 17.0.21+9 (default) | JAVA_HOME_17_X64     |
 | 21.0.13+9           | JAVA_HOME_21_X64     |
 | 25.0.5+8            | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.3.6
-- Composer 2.10.3
+- Composer 2.11.1
 - PHPUnit 8.5.56
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
@@ -128,8 +128,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.10.0
 
 ### Browsers and Drivers
-- Selenium server 4.51.0
-- Mozilla Firefox 158.0.1
+- Selenium server 4.52.0
+- Mozilla Firefox 159.0
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -141,7 +141,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.132, 8.0.206, 8.0.319, 8.0.426, 9.0.122, 9.0.205, 9.0.319, 10.0.113, 10.0.204, 10.0.303, 10.0.402
+- .NET Core SDK: 8.0.133, 8.0.206, 8.0.319, 8.0.427, 9.0.123, 9.0.205, 9.0.320, 10.0.114, 10.0.204, 10.0.303, 10.0.403
 - nbgv 3.10.94+dea9a6c17c
 
 ### Databases
@@ -173,14 +173,14 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Node.js
 - 22.23.4
-- 24.22.1
+- 24.22.2
 
 #### Python
-- 3.11.17
-- 3.12.15
-- 3.13.17
-- 3.14.9
-- 3.15.1
+- 3.11.18
+- 3.12.16
+- 3.13.18
+- 3.14.10
+- 3.15.2
 
 #### Ruby
 - 3.2.11
@@ -189,7 +189,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 4.0.9
 
 ### PowerShell Tools
-- PowerShell 7.4.21
+- PowerShell 7.4.22
 
 #### PowerShell Modules
 - Az: 15.6.1
@@ -212,7 +212,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | automake               | 1:1.16.5-1.3ubuntu1           |
 | binutils               | 2.42-4ubuntu2.10              |
 | bison                  | 2:3.8.2+dfsg-1ubuntu0.24.04.1 |
-| brotli                 | 1.1.0-2build2                 |
+| brotli                 | 1.1.0-2ubuntu0.1              |
 | bzip2                  | 1.0.8-5.1ubuntu0.1            |
 | coreutils              | 9.4-3ubuntu6.3                |
 | curl                   | 8.5.0-2ubuntu10.16            |

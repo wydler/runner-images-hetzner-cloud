@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-190-generic
-- Image Version: 20261024.0111.1
+- Image Version: 20261101.0112.1
 - Systemd version: 249.11-0ubuntu3.23
 
 ## Installed Software
@@ -14,7 +14,7 @@
 - Dash 0.5.11+git20210903+057cd650a4ed-3build1
 - GNU C++: 10.5.0, 11.4.0, 12.3.0
 - GNU Fortran: 10.5.0, 11.4.0, 12.3.0
-- Julia 1.13.2
+- Julia 1.13.3
 - Kotlin 2.4.21
 - Mono 6.12.0.200
 - MSBuild 16.10.1.31701 (Mono 6.12.0.200)
@@ -22,12 +22,12 @@
 - Perl 5.34.0
 - Python 3.10.12
 - Ruby 3.0.2p107
-- Swift 6.4.1
+- Swift 6.4.2
 
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.10
+- Homebrew 7.0.11
 - Miniconda 26.9.4
 - Npm 10.9.9
 - NuGet 6.6.1.2
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.17.12
 - RubyGems 3.3.5
-- Vcpkg (build from commit 0c2a9ace19)
+- Vcpkg (build from commit 9a5dfef5d1)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -57,7 +57,7 @@ to accomplish this.
 - Gradle 9.8.2
 - Lerna 10.1.1
 - Maven 3.10.0
-- Sbt 1.13.0
+- Sbt 1.13.1
 
 ### Tools
 - Ansible 2.17.14
@@ -82,7 +82,7 @@ to accomplish this.
 - Heroku 11.12.1
 - jq 1.6
 - Kind 0.33.0
-- Kubectl 1.37.1
+- Kubectl 1.37.2
 - Kustomize 5.8.3
 - Leiningen 2.12.0
 - MediaInfo 21.09
@@ -95,12 +95,12 @@ to accomplish this.
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 3.4.4
-- Pulumi 3.272.0
-- R 4.6.1
+- Pulumi 3.273.0
+- R 4.6.2
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
 - SVN 1.14.1
-- Terraform 1.17.0
+- Terraform 1.17.1
 - yamllint 1.38.0
 - yq 4.54.1
 - zstd 1.5.7
@@ -108,17 +108,17 @@ to accomplish this.
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.5.2
-- AWS CLI 2.38.5
+- AWS CLI 2.39.3
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.170.0
+- AWS SAM CLI 1.171.0
 - Azure CLI 2.91.0
 - Azure CLI (azure-devops) 1.0.10
-- GitHub CLI 2.103.2
-- Google Cloud CLI 590.0.1
-- ORAS CLI 1.3.5
-- Netlify CLI 27.14.2
+- GitHub CLI 2.103.3
+- Google Cloud CLI 591.0.0
+- ORAS CLI 1.3.6
+- Netlify CLI 27.16.1
 - OpenShift CLI 4.22.19
-- Vercel CLI 65.2.0
+- Vercel CLI 65.9.0
 
 ### Java
 | Version             | Environment Variable |
@@ -131,7 +131,7 @@ to accomplish this.
 
 ### PHP Tools
 - PHP: 8.1.2
-- Composer 2.10.3
+- Composer 2.11.1
 - PHPUnit 8.5.56
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
@@ -158,13 +158,13 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.10.0
 
 ### Browsers and Drivers
-- Google Chrome 156.0.8078.47
-- ChromeDriver 156.0.8078.47
+- Google Chrome 156.0.8078.79
+- ChromeDriver 156.0.8078.80
 - Chromium 156.0.8078.0
-- Microsoft Edge 156.0.4314.42
-- Microsoft Edge WebDriver 156.0.4314.42
-- Selenium server 4.51.0
-- Mozilla Firefox 158.0.1
+- Microsoft Edge 156.0.4314.58
+- Microsoft Edge WebDriver 156.0.4314.58
+- Selenium server 4.52.0
+- Mozilla Firefox 159.0
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -176,7 +176,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar   |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.132, 8.0.206, 8.0.319, 8.0.426, 9.0.122, 9.0.205, 9.0.319, 10.0.113, 10.0.204, 10.0.303, 10.0.402
+- .NET Core SDK: 8.0.133, 8.0.206, 8.0.319, 8.0.427, 9.0.123, 9.0.205, 9.0.320, 10.0.114, 10.0.204, 10.0.303, 10.0.403
 - nbgv 3.10.94+dea9a6c17c
 
 ### Databases
@@ -212,14 +212,14 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Node.js
 - 22.23.4
-- 24.22.1
+- 24.22.2
 
 #### Python
-- 3.11.17
-- 3.12.15
-- 3.13.17
-- 3.14.9
-- 3.15.1
+- 3.11.18
+- 3.12.16
+- 3.13.18
+- 3.14.10
+- 3.15.2
 
 #### PyPy
 - 3.7.13 [PyPy 7.3.9]
@@ -235,7 +235,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 - 4.0.9
 
 ### PowerShell Tools
-- PowerShell 7.4.21
+- PowerShell 7.4.22
 
 #### PowerShell Modules
 - Az: 15.6.1
@@ -256,7 +256,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | Android Command Line Tools | 9.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | Android SDK Build-tools    | 37.0.0<br>36.0.0 36.1.0<br>35.0.0 35.0.1<br>34.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Android SDK Platform-Tools | 37.0.1                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Android SDK Platforms      | android-37.2-beta3 (rev 3)<br>android-37.2-beta2 (rev 2)<br>android-37.2-beta1 (rev 1)<br>android-37.2 (rev 1)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
+| Android SDK Platforms      | android-37.2-beta3 (rev 3)<br>android-37.2-beta2 (rev 2)<br>android-37.2-beta1 (rev 1)<br>android-37.2 (rev 2)<br>android-37.1 (rev 1)<br>android-37.0 (rev 2)<br>android-36.1 (rev 1)<br>android-36-ext19 (rev 1)<br>android-36-ext18 (rev 1)<br>android-36 (rev 2)<br>android-35-ext15 (rev 1)<br>android-35-ext14 (rev 1)<br>android-35 (rev 2)<br>android-34-ext8 (rev 1)<br>android-34-ext12 (rev 1)<br>android-34-ext11 (rev 1)<br>android-34-ext10 (rev 1)<br>android-34 (rev 3) |
 | Android Support Repository | 47.0.0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
 | CMake                      | 3.18.1<br>3.22.1<br>3.31.5                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | Google Play services       | 49                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -282,7 +282,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | automake               | 1:1.16.5-1.3                        |
 | binutils               | 2.38-4ubuntu2.12                    |
 | bison                  | 2:3.8.2+dfsg-1ubuntu0.22.04.1       |
-| brotli                 | 1.0.9-2build6                       |
+| brotli                 | 1.0.9-2ubuntu0.1                    |
 | bzip2                  | 1.0.8-5ubuntu0.1                    |
 | coreutils              | 8.32-4.1ubuntu1.4                   |
 | curl                   | 7.81.0-1ubuntu1.30                  |

@@ -1,7 +1,7 @@
 # Ubuntu 26.04
 - OS Version: 26.04.1 LTS
 - Kernel Version: 7.0.0-30-generic
-- Image Version: 20261101.0023.1
+- Image Version: 20261106.0024.1
 - Systemd version: 259.9-0ubuntu0.1
 
 ## Installed Software
@@ -24,13 +24,13 @@
 ### Package Management
 - cpan 1.64
 - Helm 4.3.1
-- Homebrew 7.0.11
+- Homebrew 7.0.12
 - Npm 11.19.1
 - Pip 25.1.1
 - Pip3 25.1.1
 - Pipx 1.17.10
 - RubyGems 3.6.7
-- Vcpkg (build from commit 9a5dfef5d1)
+- Vcpkg (build from commit 958ea5441f)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -49,19 +49,19 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.15
-- Gradle 9.8.2
+- Gradle 9.9.0
 - Maven 3.9.15
 
 ### Tools
-- Ansible 2.21.5
+- Ansible 2.21.6
 - AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
-- Bazel 9.3.1
+- Bazel 9.3.2
 - Bazelisk 1.28.1
 - Buildah 1.42.1
 - CMake 4.4.5
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 5.1.3
-- Docker-Buildx 0.38.1
+- Docker-Buildx 0.38.2
 - Docker Client 29.4.2
 - Docker Server 29.4.2
 - Git 2.56.0
@@ -73,29 +73,29 @@ to accomplish this.
 - Kustomize 5.8.3
 - Minikube 1.39.0
 - n 11.0.0
-- nvm 0.40.8
+- nvm 0.41.0
 - OpenSSL 3.5.5-1ubuntu3.7
 - Packer 1.16.2
 - Podman 5.7.0
 - Skopeo 1.21.0-dev
 - yamllint 1.38.0
-- yq 4.54.1
+- yq 4.54.2
 - zstd 1.5.7
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.39.3
+- AWS CLI 2.39.6
 - AWS CLI Session Manager Plugin 1.2.896.0
 - AWS SAM CLI 1.171.0
-- Azure CLI 2.91.0
+- Azure CLI 2.92.0
 - Azure CLI (azure-devops) 1.0.10
 - GitHub CLI 2.103.3
-- Google Cloud CLI 591.0.0
+- Google Cloud CLI 592.0.0
 
 ### Java
 | Version            | Environment Variable |
 | ------------------ | -------------------- |
-| 11.0.32+1          | JAVA_HOME_11_X64     |
+| 11.0.33+10         | JAVA_HOME_11_X64     |
 | 17.0.21+9          | JAVA_HOME_17_X64     |
 | 21.0.13+9          | JAVA_HOME_21_X64     |
 | 25.0.5+8 (default) | JAVA_HOME_25_X64     |
@@ -112,14 +112,14 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cargo 1.99.1
 - Rust 1.99.1
 - Rustdoc 1.99.1
-- Rustup 1.29.2
+- Rustup 1.29.3
 
 #### Packages
 - Rustfmt 1.10.0
 
 ### Browsers and Drivers
 - Selenium server 4.52.0
-- Mozilla Firefox 159.0
+- Mozilla Firefox 159.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -202,7 +202,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | aria2                  | 1.37.0+debian-4               |
 | autoconf               | 2.72-3.1ubuntu2               |
 | automake               | 1:1.18.1-3build1              |
-| bind9-dnsutils         | 1:9.20.24-1ubuntu0.4          |
+| bind9-dnsutils         | 1:9.20.24-1ubuntu0.5          |
 | binutils               | 2.46-3ubuntu2                 |
 | bison                  | 2:3.8.2+dfsg-1ubuntu0.26.04.1 |
 | brotli                 | 1.2.0-3ubuntu0.1              |
@@ -227,6 +227,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libcrypt-dev           | 1:4.5.1-1                     |
 | libgbm-dev             | 26.0.8-1ubuntu0.3             |
 | libicu-dev             | 78.2-2ubuntu1                 |
+| libjitterentropy3-dev  | 3.6.3-1                       |
 | libnss3-tools          | 2:3.120-1ubuntu2.2            |
 | libsqlite3-dev         | 3.46.1-9ubuntu0.3             |
 | libssl-dev             | 3.5.5-1ubuntu3.7              |

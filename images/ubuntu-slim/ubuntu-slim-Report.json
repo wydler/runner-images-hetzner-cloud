@@ -10,7 +10,7 @@
     {
       "NodeType": "ToolVersionNode",
       "ToolName": "Image Version:",
-      "Version": "20261101.0055.1"
+      "Version": "20261106.0056.1"
     },
     {
       "NodeType": "ToolVersionNode",
@@ -74,7 +74,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Pipx",
-              "Version": "1.18.11"
+              "Version": "1.18.15"
             }
           ]
         },
@@ -90,12 +90,12 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Bicep",
-              "Version": "0.48.1"
+              "Version": "0.49.2"
             },
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Compose",
-              "Version": "5.6.1"
+              "Version": "5.7.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -105,7 +105,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Docker Client",
-              "Version": "29.9.2"
+              "Version": "29.9.3"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -130,7 +130,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "nvm",
-              "Version": "0.40.8"
+              "Version": "0.41.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -140,7 +140,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "yq",
-              "Version": "4.54.1"
+              "Version": "4.54.2"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -156,7 +156,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "AWS CLI",
-              "Version": "2.39.3"
+              "Version": "2.39.6"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -171,7 +171,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Azure CLI",
-              "Version": "2.91.0"
+              "Version": "2.92.0"
             },
             {
               "NodeType": "ToolVersionNode",
@@ -186,7 +186,7 @@
             {
               "NodeType": "ToolVersionNode",
               "ToolName": "Google Cloud CLI",
-              "Version": "591.0.0"
+              "Version": "592.0.0"
             }
           ]
         },
@@ -207,17 +207,17 @@
             "Headers": "Name|Version",
             "Rows": [
               "acl|2.3.2-1build1.1",
-              "apt-utils|2.8.3",
+              "apt-utils|2.8.4ubuntu0.1",
               "autoconf|2.71-3",
               "automake|1:1.16.5-1.3ubuntu1",
               "bc|1.07.1-3ubuntu4",
               "binutils|2.42-4ubuntu2.10",
               "bzip2|1.0.8-5.1ubuntu0.1",
-              "ca-certificates|20260816ubuntu0.24.04.1",
+              "ca-certificates|20260816ubuntu0.24.04.2",
               "coreutils|9.4-3ubuntu6.3",
               "curl|8.5.0-2ubuntu10.16",
               "dbus|1.14.10-4ubuntu4.1",
-              "dnsutils|1:9.18.39-0ubuntu0.24.04.8",
+              "dnsutils|1:9.18.39-0ubuntu0.24.04.9",
               "dpkg|1.22.6ubuntu6.6",
               "dpkg-dev|1.22.6ubuntu6.6",
               "fakeroot|1.33-1",
@@ -234,7 +234,7 @@
               "iputils-ping|3:20240117-1ubuntu0.1",
               "jq|1.7.1-3ubuntu0.24.04.2",
               "libnss3-tools|2:3.98-1ubuntu0.3",
-              "libsqlite3-dev|3.45.1-1ubuntu2.8",
+              "libsqlite3-dev|3.45.1-1ubuntu2.9",
               "libssl-dev|3.0.13-0ubuntu3.16",
               "libtool|2.4.7-7build1",
               "libyaml-dev|0.2.5-1build1",
@@ -257,7 +257,7 @@
               "rpm|4.18.2+dfsg-2.1build2",
               "rsync|3.2.7-1ubuntu1.5",
               "shellcheck|0.9.0-1",
-              "sqlite3|3.45.1-1ubuntu2.8",
+              "sqlite3|3.45.1-1ubuntu2.9",
               "ssh|1:9.6p1-3ubuntu13.20",
               "sshpass|1.09-1",
               "sudo|1.9.15p5-3ubuntu5.24.04.4",

@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
 - Kernel Version: 5.15.0-190-generic
-- Image Version: 20261101.0014.1
+- Image Version: 20261106.0015.1
 - Systemd version: 249.11-0ubuntu3.23
 
 ## Installed Software
@@ -26,7 +26,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.11
+- Homebrew 7.0.12
 - Npm 10.9.9
 - NuGet 6.6.1.2
 - Pip 22.0.2
@@ -52,7 +52,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.12
-- Gradle 9.8.2
+- Gradle 9.9.0
 - Lerna 10.1.1
 - Maven 3.9.12
 
@@ -60,13 +60,13 @@ to accomplish this.
 - Ansible 2.17.14
 - apt-fast 1.10.0
 - AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
-- Bazel 9.3.1
+- Bazel 9.3.2
 - Bazelisk 1.28.1
 - Buildah 1.23.1
 - CMake 3.31.6
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.38.1
+- Docker-Buildx 0.38.2
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.238.0
@@ -83,41 +83,41 @@ to accomplish this.
 - Minikube 1.39.0
 - n 11.0.0
 - Newman 6.2.3
-- nvm 0.40.8
+- nvm 0.41.0
 - OpenSSL 3.0.2-0ubuntu1.30
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 3.4.4
-- Pulumi 3.273.0
+- Pulumi 3.274.1
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
 - SVN 1.14.1
 - Terraform 1.17.1
 - yamllint 1.38.0
-- yq 4.54.1
+- yq 4.54.2
 - zstd 1.5.7
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.39.3
+- AWS CLI 2.39.6
 - AWS CLI Session Manager Plugin 1.2.896.0
 - AWS SAM CLI 1.171.0
-- Azure CLI 2.91.0
+- Azure CLI 2.92.0
 - Azure CLI (azure-devops) 1.0.10
 - GitHub CLI 2.103.3
-- Google Cloud CLI 591.0.0
-- Netlify CLI 27.16.1
+- Google Cloud CLI 592.0.0
+- Netlify CLI 27.16.2
 - OpenShift CLI 4.22.19
-- Vercel CLI 65.9.0
+- Vercel CLI 65.12.1
 
 ### Java
-| Version             | Environment Variable |
-| ------------------- | -------------------- |
-| 8.0.504+1           | JAVA_HOME_8_X64      |
-| 11.0.32+1 (default) | JAVA_HOME_11_X64     |
-| 17.0.21+9           | JAVA_HOME_17_X64     |
-| 21.0.13+9           | JAVA_HOME_21_X64     |
-| 25.0.5+8            | JAVA_HOME_25_X64     |
+| Version              | Environment Variable |
+| -------------------- | -------------------- |
+| 8.0.512+9            | JAVA_HOME_8_X64      |
+| 11.0.33+10 (default) | JAVA_HOME_11_X64     |
+| 17.0.21+9            | JAVA_HOME_17_X64     |
+| 21.0.13+9            | JAVA_HOME_21_X64     |
+| 25.0.5+8             | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.1.2
@@ -131,7 +131,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cargo 1.99.1
 - Rust 1.99.1
 - Rustdoc 1.99.1
-- Rustup 1.29.2
+- Rustup 1.29.3
 
 #### Packages
 - Bindgen 0.73.2
@@ -143,7 +143,7 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 
 ### Browsers and Drivers
 - Selenium server 4.52.0
-- Mozilla Firefox 159.0
+- Mozilla Firefox 159.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -232,7 +232,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | coreutils              | 8.32-4.1ubuntu1.4                   |
 | curl                   | 7.81.0-1ubuntu1.30                  |
 | dbus                   | 1.12.20-2ubuntu4.1                  |
-| dnsutils               | 1:9.18.39-0ubuntu0.22.04.7          |
+| dnsutils               | 1:9.18.39-0ubuntu0.22.04.8          |
 | dpkg                   | 1.21.1ubuntu2.6                     |
 | dpkg-dev               | 1.21.1ubuntu2.6                     |
 | fakeroot               | 1.28-1ubuntu1                       |

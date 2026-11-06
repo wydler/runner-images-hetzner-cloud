@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20261101.0174.1
+- Image Version: 20261106.0175.1
 - Systemd version: 255.4-1ubuntu8.18
 
 ## Installed Software
@@ -25,14 +25,14 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.11
+- Homebrew 7.0.12
 - Miniconda 26.9.4
 - Npm 10.9.9
 - Pip 24.0
 - Pip3 24.0
 - Pipx 1.16.7
 - RubyGems 3.4.20
-- Vcpkg (build from commit 9a5dfef5d1)
+- Vcpkg (build from commit 958ea5441f)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -51,22 +51,22 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.8.2
+- Gradle 9.9.0
 - Lerna 10.1.1
 - Maven 3.10.0
 
 ### Tools
-- Ansible 2.21.5
+- Ansible 2.21.6
 - AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
-- Bazel 9.3.1
+- Bazel 9.3.2
 - Bazelisk 1.28.1
-- Bicep 0.48.1
+- Bicep 0.49.2
 - Buildah 1.33.7
 - CMake 3.31.6
-- CodeQL Action Bundle 2.27.3
+- CodeQL Action Bundle 2.27.4
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.38.1
+- Docker-Buildx 0.38.2
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.241.2
@@ -83,33 +83,33 @@ to accomplish this.
 - Minikube 1.39.0
 - n 11.0.0
 - Newman 6.2.3
-- nvm 0.40.8
+- nvm 0.41.0
 - OpenSSL 3.0.13-0ubuntu3.16
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.273.0
+- Pulumi 3.274.1
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
-- yq 4.54.1
+- yq 4.54.2
 - zstd 1.5.7
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.39.3
+- AWS CLI 2.39.6
 - AWS CLI Session Manager Plugin 1.2.896.0
 - AWS SAM CLI 1.171.0
-- Azure CLI 2.91.0
+- Azure CLI 2.92.0
 - Azure CLI (azure-devops) 1.0.10
 - GitHub CLI 2.103.3
-- Google Cloud CLI 591.0.0
+- Google Cloud CLI 592.0.0
 
 ### Java
 | Version             | Environment Variable |
 | ------------------- | -------------------- |
-| 8.0.504+1           | JAVA_HOME_8_X64      |
-| 11.0.32+1           | JAVA_HOME_11_X64     |
+| 8.0.512+9           | JAVA_HOME_8_X64      |
+| 11.0.33+10          | JAVA_HOME_11_X64     |
 | 17.0.21+9 (default) | JAVA_HOME_17_X64     |
 | 21.0.13+9           | JAVA_HOME_21_X64     |
 | 25.0.5+8            | JAVA_HOME_25_X64     |
@@ -132,19 +132,19 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Cargo 1.99.1
 - Rust 1.99.1
 - Rustdoc 1.99.1
-- Rustup 1.29.2
+- Rustup 1.29.3
 
 #### Packages
 - Rustfmt 1.10.0
 
 ### Browsers and Drivers
-- Google Chrome 156.0.8078.79
-- ChromeDriver 156.0.8078.80
-- Chromium 156.0.8078.0
-- Microsoft Edge 156.0.4314.58
-- Microsoft Edge WebDriver 156.0.4314.58
+- Google Chrome 157.0.8103.38
+- ChromeDriver 157.0.8103.38
+- Chromium 157.0.8103.0
+- Microsoft Edge 157.0.4341.42
+- Microsoft Edge WebDriver 157.0.4341.42
 - Selenium server 4.52.0
-- Mozilla Firefox 159.0
+- Mozilla Firefox 159.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -260,7 +260,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | coreutils              | 9.4-3ubuntu6.3                |
 | curl                   | 8.5.0-2ubuntu10.16            |
 | dbus                   | 1.14.10-4ubuntu4.1            |
-| dnsutils               | 1:9.18.39-0ubuntu0.24.04.8    |
+| dnsutils               | 1:9.18.39-0ubuntu0.24.04.9    |
 | dpkg                   | 1.22.6ubuntu6.6               |
 | dpkg-dev               | 1.22.6ubuntu6.6               |
 | fakeroot               | 1.33-1                        |
@@ -278,7 +278,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | jq                     | 1.7.1-3ubuntu0.24.04.2        |
 | libicu-dev             | 74.2-1ubuntu3.1               |
 | libnss3-tools          | 2:3.98-1ubuntu0.3             |
-| libsqlite3-dev         | 3.45.1-1ubuntu2.8             |
+| libsqlite3-dev         | 3.45.1-1ubuntu2.9             |
 | libssl-dev             | 3.0.13-0ubuntu3.16            |
 | libtool                | 2.4.7-7build1                 |
 | libyaml-dev            | 0.2.5-1build1                 |
@@ -303,7 +303,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | rsync                  | 3.2.7-1ubuntu1.5              |
 | shellcheck             | 0.9.0-1                       |
 | sphinxsearch           | 2.2.11-8build1                |
-| sqlite3                | 3.45.1-1ubuntu2.8             |
+| sqlite3                | 3.45.1-1ubuntu2.9             |
 | ssh                    | 1:9.6p1-3ubuntu13.20          |
 | sshpass                | 1.09-1                        |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.4     |

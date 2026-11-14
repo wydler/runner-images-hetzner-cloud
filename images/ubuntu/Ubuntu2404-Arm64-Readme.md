@@ -1,7 +1,7 @@
 # Ubuntu 24.04
 - OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20261106.0015.1
+- Image Version: 20261114.0016.2
 - Systemd version: 255.4-1ubuntu8.18
 
 ## Installed Software
@@ -15,7 +15,7 @@
 - GNU C++: 12.4.0, 13.3.0, 14.2.0
 - GNU Fortran: 12.4.0, 13.3.0, 14.2.0
 - Kotlin 2.4.21
-- Node.js 22.23.4
+- Node.js 22.23.5
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
@@ -24,7 +24,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.12
+- Homebrew 7.0.13
 - Npm 10.9.9
 - Pip 24.0
 - Pip3 24.0
@@ -49,7 +49,7 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.9.0
+- Gradle 9.9.1
 - Lerna 10.1.1
 - Maven 3.9.12
 
@@ -62,11 +62,11 @@ to accomplish this.
 - CMake 3.31.6
 - Docker Amazon ECR Credential Helper 0.12.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.38.2
+- Docker-Buildx 0.39.0
 - Docker Client 28.0.4
 - Docker Server 28.0.4
 - Fastlane 2.241.2
-- Git 2.56.0
+- Git 2.56.1
 - Git LFS 3.8.1
 - Git-ftp 1.6.0
 - Haveged 1.9.14
@@ -84,22 +84,22 @@ to accomplish this.
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.274.1
+- Pulumi 3.276.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
-- yq 4.54.2
+- yq 4.54.3
 - zstd 1.5.7
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.39.6
+- AWS CLI 2.40.3
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.171.0
+- AWS SAM CLI 1.172.1
 - Azure CLI 2.92.0
 - Azure CLI (azure-devops) 1.0.10
-- GitHub CLI 2.103.3
-- Google Cloud CLI 592.0.0
+- GitHub CLI 2.104.0
+- Google Cloud CLI 593.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -112,24 +112,24 @@ to accomplish this.
 
 ### PHP Tools
 - PHP: 8.3.6
-- Composer 2.11.1
-- PHPUnit 8.5.56
+- Composer 2.11.2
+- PHPUnit 8.5.57
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 ```
 
 ### Rust Tools
-- Cargo 1.99.1
-- Rust 1.99.1
-- Rustdoc 1.99.1
+- Cargo 1.100.0
+- Rust 1.100.0
+- Rustdoc 1.100.0
 - Rustup 1.29.3
 
 #### Packages
-- Rustfmt 1.10.0
+- Rustfmt 1.11.0
 
 ### Browsers and Drivers
 - Selenium server 4.52.0
-- Mozilla Firefox 159.0.1
+- Mozilla Firefox 160.0
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -141,14 +141,14 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 | SELENIUM_JAR_PATH | /usr/share/java/selenium-server.jar |
 
 ### .NET Tools
-- .NET Core SDK: 8.0.133, 8.0.206, 8.0.319, 8.0.427, 9.0.123, 9.0.205, 9.0.320, 10.0.114, 10.0.204, 10.0.303, 10.0.403
+- .NET Core SDK: 8.0.134, 8.0.206, 8.0.319, 8.0.428, 9.0.124, 9.0.205, 9.0.321, 10.0.115, 10.0.204, 10.0.303, 10.0.404, 11.0.100
 - nbgv 3.10.94+dea9a6c17c
 
 ### Databases
 - sqlite3 3.45.1
 
 #### PostgreSQL
-- PostgreSQL 16.15
+- PostgreSQL 16.16
 ```
 User: postgres
 PostgreSQL service is disabled by default.
@@ -156,7 +156,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 ```
 
 #### MySQL
-- MySQL 8.0.46-0ubuntu0.24.04.4
+- MySQL 8.0.46-0ubuntu0.24.04.5
 ```
 User: root
 Password: root
@@ -169,11 +169,11 @@ Use the following command as a part of your job to start the service: 'sudo syst
 #### Go
 - 1.24.13
 - 1.25.14
-- 1.26.10
+- 1.26.11
 
 #### Node.js
-- 22.23.4
-- 24.22.2
+- 22.23.5
+- 24.22.3
 
 #### Python
 - 3.11.18
@@ -240,7 +240,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | libssl-dev             | 3.0.13-0ubuntu3.16            |
 | libtool                | 2.4.7-7build1                 |
 | libyaml-dev            | 0.2.5-1build1                 |
-| locales                | 2.39-0ubuntu8.9               |
+| locales                | 2.39-0ubuntu8.12              |
 | lz4                    | 1.9.4-1build1.1               |
 | m4                     | 1.4.19-4build1                |
 | make                   | 4.3-4.1build2                 |

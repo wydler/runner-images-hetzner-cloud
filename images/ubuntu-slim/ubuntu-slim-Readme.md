@@ -1,14 +1,14 @@
 # Ubuntu-Slim
 - OS Version: 24.04.5 LTS
-- Image Version: 20261106.0056.1
-- Systemd version: 255.4-1ubuntu8.18
+- Image Version: 20261121.0057.1
+- Systemd version: 255.4-1ubuntu8.19
 
 ## Installed Software
 
 ### Language and Runtime
 - Bash 5.2.21(1)-release
 - Dash 0.5.12-6ubuntu5
-- Node.js 24.22.2
+- Node.js 24.22.3
 - Perl 5.38.2
 - Python 3.12.3
 
@@ -16,31 +16,31 @@
 - Npm 11.19.1
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.18.15
+- Pipx 1.18.19
 
 ### Tools
-- AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
+- AzCopy 10.34.2 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.49.2
-- Docker Compose 5.7.0
-- Docker-Buildx 0.38.1
-- Docker Client 29.9.3
-- Git 2.56.0
+- Docker Compose 5.8.0
+- Docker-Buildx 0.39.1
+- Docker Client 29.10.0
+- Git 2.56.1
 - Git LFS 3.8.1
 - Git-ftp 1.6.0
 - jq 1.7
 - nvm 0.41.0
 - OpenSSL 3.0.13-0ubuntu3.16
-- yq 4.54.2
+- yq 4.54.3
 - zstd 1.5.7
 
 ### CLI Tools
-- AWS CLI 2.39.6
+- AWS CLI 2.42.1
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.171.0
-- Azure CLI 2.92.0
-- Azure CLI (azure-devops) 1.0.10
-- GitHub CLI 2.103.3
-- Google Cloud CLI 592.0.0
+- AWS SAM CLI 1.174.0
+- Azure CLI 2.93.0
+- Azure CLI (azure-devops) 1.0.12
+- GitHub CLI 2.105.0
+- Google Cloud CLI 594.0.0
 
 ### PowerShell Tools
 - PowerShell 7.5.13
@@ -80,7 +80,7 @@
 | libssl-dev             | 3.0.13-0ubuntu3.16           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
-| locales                | 2.39-0ubuntu8.9              |
+| locales                | 2.39-0ubuntu8.12             |
 | lz4                    | 1.9.4-1build1.1              |
 | lzma                   | 9.22-2.2                     |
 | make                   | 4.3-4.1build2                |
@@ -103,7 +103,7 @@
 | ssh                    | 1:9.6p1-3ubuntu13.20         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.4    |
-| systemd-coredump       | 255.4-1ubuntu8.18            |
+| systemd-coredump       | 255.4-1ubuntu8.19            |
 | tar                    | 1.35+dfsg-3ubuntu0.4         |
 | telnet                 | 0.17+2.5-3ubuntu4.2          |
 | texinfo                | 7.1-3build2                  |

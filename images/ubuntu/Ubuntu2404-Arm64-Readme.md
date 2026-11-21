@@ -1,8 +1,8 @@
 # Ubuntu 24.04
 - OS Version: 24.04.5 LTS
 - Kernel Version: 6.8.0-138-generic
-- Image Version: 20261114.0016.2
-- Systemd version: 255.4-1ubuntu8.18
+- Image Version: 20261121.0017.1
+- Systemd version: 255.4-1ubuntu8.19
 
 ## Installed Software
 
@@ -19,12 +19,12 @@
 - Perl 5.38.2
 - Python 3.12.3
 - Ruby 3.2.3
-- Swift 6.4.2
+- Swift 6.4.3
 
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.13
+- Homebrew 7.0.15
 - Npm 10.9.9
 - Pip 24.0
 - Pip3 24.0
@@ -49,23 +49,23 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.14
-- Gradle 9.9.1
-- Lerna 10.1.1
+- Gradle 9.9.2
+- Lerna 10.1.3
 - Maven 3.9.12
 
 ### Tools
 - Ansible 2.21.6
-- AzCopy 10.34.1 - available by `azcopy` and `azcopy10` aliases
-- Bazel 9.3.2
+- AzCopy 10.34.2 - available by `azcopy` and `azcopy10` aliases
+- Bazel 9.3.3
 - Bazelisk 1.28.1
 - Buildah 1.33.7
 - CMake 3.31.6
-- Docker Amazon ECR Credential Helper 0.12.0
+- Docker Amazon ECR Credential Helper 0.13.0
 - Docker Compose 2.38.2
-- Docker-Buildx 0.39.0
+- Docker-Buildx 0.39.1
 - Docker Client 28.0.4
 - Docker Server 28.0.4
-- Fastlane 2.241.2
+- Fastlane 2.242.0
 - Git 2.56.1
 - Git LFS 3.8.1
 - Git-ftp 1.6.0
@@ -77,14 +77,14 @@ to accomplish this.
 - MediaInfo 24.01
 - Mercurial 6.7.2
 - Minikube 1.39.0
-- n 11.0.0
+- n 12.0.0
 - Newman 6.2.3
 - nvm 0.41.0
 - OpenSSL 3.0.13-0ubuntu3.16
 - Packer 1.16.2
 - Parcel 2.16.4
 - Podman 4.9.3
-- Pulumi 3.276.0
+- Pulumi 3.277.0
 - Skopeo 1.13.3
 - Sphinx Open Source Search Server 2.2.11
 - yamllint 1.38.0
@@ -93,22 +93,22 @@ to accomplish this.
 - Ninja 1.13.2
 
 ### CLI Tools
-- AWS CLI 2.40.3
+- AWS CLI 2.42.1
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.172.1
-- Azure CLI 2.92.0
-- Azure CLI (azure-devops) 1.0.10
-- GitHub CLI 2.104.0
-- Google Cloud CLI 593.0.0
+- AWS SAM CLI 1.174.0
+- Azure CLI 2.93.0
+- Azure CLI (azure-devops) 1.0.12
+- GitHub CLI 2.105.0
+- Google Cloud CLI 594.0.0
 
 ### Java
 | Version             | Environment Variable |
 | ------------------- | -------------------- |
 | 8.0.512+9           | JAVA_HOME_8_X64      |
 | 11.0.33+10          | JAVA_HOME_11_X64     |
-| 17.0.21+9 (default) | JAVA_HOME_17_X64     |
-| 21.0.13+9           | JAVA_HOME_21_X64     |
-| 25.0.5+8            | JAVA_HOME_25_X64     |
+| 17.0.21+2 (default) | JAVA_HOME_17_X64     |
+| 21.0.13+2           | JAVA_HOME_21_X64     |
+| 25.0.5+2            | JAVA_HOME_25_X64     |
 
 ### PHP Tools
 - PHP: 8.3.6
@@ -128,8 +128,8 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Rustfmt 1.11.0
 
 ### Browsers and Drivers
-- Selenium server 4.52.0
-- Mozilla Firefox 160.0
+- Selenium server 4.53.0
+- Mozilla Firefox 160.0.1
 - Geckodriver 0.37.1
 
 #### Environment variables
@@ -167,13 +167,14 @@ Use the following command as a part of your job to start the service: 'sudo syst
 ### Cached Tools
 
 #### Go
-- 1.24.13
 - 1.25.14
 - 1.26.11
+- 1.27.4
 
 #### Node.js
 - 22.23.5
 - 24.22.3
+- 26.13.1
 
 #### Python
 - 3.11.18
@@ -184,9 +185,9 @@ Use the following command as a part of your job to start the service: 'sudo syst
 
 #### Ruby
 - 3.2.11
-- 3.3.13
-- 3.4.12
-- 4.0.9
+- 3.3.14
+- 3.4.13
+- 4.0.10
 
 ### PowerShell Tools
 - PowerShell 7.4.22
@@ -233,7 +234,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | iproute2               | 6.1.0-1ubuntu6.4              |
 | iputils-ping           | 3:20240117-1ubuntu0.1         |
 | jq                     | 1.7.1-3ubuntu0.24.04.2        |
-| libgbm-dev             | 25.2.8-0ubuntu0.24.04.4       |
+| libgbm-dev             | 25.2.8-0ubuntu0.24.04.5       |
 | libicu-dev             | 74.2-1ubuntu3.1               |
 | libnss3-tools          | 2:3.98-1ubuntu0.3             |
 | libsqlite3-dev         | 3.45.1-1ubuntu2.9             |
@@ -266,7 +267,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | sshpass                | 1.09-1                        |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.4     |
 | swig                   | 4.2.0-2ubuntu1                |
-| systemd-coredump       | 255.4-1ubuntu8.18             |
+| systemd-coredump       | 255.4-1ubuntu8.19             |
 | tar                    | 1.35+dfsg-3ubuntu0.4          |
 | telnet                 | 0.17+2.5-3ubuntu4.2           |
 | texinfo                | 7.1-3build2                   |

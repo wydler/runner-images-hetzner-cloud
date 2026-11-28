@@ -1,6 +1,6 @@
 # Ubuntu-Slim
 - OS Version: 24.04.5 LTS
-- Image Version: 20261121.0057.1
+- Image Version: 20261128.0058.1
 - Systemd version: 255.4-1ubuntu8.19
 
 ## Installed Software
@@ -16,14 +16,14 @@
 - Npm 11.19.1
 - Pip 24.0
 - Pip3 24.0
-- Pipx 1.18.19
+- Pipx 1.19.2
 
 ### Tools
 - AzCopy 10.34.2 - available by `azcopy` and `azcopy10` aliases
 - Bicep 0.49.2
-- Docker Compose 5.8.0
+- Docker Compose 5.8.1
 - Docker-Buildx 0.39.1
-- Docker Client 29.10.0
+- Docker Client 29.10.1
 - Git 2.56.1
 - Git LFS 3.8.1
 - Git-ftp 1.6.0
@@ -31,16 +31,16 @@
 - nvm 0.41.0
 - OpenSSL 3.0.13-0ubuntu3.16
 - yq 4.54.3
-- zstd 1.5.7
+- zstd 1.6.0
 
 ### CLI Tools
-- AWS CLI 2.42.1
+- AWS CLI 2.42.5
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.174.0
+- AWS SAM CLI 1.174.1
 - Azure CLI 2.93.0
 - Azure CLI (azure-devops) 1.0.12
-- GitHub CLI 2.105.0
-- Google Cloud CLI 594.0.0
+- GitHub CLI 2.106.0
+- Google Cloud CLI 594.0.1
 
 ### PowerShell Tools
 - PowerShell 7.5.13
@@ -53,7 +53,7 @@
 | autoconf               | 2.71-3                       |
 | automake               | 1:1.16.5-1.3ubuntu1          |
 | bc                     | 1.07.1-3ubuntu4              |
-| binutils               | 2.42-4ubuntu2.10             |
+| binutils               | 2.42-4ubuntu2.11             |
 | bzip2                  | 1.0.8-5.1ubuntu0.1           |
 | ca-certificates        | 20260816ubuntu0.24.04.2      |
 | coreutils              | 9.4-3ubuntu6.3               |
@@ -76,7 +76,7 @@
 | iputils-ping           | 3:20240117-1ubuntu0.1        |
 | jq                     | 1.7.1-3ubuntu0.24.04.2       |
 | libnss3-tools          | 2:3.98-1ubuntu0.3            |
-| libsqlite3-dev         | 3.45.1-1ubuntu2.9            |
+| libsqlite3-dev         | 3.45.1-1ubuntu2.11           |
 | libssl-dev             | 3.0.13-0ubuntu3.16           |
 | libtool                | 2.4.7-7build1                |
 | libyaml-dev            | 0.2.5-1build1                |
@@ -99,7 +99,7 @@
 | rpm                    | 4.18.2+dfsg-2.1build2        |
 | rsync                  | 3.2.7-1ubuntu1.5             |
 | shellcheck             | 0.9.0-1                      |
-| sqlite3                | 3.45.1-1ubuntu2.9            |
+| sqlite3                | 3.45.1-1ubuntu2.11           |
 | ssh                    | 1:9.6p1-3ubuntu13.20         |
 | sshpass                | 1.09-1                       |
 | sudo                   | 1.9.15p5-3ubuntu5.24.04.4    |
@@ -110,7 +110,7 @@
 | time                   | 1.9-0.2build1                |
 | tk                     | 8.6.14build1                 |
 | tree                   | 2.1.1-2ubuntu3.24.04.2       |
-| tzdata                 | 2026e-0ubuntu0.24.04.1       |
+| tzdata                 | 2026f-0ubuntu0.24.04.1       |
 | unzip                  | 6.0-28ubuntu4.1              |
 | upx                    | 4.2.2-3                      |
 | wget                   | 1.21.4-1ubuntu4.5            |

@@ -1,7 +1,7 @@
 # Ubuntu 22.04
 - OS Version: 22.04.5 LTS
-- Kernel Version: 5.15.0-187-generic
-- Image Version: 20261121.0115.1
+- Kernel Version: 5.15.0-204-generic
+- Image Version: 20261128.0116.1
 - Systemd version: 249.11-0ubuntu3.23
 
 ## Installed Software
@@ -27,7 +27,7 @@
 ### Package Management
 - cpan 1.64
 - Helm 3.22.1
-- Homebrew 7.0.15
+- Homebrew 7.0.17
 - Miniconda 26.9.4
 - Npm 10.9.9
 - NuGet 6.6.1.2
@@ -35,7 +35,7 @@
 - Pip3 22.0.2
 - Pipx 1.17.12
 - RubyGems 3.3.5
-- Vcpkg (build from commit 93ad765c7b)
+- Vcpkg (build from commit ba33ef1a2f)
 - Yarn 1.22.22
 
 #### Environment variables
@@ -54,9 +54,9 @@ to accomplish this.
 
 ### Project Management
 - Ant 1.10.12
-- Gradle 9.9.2
+- Gradle 9.9.3
 - Lerna 10.1.3
-- Maven 3.10.1
+- Maven 3.10.2
 - Sbt 1.13.1
 
 ### Tools
@@ -68,7 +68,7 @@ to accomplish this.
 - Bicep 0.49.2
 - Buildah 1.23.1
 - CMake 3.31.6
-- CodeQL Action Bundle 2.27.5
+- CodeQL Action Bundle 2.27.6
 - Docker Amazon ECR Credential Helper 0.13.0
 - Docker Compose 2.38.2
 - Docker-Buildx 0.39.1
@@ -82,7 +82,7 @@ to accomplish this.
 - Heroku 11.14.0
 - jq 1.6
 - Kind 0.33.0
-- Kubectl 1.37.2
+- Kubectl 1.37.3
 - Kustomize 5.8.3
 - Leiningen 2.12.0
 - MediaInfo 21.09
@@ -92,10 +92,10 @@ to accomplish this.
 - Newman 6.2.3
 - nvm 0.41.0
 - OpenSSL 3.0.2-0ubuntu1.30
-- Packer 1.16.2
+- Packer 1.16.3
 - Parcel 2.16.4
 - Podman 3.4.4
-- Pulumi 3.277.0
+- Pulumi 3.278.0
 - R 4.6.2
 - Skopeo 1.4.1
 - Sphinx Open Source Search Server 2.2.11
@@ -103,22 +103,22 @@ to accomplish this.
 - Terraform 1.17.2
 - yamllint 1.38.0
 - yq 4.54.3
-- zstd 1.5.7
+- zstd 1.6.0
 - Ninja 1.13.2
 
 ### CLI Tools
 - Alibaba Cloud CLI 3.5.4
-- AWS CLI 2.42.1
+- AWS CLI 2.42.5
 - AWS CLI Session Manager Plugin 1.2.896.0
-- AWS SAM CLI 1.174.0
+- AWS SAM CLI 1.174.1
 - Azure CLI 2.93.0
 - Azure CLI (azure-devops) 1.0.12
-- GitHub CLI 2.105.0
-- Google Cloud CLI 594.0.0
+- GitHub CLI 2.106.0
+- Google Cloud CLI 594.0.1
 - ORAS CLI 1.4.0
 - Netlify CLI 27.20.1
 - OpenShift CLI 5.0.1
-- Vercel CLI 66.6.0
+- Vercel CLI 68.0.0
 
 ### Java
 | Version             | Environment Variable |
@@ -131,7 +131,7 @@ to accomplish this.
 
 ### PHP Tools
 - PHP: 8.1.2
-- Composer 2.11.2
+- Composer 2.11.3
 - PHPUnit 8.5.57
 ```
 Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
@@ -144,26 +144,26 @@ Both Xdebug and PCOV extensions are installed, but only Xdebug is enabled.
 - Stack 3.11.1
 
 ### Rust Tools
-- Cargo 1.100.0
-- Rust 1.100.0
-- Rustdoc 1.100.0
+- Cargo 1.100.1
+- Rust 1.100.1
+- Rustdoc 1.100.1
 - Rustup 1.29.3
 
 #### Packages
 - Bindgen 0.73.2
 - Cargo audit 0.23.0
 - Cargo clippy 0.1.100
-- Cargo outdated 0.19.0
+- Cargo outdated 0.20.0
 - Cbindgen 0.29.4
 - Rustfmt 1.11.0
 
 ### Browsers and Drivers
-- Google Chrome 158.0.8127.36
-- ChromeDriver 158.0.8127.36
+- Google Chrome 158.0.8127.88
+- ChromeDriver 158.0.8127.88
 - Chromium 158.0.8127.0
-- Microsoft Edge 158.0.4370.33
-- Microsoft Edge WebDriver 158.0.4370.33
-- Selenium server 4.53.0
+- Microsoft Edge 158.0.4370.45
+- Microsoft Edge WebDriver 158.0.4370.45
+- Selenium server 4.54.0
 - Mozilla Firefox 160.0.1
 - Geckodriver 0.37.1
 
@@ -200,7 +200,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 ```
 
 #### MS SQL
-- sqlcmd 17.11.0001.1
+- sqlcmd 17.12.0001.1
 - SqlPackage 170.4.83.3
 
 ### Cached Tools
@@ -281,7 +281,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | aria2                  | 1.36.0-1                            |
 | autoconf               | 2.71-2                              |
 | automake               | 1:1.16.5-1.3                        |
-| binutils               | 2.38-4ubuntu2.12                    |
+| binutils               | 2.38-4ubuntu2.14                    |
 | bison                  | 2:3.8.2+dfsg-1ubuntu0.22.04.1       |
 | brotli                 | 1.0.9-2ubuntu0.1                    |
 | bzip2                  | 1.0.8-5ubuntu0.1                    |
@@ -361,7 +361,7 @@ Use the following command as a part of your job to start the service: 'sudo syst
 | texinfo                | 6.8-4build1                         |
 | time                   | 1.9-0.1build2                       |
 | tk                     | 8.6.11+1build2                      |
-| tzdata                 | 2026e-0ubuntu0.22.04.1              |
+| tzdata                 | 2026f-0ubuntu0.22.04.1              |
 | unzip                  | 6.0-26ubuntu3.2                     |
 | upx                    | 3.96-3                              |
 | wget                   | 1.21.2-2ubuntu1.5                   |
